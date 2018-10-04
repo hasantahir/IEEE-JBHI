@@ -1,53 +1,19 @@
-
 %% bare_jrnl_comsoc.tex
 %% V1.4b
 %% 2015/08/26
 %% by Michael Shell
 %% see http://www.michaelshell.org/
 %% for current contact information.
-%%
-%% This is a skeleton file demonstrating the use of IEEEtran.cls
-%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
-%% Communications Society journal paper.
-%%
-%% Support sites:
-%% http://www.michaelshell.org/tex/ieeetran/
-%% http://www.ctan.org/pkg/ieeetran
-%% and
-%% http://www.ieee.org/
 
-%%*************************************************************************
-%% Legal Notice:
-%% This code is offered as-is without any warranty either expressed or
-%% implied; without even the implied warranty of MERCHANTABILITY or
-%% FITNESS FOR A PARTICULAR PURPOSE!
-%% User assumes all risk.
-%% In no event shall the IEEE or any contributor to this code be liable for
-%% any damages or losses, including, but not limited to, incidental,
-%% consequential, or any other damages, resulting from the use or misuse
-%% of any information contained here.
-%%
-%% All comments are the opinions of their respective authors and are not
-%% necessarily endorsed by the IEEE.
-%%
-%% This work is distributed under the LaTeX Project Public License (LPPL)
-%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
-%% distributed and modified. A copy of the LPPL, version 1.3, is included
-%% in the base LaTeX documentation of all distributions of LaTeX released
-%% 2003/12/01 or later.
-%% Retain all contribution notices and credits.
-%% ** Modified files should be clearly indicated as such, including  **
-%% ** renaming them and changing author support contact information. **
-%%*************************************************************************
+
 
 
 % *** Authors should verify (and, if needed, correct) their LaTeX system  ***
 % *** with the testflow diagnostic prior to trusting their LaTeX platform ***
 % *** with production work. The IEEE's font choices and paper sizes can   ***
-% *** trigger bugs that do not appear when using other class files.       ***                          ***
+% *** trigger bugs that do not appear when using other class files.       ***                        
 % The testflow support page is at:
 % http://www.michaelshell.org/tex/testflow/
-
 
 
 \documentclass[journal,comsoc]{IEEEtran}
@@ -65,22 +31,6 @@
 
 
 % *** MISC UTILITY PACKAGES ***
-%
-%\usepackage{ifpdf}
-% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
-% compilation based on whether the output is pdf or dvi.
-% usage:
-% \ifpdf
-%   % pdf code
-% \else
-%   % dvi code
-% \fi
-% The latest version of ifpdf.sty can be obtained from:
-% http://www.ctan.org/pkg/ifpdf
-% Also, note that IEEEtran.cls V1.7 and later provides a builtin
-% \ifCLASSINFOpdf conditional that works the same way.
-% When switching from latex to pdflatex and vice-versa, the compiler may
-% have to be run twice to clear warning/error messages.
 
 
 %  ***  MY CUSTOM PACKAGES
@@ -130,7 +80,7 @@
 % *** GRAPHICS RELATED PACKAGES ***
 %
 \ifCLASSINFOpdf
-  % \usepackage[pdftex]{graphicx}
+  \usepackage[pdftex]{graphicx}
   % declare the path(s) where your graphic files are
   % \graphicspath{{../pdf/}{../jpeg/}}
   % and their extensions so you won't have to specify these with
@@ -140,7 +90,7 @@
   % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
   % will default to the driver specified in the system graphics.cfg if no
   % driver is specified.
-  % \usepackage[dvips]{graphicx}
+  \usepackage[dvips]{graphicx}
   % declare the path(s) where your graphic files are
   % \graphicspath{{../eps/}}
   % and their extensions so you won't have to specify these with
@@ -374,20 +324,11 @@
 % *** PDF, URL AND HYPERLINK PACKAGES ***
 %
 %\usepackage{url}
-% url.sty was written by Donald Arseneau. It provides better support for
-% handling and breaking URLs. url.sty is already installed on most LaTeX
-% systems. The latest version and documentation can be obtained at:
-% http://www.ctan.org/pkg/url
-% Basically, \url{my_url_here}.
-
 
 
 
 % *** Do not adjust lengths that control margins, column widths, etc. ***
 % *** Do not use packages that alter fonts (such as pslatex).         ***
-% There should be no need to do such things with IEEEtran.cls V1.6 and later.
-% (Unless specifically asked to do so by the journal or conference you plan
-% to submit to, of course. )
 
 
 % correct bad hyphenation here
@@ -396,19 +337,8 @@
 
 \begin{document}
 %
-% paper title
-% Titles are generally capitalized except for words such as a, an, and, as,
-% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
-% not capitalized unless they are the first or last word of the title.
-% Linebreaks \\ can be used within to get better formatting as desired.
-% Do not put math or special symbols in the title.
 \title{Predicting Future Type 2 Diabetes through Machine Learning}
 %
-%
-% author names and IEEE memberships
-% note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
-% a structure at a ~ so this keeps an author's name from being broken across
-% two lines.
 % use \thanks{} to gain access to the first footnote area
 % a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
 % was not built to handle multiple paragraphs
@@ -419,7 +349,7 @@
         Madhav~Erraguntla,~\IEEEmembership{Member,~IEEE,,}
         Qammer~Abbas,~\IEEEmembership{Senior Member,~IEEE,,}
         and~Khalid~Qaraqe,~\IEEEmembership{Senior~Member,~IEEE}% <-this % stops a space
-\thanks{Hasan A was with the Department
+\thanks{Hasan Abbas is with the Department
 of Electrical and Computer Engineering, Georgia Institute of Technology, Atlanta,
 GA, 30332 USA e-mail: (see http://www.michaelshell.org/contact.html).}% <-this % stops a space
 \thanks{J. Doe and J. Doe are with Anonymous University.}% <-this % stops a space
@@ -479,10 +409,10 @@ GA, 30332 USA e-mail: (see http://www.michaelshell.org/contact.html).}% <-this %
 % As a general rule, do not put math, special symbols or citations
 % in the abstract or keywords.
 \begin{abstract}
-We present a prediction model to assess the future risk of developing type 2 diabetes mellitus (T2DM). We use the oral glucose tolerance test (OGTT) data collected from a group of 1,551  healthy subjects to construct a machine learning model employing the support vector machines. We used ten-fold cross validation technique to optimize the prediction model and validated it on a hold-out subset. Our model can predict the future risk of diabetes with a hold-out validation accuracy of 97.23\% and recall of 77.27\%, both averaged over 100 iterations in which each of the disjoint training, test and hold-out sets are randomly generated. The results also show that the plasma glucose based variables are the strongest predictors of developing T2DM in future. The outcomes of this paper can therefore, serve to develop clinical and lifestyle intervention programs for the individuals that are at high-risk of developing T2DM in future.
+We present a prediction model that assesses the future risk of developing type 2 diabetes mellitus (T2DM). We use the oral glucose tolerance test (OGTT) data collected from a group of 1,551  healthy subjects to construct a machine learning model employing the support vector machines. We trained and validated the models on the data obtained from the second cohort of the San Antonio Heart Study, using a set of four features derived from the glucose measurements in the OGTT. The results of the proposed scheme show a mean validation accuracy of 97.23\% and recall of 77.27\%. The results also show that the plasma glucose based features show the maximum relevance regards to predicting the development of T2DM in future.
 \end{abstract}
 
-% Note that keywords are not normally used for peerreview papers.
+% Note that keywords are not normally used for peer-review papers.
 \begin{IEEEkeywords}
 Type-2 Diabetes prediction, machine learning, oral glucose tolerance test, San Antonio heart study, pre-diabetes
 \end{IEEEkeywords}
@@ -529,7 +459,7 @@ In this paper, we revisit the data generated by a population-based, epidemiologi
 %%% DIAGNOSIS THROUGH OGTT and discuss the costs aspects
 Does it improve the prediction performance over other models such as SADPM that do not require any invasive procedure. SADPM is based on demographics data and fasting plasma glucose.
 
-%%% Previous studies
+
 
 
 %%%
@@ -540,7 +470,13 @@ Does it improve the prediction performance over other models such as SADPM that 
 2. Machine learning approaches primarily work on the aspects of diagnosis rather than prediction.
     BARAKAT rule based diagnosis
 3. Ensemble based approach on diabetes diagnosis models
-4.
+
+%%% Previous studies
+1. BARAKAT
+2. ABDUl-GHANI
+3. SAn Antonio Diabetes Prediction Model
+4. Chinese paper using SVMS
+5. Ensemble based approach for T2DM prediction
 
 \section{Materials and Methods}
 %
@@ -574,6 +510,43 @@ Healthy &  DMI & CVD & DMI+CVD\\
 We excluded the participants with any missing values. The dataset included the ethnicity and Two socio-demographic factors (age and ethnicity), and eight physiological factors either measured during the OGTT or derived later, were used in this study, listed in Table \ref{tab:features}. These features have previously been used in diabetes prediction studies \cite{abdul-ghani_what_2007,abdul-ghani_plasma_2009}. The area under the \SI{2}{\hour} glucose curve ($\textrm{AuG}_{0-120}$) was calculated using the trapezoidal rule, while the Matsuda index (M) was used as defined in \cite{Matsuda1462}. \( {\Delta I}/{\Delta G}_{0-120} \), where $x = 30, 120$ was calculated using the measured insulin and glucose values at time x during the OGTT.
 
 MAke some changes here and see if they appear on the Github repo
+
+
+\subsection{Machine Learning Technique}
+% 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 % An example of a floating figure using the graphicx package.

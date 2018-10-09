@@ -517,6 +517,28 @@ MAke some changes here and see if they appear on the Github repo
 
 
 
+\subsection{Feature Selection}
+% 
+Before constructing the diabetes prediction model, we aim to find the most effective subset of the features in terms of the relevance to the classifier output. This process greatly reduces the computational cost during the model development by reducing the feature space dimension and also dispense useful scientific insight in to the classification problem. Here, we pursue the so-called \emph{feature selection} process using the \emph{filter} method, where the features that correlate the most to the classifier target class are shortlisted. Let us consider a feature $\mathbf{X}$ as a continuous random variable and the class label $\mathbf{Y}$ as a discrete random variable. The correlation or relevance between the two random variables can be described in terms of the mutual information, $I$ defined as:
+% 
+\begin{equation}
+    I(\mathbf{X}, \mathbf{Y}) = - \int p_i\ln p_i - \sum_j p_j\ln p_j + \sum_j \int p_{ij}\ln p_{ij},
+    \label{eq:MI}
+\end{equation}
+% 
+where $p_{i}$ is the probability of a random variable $\mathbf{X}$ taking a particular value $x_i$ and so forth, and $p_{ij}$ denotes the joint probability $P\{\mathbf{X}= x_i, \mathbf{Y}=y_j\}$. The three terms in \eqref{eq:MI} are the continuous, discrete and joint entropies of the random variables. The set of features that individually yield the maximum $I$ are termed as the most relevant features. A downside of this approach is that the obtained subset of features may not be mutually independent of each other. This redundancy in the feature list only adds in to the computational cost and does not improve the classifier performance. Therefore, we aim to select the features that yield maximized relevance along with minimal redundancy which is defined as:
+% 
+contain independent individual features that are depen
+% 
+
+
+
+We use the minimal-redundancy-maximal-relevance (mRMR) algorithm \cite{mRMR} to reduce the feature space     In the proposed method, we first simplify the feature space by selecting the top ten features that carry the maximum relevance with the classifier output, namely the labels. For this purpose, we used the maximum-relevance, minimal-redundancy (mR-mR) algorithm to rank the ten best features based on the. The mRmR algorithm is a type of filter method for feature selection in which individual features are ranked based on the mutual information they have with the classifier output. Mathematically, the mutual information MI between two random variables $\mathbf{x}$ and $\mathbf{C}$ is defined as:
+%
+\begin{equation}
+    I(\mathbf{x}, \mathbf{C}) = \int \int p(\mathbf{x}, \mathbf{x}) \log \frac{\p(x)}
+\end{equation}
+
 
 
 

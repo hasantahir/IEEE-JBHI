@@ -29,29 +29,50 @@
 % Some very useful LaTeX packages include:
 % (uncomment the ones you want to load)
 
-
-% *** MISC UTILITY PACKAGES ***
-
-
-%  ***  MY CUSTOM PACKAGES
-\usepackage{epsfig}
-\usepackage{subfigure}
+\usepackage[cmex10]{amsmath}
 \usepackage{calc}
-\usepackage{amstext}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{multicol}
-\usepackage{pslatex}
-\usepackage{apalike}
-%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts} % to load math symbols
+\usepackage{mdwmath}
+\usepackage{commath}
+\usepackage{mdwmath}
+% \usepackage{showframe}
+% \usepackage{mdwtab}
+% \usepackage{minipage}
+% \usepackage[keeplastbox]{flushend}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+\usepackage{color}
+\usepackage{placeins}
+\usepackage{subfigure}
+\usepackage{hyperref}
+% % The following is done to hide ugly color boxes around the links
+\usepackage{xcolor}
+\hypersetup{
+colorlinks,
+linkcolor={black},
+citecolor={black},
+urlcolor={black}
+}
 \usepackage{booktabs}
-\usepackage{tabularx,colortbl}
 \usepackage{float}
+\usepackage{tabularx,colortbl}
+\usepackage{newtxtext,newtxmath}
+\usepackage{geometry} % just not to bother with the table width
+% \usepackage{standalone}
+\usepackage{filecontents}
+\usepackage{tabularx,colortbl}
+\usepackage{pgfplots}
+\usepackage{standalone}
+\usepackage{tikz}
+\tikzset{
+  font={\fontsize{9pt}{9}\selectfont}}
+  \usepackage{tikzscale} % Scale the figure not the font
+\pgfplotsset{compat=newest}
+%% the following commands are sometimes needed
+\usepackage{grffile}
+\usepackage{mathtools,amssymb,lipsum}
 \usepackage{siunitx}
     \sisetup{per=slash, load=abbr, output-complex-root = j, complex-root-position = before-number}
-
-
 
 % *** CITATION PACKAGES ***
 %
@@ -79,24 +100,12 @@
 
 % *** GRAPHICS RELATED PACKAGES ***
 %
-\ifCLASSINFOpdf
-  \usepackage[pdftex]{graphicx}
+\usepackage{graphicx}
   % declare the path(s) where your graphic files are
-  % \graphicspath{{../pdf/}{../jpeg/}}
+  \graphicspath{{Figures/}}
   % and their extensions so you won't have to specify these with
   % every instance of \includegraphics
   % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
-\else
-  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
-  % will default to the driver specified in the system graphics.cfg if no
-  % driver is specified.
-  \usepackage[dvips]{graphicx}
-  % declare the path(s) where your graphic files are
-  % \graphicspath{{../eps/}}
-  % and their extensions so you won't have to specify these with
-  % every instance of \includegraphics
-  % \DeclareGraphicsExtensions{.eps}
-\fi
 % graphicx was written by David Carlisle and Sebastian Rahtz. It is
 % required if you want graphics, photos, etc. graphicx.sty is already
 % installed on most LaTeX systems. The latest version and documentation
@@ -235,7 +244,7 @@
 
 % *** FLOAT PACKAGES ***
 %
-%\usepackage{fixltx2e}
+\usepackage{fixltx2e}
 % fixltx2e, the successor to the earlier fix2col.sty, was written by
 % Frank Mittelbach and David Carlisle. This package corrects a few problems
 % in the LaTeX2e kernel, the most notable of which is that in current
@@ -251,7 +260,7 @@
 % http://www.ctan.org/pkg/fixltx2e
 
 
-%\usepackage{stfloats}
+\usepackage{stfloats}
 % stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
 % the ability to do double column floats at the bottom of the page as well
 % as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
@@ -344,15 +353,19 @@
 % was not built to handle multiple paragraphs
 %
 
-\author{Hasan~Abbas,~\IEEEmembership{Member,~IEEE,}
-        Lejla~Alic,~\IEEEmembership{Member,~IEEE,,}
-        Madhav~Erraguntla,~\IEEEmembership{Member,~IEEE,,}
-        Qammer~Abbas,~\IEEEmembership{Senior Member,~IEEE,,}
-        and~Khalid~Qaraqe,~\IEEEmembership{Senior~Member,~IEEE}% <-this % stops a space
-\thanks{Hasan Abbas is with the Department
-of Electrical and Computer Engineering, Georgia Institute of Technology, Atlanta,
-GA, 30332 USA e-mail: (see http://www.michaelshell.org/contact.html).}% <-this % stops a space
-\thanks{J. Doe and J. Doe are with Anonymous University.}% <-this % stops a space
+\author{Hasan~Abbas,~
+        Lejla~Alic,~
+        Shafiqul~Islam,~
+        Madhav~Erraguntla,~
+        Qammer~Abbasi,~\IEEEmembership{Senior Member,~IEEE,}
+        and~Marwa~Qaraqe,~\IEEEmembership{Member,~IEEE}% <-this % stops a space
+\thanks{H. Abbas is with the Department
+of Electrical and Computer Engineering, Texas A\&M University at Qatar, Doha 23874 Qatar;  hasan.abbas@qatar.tamu.edu}% <-this % stops a space
+\thanks{L. Alic was with the Department
+of Electrical and Computer Engineering, Texas A\&M University at Qatar, Doha 23874 Qatar; lejlaresearch@gmail.com}% <-this % stops a space
+\thanks{S. Islam and M. Qaraqe are with the College of Science and Engineering, Hamad Bin Khalifa University Doha, Qatar}% <-this % stops a space
+\thanks{M. Erraguntla is with the Department of Industrial and Systems Engineering, Texas A\&M University, College Station, TX 77843}% <-this % stops a space
+\thanks{Q. Abbasi is with the School of Engineering, University of Glasgow, UK}% <-this % stops a space
 \thanks{Manuscript received April 19, 2005; revised August 26, 2015.}}
 
 % note the % following the last \IEEEmembership and also \thanks -
@@ -409,12 +422,12 @@ GA, 30332 USA e-mail: (see http://www.michaelshell.org/contact.html).}% <-this %
 % As a general rule, do not put math, special symbols or citations
 % in the abstract or keywords.
 \begin{abstract}
-We present a prediction model that assesses the future risk of developing type 2 diabetes mellitus (T2DM). We use the oral glucose tolerance test (OGTT) data collected from a group of 1,551  healthy subjects to construct a machine learning model employing the support vector machines. We trained and validated the models on the data obtained from the second cohort of the San Antonio Heart Study, using a set of four features derived from the glucose measurements in the OGTT. The results of the proposed scheme show a mean validation accuracy of 97.23\% and recall of 77.27\%. The results also show that the plasma glucose based features show the maximum relevance regards to predicting the development of T2DM in future.
+We present a prediction model that assesses the future risk of developing type 2 diabetes mellitus (T2DM). We use the oral glucose tolerance test (OGTT) data collected from a group of 1,551  healthy subjects to construct a machine learning model employing the support vector machines. We trained and validated the models on the data obtained from the second cohort of the San Antonio Heart Study, using a set of four features derived from the glucose measurements in the OGTT. The results of the proposed scheme show an average validation accuracy of 97.23\% and recall of 77.27\%. The results also show that the plasma glucose based features are the strongest predictors of the future development of T2DM.
 \end{abstract}
 
 % Note that keywords are not normally used for peer-review papers.
 \begin{IEEEkeywords}
-Type-2 Diabetes prediction, machine learning, oral glucose tolerance test, San Antonio heart study, pre-diabetes
+Type-2 Diabetes prediction, machine learning, disease risk assessment, San Antonio heart study.
 \end{IEEEkeywords}
 
 % For peer review papers, you can put extra information on the cover
@@ -507,10 +520,17 @@ Healthy &  DMI & CVD & DMI+CVD\\
 
 \subsection{Preparation of the Data}
 %
-We excluded the participants with any missing values. The dataset included the ethnicity and Two socio-demographic factors (age and ethnicity), and eight physiological factors either measured during the OGTT or derived later, were used in this study, listed in Table \ref{tab:features}. These features have previously been used in diabetes prediction studies \cite{abdul-ghani_what_2007,abdul-ghani_plasma_2009}. The area under the \SI{2}{\hour} glucose curve ($\textrm{AuG}_{0-120}$) was calculated using the trapezoidal rule, while the Matsuda index (M) was used as defined in \cite{Matsuda1462}. \( {\Delta I}/{\Delta G}_{0-120} \), where $x = 30, 120$ was calculated using the measured insulin and glucose values at time x during the OGTT.
-
-MAke some changes here and see if they appear on the Github repo
-
+The dataset included the glucose and insulin values recorded at the baseline, \num{30}, \num{60} and \num{120} minute intervals, and a distribution of these values marked by the follow-up labels of \texttt{healthy} and \texttt{diabetic} is shown in Fig. \ref{fig:ogtt_mean}. Moreover, the socio-demographic information such as age, ethnicity and body-mass index (BMI) was also part of the dataset. From the glucose and insulin measurements, we computed the slope and area under the curve between all the possible combinations  of a pair of readings. In addition, we also calculated parameters such as the insulinogenic (ratio of insulin and glucose slopes between any two time intervals) and Matsuda indices, as defined in \cite{Matsuda1462,abdul-ghani_plasma_2009}. These variables have shown a good efficacy of diabetes prediction in previous studies \cite{abdul-ghani_what_2007,abdul-ghani_plasma_2009}, since they are used to quantify the amount of insulin required by the body to maintain healthy glucose levels. In total we prepared \num{68} features for the classification problem and removed the rows that had missing entries or contained zero or infinite values.
+%
+\begin{figure}[!h]
+  \centering
+  \subfigure{\includegraphics[width=\linewidth]{Glucose_curve.tex}}\hfil
+  \subfigure{\includegraphics[width=\linewidth]{Insulin_curve.tex}}
+% \vspace*{-6mm}
+      \caption{Mean glucose and insulin curves of healthy and diabetic patients}
+    \label{fig:ogtt_mean}
+    % \vspace{-2mm}%Put here to reduce too much white space after figure
+\end{figure}
 
 \subsection{Machine Learning Technique}
 %
@@ -519,35 +539,48 @@ MAke some changes here and see if they appear on the Github repo
 
 \subsection{Feature Selection}
 %
-Before constructing the future diabetes prediction model based on the support vector machines, we aim to find the most effective subset of the features in terms of the relevance to the classifier output. This process greatly reduces the computational cost during the model development by reducing the feature space dimension and also dispense useful scientific insight in to the classification problem. Here, we perform \emph{feature selection} using the \emph{filter} method, where the features that correlate the most to the classifier target class are shortlisted. Let us consider a feature $\mathbf{X}$ from a feature set $\mathcal X$ as a continuous random variable and the class label $\mathbf{Y}$ as a discrete random variable. The correlation or relevance between the feature and the label can be described in terms of the mutual information, $I$ defined as \cite{ross2014mutual}:
+Before constructing the future diabetes prediction model based on the support vector machines, we aim to find the most effective subset of the features in terms of the relevance to the classifier output. This process greatly reduces the computational cost during the model development by reducing the feature space dimension and also dispense useful scientific insight in to the classification problem. We performed a two-step filter selection, first of which was the emph{filter} method in which ten features that correlated the most to the classifier target class were shortlisted. In order to define the relevance between the featue and the class labels, consider a feature $\mathbf{X}$ from a feature set $\mathcal X$ as a continuous random variable and the class label $\mathbf{Y}$ as a discrete random variable. Their relationship can be described in terms of the mutual information, $I$ defined as \cite{ross2014mutual}:
 %
 \begin{equation}
     I(\mathbf{X}, \mathbf{Y}) = - \int p_i\ln p_i - \sum_j p_j\ln p_j + \sum_j \int p_{ij}\ln p_{ij},
     \label{eq:MI}
 \end{equation}
 %
-where $p_{i}$ is the probability of a random variable $\mathbf{X}$ taking a particular value $x_i$ and so forth, and $p_{ij}$ denotes the joint probability $P\{\mathbf{X}= x_i, \mathbf{Y}=y_j\}$. The three terms in \eqref{eq:MI} are the continuous, discrete and joint entropies of the random variables. The features that are most relevant to the class label are the ones that individually yield the maximum $I$. However, a drawback of pursuing this approach is that the selected features may be mutually correlated, and having a redundant list of shortlisted features only adds to the computational cost of the classifier without necessarily improving its performance. Even more so, the addition of extra features commonly result in the deterioration of the classifier performance \cite{trunk1979problem}. Therefore, an instinctive way forward is to keep only one feature from a correlated set of features that provide similar relevance information, and discard the remaining features from the set $\mathcal X$. In this paper, we follow the minimal-redundancy-maximal-relevance (mRMR) algorithm presented in \cite{mRMR} to obtain a compact set of five features that can strongly predict the future development of type-2 diabetes. Using the mutual information $I$ defined in \eqref{eq:MI}, the feature redundancy in a set $\mathcal{X}$ is expressed as \cite{mRMR}:
+where $p_{i}$ is the probability of a random variable $\mathbf{X}$ taking a particular value $x_i$ and so forth, and $p_{ij}$ denotes the joint probability $P\{\mathbf{X}= x_i, \mathbf{Y}=y_j\}$. The three terms in \eqref{eq:MI} are the continuous, discrete and joint entropies of the random variables. The features that are most relevant to the class label are the ones that individually yield the maximum $I$. However, a drawback of pursuing this approach is that the selected features may be mutually correlated, and having a redundant list of shortlisted features only adds to the computational cost of the classifier without necessarily improving its performance. Even more so, the addition of extra features commonly result in the deterioration of the classifier performance \cite{trunk1979problem}. Therefore, an instinctive way forward is to keep only one feature from a correlated set of features that provide similar relevance information, and discard the remaining features from the set $\mathcal X$. We follow the minimal-redundancy-maximal-relevance () algorithm \cite{mRMR}, that selects the features, that not only yield the maximal mutual information \eqref{eq:MI} with respect to the class label, but minimizes the mutual correlation among the features expressed in terms of redundancy $R$ as:
 %
 \begin{equation}
   R(\mathcal X) = \sum_{\mathbf{X}_i, \mathbf{X}_j \in \mathcal{X}} I(\mathbf{X}_i, \mathbf{X}_j).
   \label{eq:R}
 \end{equation}
 %
-By minimizing $R$, the selection of mutually exclusive features 
-mRMR also removes the repititive  only maximize the mutual informatio
-to the target class, but
-not only selects the most relevant features but minimizes the redundancy in the shortlisted features list as well. As presented in \cite{mRMR}, the redundancy between two features $\mathbf{X_i}$ and $\mathbf{X_j}$ is defined as    the We follow the approach of Therefore, we aim to select the features that yield maximized relevance along with minimal redundancy which is defined as:
+where $I$ is defined in \eqref{eq:MI}. By minimizing $R$, the mRMR framework selects a set of mutually exclusive features that are most relevant to the class label. In this paper, we shortlist a set of ten features that are strong predictors of the future development of type-2 diabetes. With the application of the mRMR algorithm, Table \ref{tab:ranked} shows the list of the ten features ranked in order of their relevance to the class label, where the prefixes $au$ and $sl$ denote the area under the curve and slope respectively and the time interval is shown in the subscripts.
 %
-contain independent individual features that are depen
+\begin{table}[!b]
+% \vspace{-4mm}%Put here to reduce too much white space after table
+\centering
+\begin{tabular}{c c}
+\toprule
+Rank &  Feature\\
+\midrule \midrule
+1 & $\mathrm{au-Glu}_{0-120}$\\
+2 & $\mathrm{sl-Glu}_{120-0}$\\
+3 & $\mathrm{sl-Glu}_{120-60}$\\
+4 & $\mathrm{sl-Glu}_{60-0}$\\
+5 & $\mathrm{sl-Glu}_{30-0}$\\
+6 & $\mathrm{sl-Glu}_{60-30}$\\
+7 & $\mathrm{PG}_{0} $\\
+8 & $\mathrm{PG}_{120}$\\
+9 & $\mathrm{PG}_{60}$\\
+10 & $\mathrm{au-Glu}_{0-30}$\\
+\bottomrule
+\end{tabular}
+\caption{The ten ranked features obtained through the mRMR algorithm}
+\label{tab:ranked}
+\end{table}
 %
+ In the second phase, we reduced the number of selected features to four that provided the best performance in terms of validation accuracy.  For this purpose, we used the same SVM classification scheme.
 
 
-
-We use the minimal-redundancy-maximal-relevance (mRMR) algorithm \cite{mRMR} to reduce the feature space     In the proposed method, we first simplify the feature space by selecting the top ten features that carry the maximum relevance with the classifier output, namely the labels. For this purpose, we used the maximum-relevance, minimal-redundancy (mR-mR) algorithm to rank the ten best features based on the. The mRmR algorithm is a type of filter method for feature selection in which individual features are ranked based on the mutual information they have with the classifier output. Mathematically, the mutual information MI between two random variables $\mathbf{x}$ and $\mathbf{C}$ is defined as:
-%
-\begin{equation}
-    I(\mathbf{x}, \mathbf{C}) = \int \int p(\mathbf{x}, \mathbf{x}) \log \frac{\p(x)}
-\end{equation}
 
 
 

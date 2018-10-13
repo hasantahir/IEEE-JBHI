@@ -1,0 +1,48 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\definecolor{mycolor1}{rgb}{0.89412,0.10196,0.10980}%
+\definecolor{mycolor2}{rgb}{0.21569,0.49412,0.72157}%
+\definecolor{mycolor3}{rgb}{0.30196,0.68627,0.29020}%
+
+\begin{tikzpicture}
+
+\begin{axis}[%
+xmin=0,
+xmax=4,
+xtick={0,1,2,4},
+xticklabels={{0},{30},{60},{120}},
+xlabel style={font=\color{white!15!black}},
+xlabel={Time (minutes)},
+ymin=0,
+ymax=190,
+ylabel style={font=\color{white!15!black}},
+ylabel={Glucose (\SI{}{\milli\gram\per\deci\liter})},
+axis background/.style={fill=white},
+xmajorgrids,
+ymajorgrids,
+legend style={at={(0.97,0.03)}, anchor=south east, legend cell align=left, align=left, draw=white!15!black}
+]
+\addplot [color=mycolor1, line width=1.4pt, mark size=2.5pt, mark=square*, mark options={solid, fill=mycolor1, mycolor1}]
+  table[row sep=crcr]{%
+0	84.4129238884702\\
+1	136.264431047476\\
+2	125.283458929917\\
+4	112.626171816127\\
+};
+\addlegendentry{Healthy}
+
+\addplot [color=mycolor2, line width=1.4pt, mark size=2.5pt, mark=square*, mark options={solid, fill=mycolor2, mycolor2}]
+  table[row sep=crcr]{%
+0	95.3846820809248\\
+1	168.480346820809\\
+2	179.028034682081\\
+4	159.691560693642\\
+};
+\addlegendentry{Diabetic}
+
+\end{axis}
+\end{tikzpicture}%

@@ -43,7 +43,8 @@
 \usepackage{etoolbox}
 \usepackage{color}
 \usepackage{placeins}
-\usepackage{subfigure}
+% \usepackage{subfigure}
+\usepackage{subcaption}
 \usepackage{hyperref}
 % % The following is done to hide ugly color boxes around the links
 \usepackage{xcolor}
@@ -65,14 +66,14 @@ urlcolor={black}
 \usepackage{standalone}
 \usepackage{tikz}
 \tikzset{
-  font={\fontsize{9pt}{9}\selectfont}}
-  \usepackage{tikzscale} % Scale the figure not the font
+font={\fontsize{9pt}{9}\selectfont}}
+\usepackage{tikzscale} % Scale the figure not the font
 \pgfplotsset{compat=newest}
 %% the following commands are sometimes needed
 \usepackage{grffile}
 \usepackage{mathtools,amssymb,lipsum}
 \usepackage{siunitx}
-    \sisetup{per=slash, load=abbr, output-complex-root = j, complex-root-position = before-number}
+\sisetup{per=slash, load=abbr, output-complex-root = j, complex-root-position = before-number}
 
 % *** CITATION PACKAGES ***
 %
@@ -101,11 +102,11 @@ urlcolor={black}
 % *** GRAPHICS RELATED PACKAGES ***
 %
 \usepackage{graphicx}
-  % declare the path(s) where your graphic files are
-  \graphicspath{{Figures/}}
-  % and their extensions so you won't have to specify these with
-  % every instance of \includegraphics
-  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+% declare the path(s) where your graphic files are
+\graphicspath{{Figures/}}
+% and their extensions so you won't have to specify these with
+% every instance of \includegraphics
+% \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
 % graphicx was written by David Carlisle and Sebastian Rahtz. It is
 % required if you want graphics, photos, etc. graphicx.sty is already
 % installed on most LaTeX systems. The latest version and documentation
@@ -354,11 +355,11 @@ urlcolor={black}
 %
 
 \author{Hasan~Abbas,~
-        Lejla~Alic,~
-        Shafiqul~Islam,~
-        Madhav~Erraguntla,~
-        Qammer~Abbasi,~\IEEEmembership{Senior Member,~IEEE,}
-        and~Marwa~Qaraqe,~\IEEEmembership{Member,~IEEE}% <-this % stops a space
+Lejla~Alic,~
+Shafiqul~Islam,~
+Madhav~Erraguntla,~
+Qammer~Abbasi,~\IEEEmembership{Senior Member,~IEEE,}
+and~Marwa~Qaraqe,~\IEEEmembership{Member,~IEEE}% <-this % stops a space
 \thanks{H. Abbas is with the Department
 of Electrical and Computer Engineering, Texas A\&M University at Qatar, Doha 23874 Qatar;  hasan.abbas@qatar.tamu.edu}% <-this % stops a space
 \thanks{L. Alic was with the Department
@@ -422,12 +423,12 @@ of Electrical and Computer Engineering, Texas A\&M University at Qatar, Doha 238
 % As a general rule, do not put math, special symbols or citations
 % in the abstract or keywords.
 \begin{abstract}
-We present a prediction model that assesses the future risk of developing type 2 diabetes mellitus (T2DM). We use the oral glucose tolerance test (OGTT) data collected from a group of 1,551  healthy subjects to construct a machine learning model employing the support vector machines. We trained and validated the models on the data obtained from the second cohort of the San Antonio Heart Study, using a set of four features derived from the glucose measurements in the OGTT. The results of the proposed scheme show an average validation accuracy of 97.23\% and recall of 77.27\%. The results also show that the plasma glucose based features are the strongest predictors of the future development of T2DM.
+  We present a prediction model that assesses the future risk of developing type 2 diabetes mellitus (T2DM). We use the oral glucose tolerance test (OGTT) data collected from a group of 1,551  healthy subjects to construct a machine learning model employing the support vector machines. We trained and validated the models on the data obtained from the second cohort of the San Antonio Heart Study, using a set of four features derived from the glucose measurements in the OGTT. The results of the proposed scheme show an average validation accuracy of 97.23\% and recall of 77.27\%. The results also show that the plasma glucose based features are the strongest predictors of the future development of T2DM.
 \end{abstract}
 
 % Note that keywords are not normally used for peer-review papers.
 \begin{IEEEkeywords}
-Type-2 Diabetes prediction, machine learning, disease risk assessment, San Antonio heart study.
+  Type-2 Diabetes prediction, machine learning, disease risk assessment, San Antonio heart study.
 \end{IEEEkeywords}
 
 % For peer review papers, you can put extra information on the cover
@@ -462,7 +463,7 @@ Type-2 Diabetes prediction, machine learning, disease risk assessment, San Anton
 
 
 %%% TALK ABOUT GLUCOSE TOLERANCE
-Impaired glucose tolerance (IGT), defined by World Health Organization (WHO) \cite{organization_definition_2006} and the American Diabetes Association (ADA) \cite{american_diabetes_association_diagnosis_2005}, that is used to detect diabetes in its early stage, known as pre-diabetes, which identifies the impaired insulin response. Glucose clamp techniques can quantify the IGT. However, such techniques are labor-intensive and complicated for clinical practice or large epidemiological studies. A less invasive technique to quantify IGT involves an oral glucose tolerance test (OGTT) that samples the blood concentration of glucose and insulin over 2 hours after a standardized glucose dose  \cite{tschritter_assessing_2003}. However, the studies have shown that only \SI{50}{\percent} of such cases actually develop diabetes within a span of \num{10} years \cite{shaw_impaired_1999, writing_committee_impaired_2002}. Moreover, \SI{40}{\percent} diabetic subjects do not show any IGT in the initial screening. Previous studies have shown that extended OGTT, that assesses the blood glucose and insulin in the period prior to \SI{2}{\hour} limit, can predict diabetes onset more reliably \cite{abdul-ghani_what_2007}.
+Impaired glucose tolerance (IGT), defined by World Health Organization (WHO) \cite{organization_definition_2006} and the American Diabetes Association (ADA) \cite{american_diabetes_association_diagnosis_2005}, that is used to detect diabetes in its early stage, known as pre-diabetes, which identifies the impaired insulin response. Glucose clamp techniques can quantify the IGT. However, such techniques are labor-intensive and complicated for clinical practice or large epidemiological studies. A less invasive technique to quantify IGT involves an oral glucose tolerance test (OGTT) that samples the blood concentration of glucose and insulin over \SI{2}{\hour} after a standardized glucose dose  \cite{tschritter_assessing_2003}. However, the studies have shown that only \SI{50}{\percent} of such cases actually develop diabetes within a span of \num{10} years \cite{shaw_impaired_1999, writing_committee_impaired_2002}. Moreover, \SI{40}{\percent} diabetic subjects do not show any IGT in the initial screening. Previous studies have shown that extended OGTT, that assesses the blood glucose and insulin in the period prior to \SI{2}{\hour} limit, can predict diabetes onset more reliably \cite{abdul-ghani_what_2007}.
 
 
 %%% TALK ABOUT INSULIN RESISTANCE
@@ -481,7 +482,7 @@ Does it improve the prediction performance over other models such as SADPM that 
 
 1. Abdul-Ghanis work on diabetes prediction model using statistical tools
 2. Machine learning approaches primarily work on the aspects of diagnosis rather than prediction.
-    BARAKAT rule based diagnosis
+BARAKAT rule based diagnosis
 3. Ensemble based approach on diabetes diagnosis models
 
 %%% Previous studies
@@ -495,24 +496,24 @@ Does it improve the prediction performance over other models such as SADPM that 
 %
 \subsection{San Antonio Heart Study}
 %
-We developed the diabetes prediction models using the data extracted from a population-based epidemiological study, the San Antonio Heart Study (SAHS). The aim of the SAHS was to assess the risk factors of diabetes and cardiovascular diseases \cite{burke_rapid_1999, lorenzo_trend_2006}, for which  5,158 men and non-pregnant women of Mexican-American and non-Hispanic white residents of San Antonio, Texas were recruited. The age of the subjects at the time of recruitment was between \num{25} and \num{64} years. As a part of the data collection, the blood glucose and insulin levels were recorded during an oral glucose tolerance test (OGTT), which measures the subject's body response to a standard \SI{75}{\gram} dose of glucose after fasting overnight. The OGTT was performed both at the baseline and follow-up phases of the study, which had an average span of \num{7.5} years. The SAHS subjects were recruited in \num{2} cohorts, the first during the period \num{1979} to \num{1982}, and the second from \num{1984} to \num{1988} \cite{haffner_hyperinsulinemia_1986}. The reassessment during the follow-up period took place during the years \num{1987} to \num{1990} for the first cohort, and \num{1991} to \num{1996} for the second cohort. For the future T2DM prediction problem, we construct the machine learning model using the data from the second cohort, in which the plasma glucose and insulin levels of \num[round-mode = off,group-separator = {,}]{1496} of healthy subjects were recorded during the OGTT at times \num{0}, \num{30}, \num{60} and \num{120} minutes in the baseline evaluation. During the course of the study, a total of 171 subjects developed T2DM within which 10 subjects also reported of at least one cardiovascular event such as a heart attack, stroke or angina.
+We developed the diabetes prediction models using the data extracted from a population-based epidemiological study, the San Antonio Heart Study (SAHS). The aim of the SAHS was to assess the risk factors of diabetes and cardiovascular diseases \cite{burke_rapid_1999, lorenzo_trend_2006}, for which \num[group-minimum-digits=4, group-separator = {,}]{5158} men and non-pregnant women of Mexican-American and non-Hispanic white residents of San Antonio, Texas were recruited. The age of the subjects at the time of recruitment was between \num{25} and \num{64} years. As a part of the data collection, the blood glucose and insulin levels were recorded during an oral glucose tolerance test (OGTT), which measures the subject's body response to a standard \SI{75}{\gram} dose of glucose after fasting overnight. The OGTT was performed both at the baseline and follow-up phases of the study, which had an average span of \num{7.5} years. The SAHS subjects were recruited in \num{2} cohorts, the first during the period \num{1979} to \num{1982}, and the second from \num{1984} to \num{1988} \cite{haffner_hyperinsulinemia_1986}. The reassessment during the follow-up period took place during the years \num{1987} to \num{1990} for the first cohort, and \num{1991} to \num{1996} for the second cohort. For the future T2DM prediction problem, we construct the machine learning model using the data from the second cohort, in which the plasma glucose and insulin levels of \num[group-minimum-digits=4, group-separator = {,}]{1496} of healthy subjects were recorded during the OGTT at times \num{0}, \num{30}, \num{60} and \num{120} minutes in the baseline evaluation. During the course of the study, a total of \num{171} subjects developed T2DM within which \num{10} subjects also reported of at least one cardiovascular event such as a heart attack, stroke or angina.
 
-At the follow-up assessment, the the participants were classified as having type 2 diabetes (T2D), cardiovascular disease (CVD) or normal. For T2D diagnosis, the WHO criteria, defining fasting glucose level \SI[round-mode = off,group-separator = {,}]{\ge 126}{\milli\gram\per\deci\liter} or 2-hour glucose level \SI[round-mode = off,group-separator = {,}]{\ge 200}{\milli\gram\per\deci\liter} was followed \cite{wei_effects_1998}. Any participant reportedly taking anti-diabetic medications was also classified as diabetic. For CVD classification, any cardiovascular event such as a heart attack, stroke or angina reported by the participant, was considered as an identifier. Table \ref{tab:patients} outlines the distribution of patient classification used in this study. In order to construct a binary classifier for this study, the subjects categorized under DMI and DMI+CVD were encoded by 1 whereas 0 was the label assigned to the healthy subjects. The subjects under the CVD catergory wrer not considered.
+At the follow-up assessment, the the participants were classified as having type 2 diabetes (T2D), cardiovascular disease (CVD) or normal. For T2D diagnosis, the WHO criteria, defining fasting glucose level \SI[round-mode = off,group-separator = {,}]{\ge 126}{\milli\gram\per\deci\liter} or 2-hour glucose level \SI[round-mode = off,group-separator = {,}]{\ge 200}{\milli\gram\per\deci\liter} was followed \cite{wei_effects_1998}. Any participant reportedly taking anti-diabetic medications was also classified as diabetic. For CVD classification, any cardiovascular event such as a heart attack, stroke or angina reported by the participant, was considered as an identifier. Table \ref{tab:patients} outlines the distribution of patient classification used in this study. In order to construct a binary classifier for this study, the subjects categorized under the \texttt{DMI} and \texttt{DMI+CVD} were encoded as the positive class whereas the \texttt{Heahlty}  labels were the negative class. We restricted the classification to only two classes and the samples with the label \texttt{CVD} were ignored.
 %
 \begin{table}[!h]
-% \vspace{-4mm}%Put here to reduce too much white space after table
-\centering
-\begin{tabular}{c c c c}
-\toprule
-Healthy &  DMI & CVD & DMI+CVD\\
-\midrule \midrule
-1,281 & 161 & 44 & 10\\
-\SI{85.63}{\percent} & \SI{10.76}{\percent} & \SI[round-precision=3]{2.94}{\percent} & \SI[round-precision=2]{0.67}{\percent} \\
-\bottomrule \\
-\end{tabular}
-\caption{The classification of the 1,496 subjects used in this study}
-\label{tab:patients}
-% \vspace{-8mm}%Put here to reduce too much white space after table
+  \caption{The classification of the \num[group-minimum-digits=4, group-separator = {,}]{1496} subjects used in this study}
+  % \vspace{-4mm}%Put here to reduce too much white space after table
+  \centering
+  \begin{tabular}{c c c c}
+    \toprule
+    Healthy &  DMI & CVD & DMI+CVD\\
+    \midrule \midrule
+    \num[group-minimum-digits=4, group-separator = {,}]{1,281} & \num{161} & \num{44} & \num{10}\\
+    \SI{85.63}{\percent} & \SI{10.76}{\percent} & \SI[round-precision=3]{2.94}{\percent} & \SI[round-precision=2]{0.67}{\percent} \\
+    \bottomrule \\
+  \end{tabular}
+  \label{tab:patients}
+  % \vspace{-8mm}%Put here to reduce too much white space after table
 \end{table}
 
 % needed in second column of first page if using \IEEEpubid
@@ -522,19 +523,54 @@ Healthy &  DMI & CVD & DMI+CVD\\
 %
 The dataset included the glucose and insulin values recorded at the baseline, \num{30}, \num{60} and \num{120} minute intervals, and a distribution of these values marked by the follow-up labels of \texttt{healthy} and \texttt{diabetic} is shown in Fig. \ref{fig:ogtt_mean}. Moreover, the socio-demographic information such as age, ethnicity and body-mass index (BMI) was also part of the dataset. From the glucose and insulin measurements, we computed the slope and area under the curve between all the possible combinations  of a pair of readings. In addition, we also calculated parameters such as the insulinogenic (ratio of insulin and glucose slopes between any two time intervals) and Matsuda indices, as defined in \cite{Matsuda1462,abdul-ghani_plasma_2009}. These variables have shown a good efficacy of diabetes prediction in previous studies \cite{abdul-ghani_what_2007,abdul-ghani_plasma_2009}, since they are used to quantify the amount of insulin required by the body to maintain healthy glucose levels. In total we prepared \num{68} features for the classification problem and removed the rows that had missing entries or contained zero or infinite values.
 %
-\begin{figure}[!h]
-  \centering
-  \subfigure{\includegraphics[width=\linewidth]{boxpl_glucose.tex}}\hfil
-  \subfigure{\includegraphics[width=\linewidth]{boxpl_Insulin.tex}}
-% \vspace*{-6mm}
-      \caption{Mean glucose and insulin curves of healthy and diabetic patients}
+\begin{figure*}
+    \centering
+    \begin{subfigure}[b]{\columnwidth}        %% or \columnwidth
+        \centering
+        \includegraphics[width=\linewidth]{boxpl_glucose.tex}
+        \label{fig:glucose}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{\columnwidth}        %% or \columnwidth
+        \centering
+        \includegraphics[width=\linewidth]{boxpl_Insulin.tex}
+        \label{fig:insulin}
+    \end{subfigure}
+    \caption{Box plots of glucose and insulin measurements for healthy and diabetic subjects.}
     \label{fig:ogtt_mean}
-    % \vspace{-2mm}%Put here to reduce too much white space after figure
-\end{figure}
-
-\subsection{Machine Learning Technique}
+\end{figure*}
 %
+The dataset was then partitioned into training and validation sets. As can be observed from the Table \ref{tab:patients}, the SAHS dataset is intrinsically imbalanced with the class distribution skewed toward the majority class with a ratio of 7.5:1. Considering the Therefore, we took two approaches for the training set, one in which the dataset was balanced by a randomized undersampling of the majority class, and second in which we persisted with natural class distribution. In both the cases, the validation set had the same class distribution representative of the original dataset. A total of \num{1360} samples were used for training that accounted for \SI{91}{\percent} of the dataset, and \num{99} samples, consisting of \num{11} diabetic and \num{83} healthy subjects were reserved for the validation of the trained prediction models.
+%
+%
+\subsection{Machine Learning Framework}
+%
+We developed a supervised learning scheme in which the classifier output labels were obtained from the follow-up data.  We used the support vector machines (SVM) for the future diabetes prediction problem. The SVMs work on the principle of \emph{structural risk minimization} (SRM) in which the goal is to develop a model from the given training data such that it generalizes well to new datasets and minimizes the empirical risk associated with misclassification of samples in the training set \cite{vapnik_nature_2000,vapnik2015uniform}. For a binary classification problem, the developed model finds a decision boundary or a separating hyperplane that maximizes the margin between the classes.
 
+We used the binary support vector machines (SVM) that have proven to be very effective in solving complex classification problems in many application domains, in which the data can not be easily separated into two classes. The SVM method aims to find an optimal hyperplane $\mathbf{w}_{0}\cdot \mathbf{x} + b_{0} = 0$, that maximizes the margin $d \sim 1/||\mathbf{w}||$, separating the two classes. The vector $\mathbf{x}$ denotes the training data and the vector $\mathbf{w}_0$ is a vector of weights expressed as a linear combination of the support vectors, $z_i$,
+%
+\begin{equation}
+    \mathbf{w}_0 = \sum ^{N}_{i=1} c_i \mathbf{z_i}.
+\end{equation}
+%
+where $N$ is the number of support vectors in the new feature space. Once the optimal hyperplane is obtained through the transformation, the linear decision classification function can be expressed as \cite{cortes1995support}:
+
+1. Balanced Training -> Unbalanced Validation
+2. Unbalanced Training -> Balanced Validation
+%
+\begin{equation}
+    I(\mathbf{x}) = \mathrm{sign} \sum_{i = 1}^{N} \left( c_i \mathbf{z_i} \cdot \mathbf{x} + b_{0} \right).
+\end{equation}
+%
+In this study, we employed the linear SVM kernel by utilizing the Matlab's \texttt{svmtrain} function. The training data was first scaled to have a unit standard deviation. The misclassification cost was configured by setting the value of the \texttt{boxconstraint} parameter to a high value of \num{100}, which would cause a stricter partitioning of the data with respect to the class labels.
+
+To predict the future risk of type-2 diabetes, we defined a positive class (occurrence of diabetes at the follow-up) and a negative class (healthy). As illustrated in Table \ref{tab:patients}, the OGTT data used in this study is heavily unbalanced. With \num{171} positive class instances as compared to \num{1281} that of the negative class, the size of class labels is unbalanced with the ratio of positive-to-negative instances of 1:8. To avoid the problem of overfitting to the majority class during the learning phase of the technique, we under-sampled the majority class (healthy) to the size of the minority class (diabetic) by a randomly selecting equal number of samples. During the prediction model generation, we employed 10-fold cross-validation framework in which \SI{90}{\percent} of the training data, consisting of \num{360} samples was used for training and the remaining \SI{10}{\percent} was used to test the model. To validate the trained models, we used a holdout data set with the same unbalanced ratio of negative-to-positive classes in the original data, i.e., \num{11} samples of the positive class, and \num{88} samples of the negative class. We started our experiments using one feature at a time, and then more number of features were incrementally added. This exercise assists in discovering any feature dependencies. In total, we performed 1,023 classification experiments.  Each of these experiments was trained as a 10-fold cross-validation (CV) and, to minimize the effect of random selection of samples from the majority class, \num{100} iterations were performed for each experiment. Owing to the small sample size of the holdout dataset, this strategy ensures the unbiased reporting of the classifier performance. To maximize reliability of the model to predict diabetes events, we maximized the recall metric during the training phase, which is defined as,
+%
+\begin{equation}
+    Recall = \frac{\mathrm{TP}}{\mathrm{TP} + \mathrm{FN}},
+\end{equation}
+%
+where TP and FN are the true-positives and false-negatives respectively. During the validation phase, we tracked the confusion matrices for all the models yielding the maximum training recall for all the feature combinations.
 
 
 \subsection{Feature Selection}
@@ -542,8 +578,8 @@ The dataset included the glucose and insulin values recorded at the baseline, \n
 Before constructing the future diabetes prediction model based on the support vector machines, we aim to find the most effective subset of the features in terms of the relevance to the classifier output. This process greatly reduces the computational cost during the model development by reducing the feature space dimension and also dispense useful scientific insight in to the classification problem. We performed a two-step filter selection, first of which was the emph{filter} method in which ten features that correlated the most to the classifier target class were shortlisted. In order to define the relevance between the featue and the class labels, consider a feature $\mathbf{X}$ from a feature set $\mathcal X$ as a continuous random variable and the class label $\mathbf{Y}$ as a discrete random variable. Their relationship can be described in terms of the mutual information, $I$ defined as \cite{ross2014mutual}:
 %
 \begin{equation}
-    I(\mathbf{X}, \mathbf{Y}) = - \int p_i\ln p_i - \sum_j p_j\ln p_j + \sum_j \int p_{ij}\ln p_{ij},
-    \label{eq:MI}
+  I(\mathbf{X}, \mathbf{Y}) = - \int p_i\ln p_i - \sum_j p_j\ln p_j + \sum_j \int p_{ij}\ln p_{ij},
+  \label{eq:MI}
 \end{equation}
 %
 where $p_{i}$ is the probability of a random variable $\mathbf{X}$ taking a particular value $x_i$ and so forth, and $p_{ij}$ denotes the joint probability $P\{\mathbf{X}= x_i, \mathbf{Y}=y_j\}$. The three terms in \eqref{eq:MI} are the continuous, discrete and joint entropies of the random variables. The features that are most relevant to the class label are the ones that individually yield the maximum $I$. However, a drawback of pursuing this approach is that the selected features may be mutually correlated, and having a redundant list of shortlisted features only adds to the computational cost of the classifier without necessarily improving its performance. Even more so, the addition of extra features commonly result in the deterioration of the classifier performance \cite{trunk1979problem}. Therefore, an instinctive way forward is to keep only one feature from a correlated set of features that provide similar relevance information, and discard the remaining features from the set $\mathcal X$. We follow the minimal-redundancy-maximal-relevance () algorithm \cite{mRMR}, that selects the features, that not only yield the maximal mutual information \eqref{eq:MI} with respect to the class label, but minimizes the mutual correlation among the features expressed in terms of redundancy $R$ as:
@@ -556,29 +592,41 @@ where $p_{i}$ is the probability of a random variable $\mathbf{X}$ taking a part
 where $I$ is defined in \eqref{eq:MI}. By minimizing $R$, the mRMR framework selects a set of mutually exclusive features that are most relevant to the class label. In this paper, we shortlist a set of ten features that are strong predictors of the future development of type-2 diabetes. With the application of the mRMR algorithm, Table \ref{tab:ranked} shows the list of the ten features ranked in order of their relevance to the class label, where the prefixes $au$ and $sl$ denote the area under the curve and slope respectively and the time interval is shown in the subscripts.
 %
 \begin{table}[!b]
-% \vspace{-4mm}%Put here to reduce too much white space after table
-\centering
-\begin{tabular}{c c}
-\toprule
-Rank &  Feature\\
-\midrule \midrule
-1 & $\mathrm{au-Glu}_{0-120}$\\
-2 & $\mathrm{sl-Glu}_{120-0}$\\
-3 & $\mathrm{sl-Glu}_{120-60}$\\
-4 & $\mathrm{sl-Glu}_{60-0}$\\
-5 & $\mathrm{sl-Glu}_{30-0}$\\
-6 & $\mathrm{sl-Glu}_{60-30}$\\
-7 & $\mathrm{PG}_{0} $\\
-8 & $\mathrm{PG}_{120}$\\
-9 & $\mathrm{PG}_{60}$\\
-10 & $\mathrm{au-Glu}_{0-30}$\\
-\bottomrule
-\end{tabular}
-\caption{The ten ranked features obtained through the mRMR algorithm}
-\label{tab:ranked}
+  \caption{List of ten most relevant features ranked by the mRMR algorithm}
+  % \vspace{-4mm}%Put here to reduce too much white space after table
+  \centering
+  \begin{tabular}{c c}
+    \toprule
+    Rank &  Feature\\
+    \midrule \midrule
+    1 & AuC-Glu\textsubscript{0-120}\\
+    2 & Sl-Glu\textsubscript{120-0}\\
+    3 & Sl-Glu\textsubscript{120-60}\\
+    4 & Sl-Glu\textsubscript{60-0}\\
+    5 & Sl-Glu\textsubscript{30-0}\\
+    6 & AuC-Glu\textsubscript{60-120}\\
+    7 & PG\textsubscript{0}\\
+    8 & PG\textsubscript{120}\\
+    9 & PG\textsubscript{60} \\
+    10 & AuC-Glu\textsubscript{0-30}\\
+    \bottomrule
+  \end{tabular}
+  \label{tab:ranked}
+  % \vspace{4mm}%Put here to reduce too much white space after table
 \end{table}
 %
- In the second phase, we reduced the number of selected features to four that provided the best performance in terms of validation accuracy.  For this purpose, we used the same SVM classification scheme.
+In the second phase, we further pruned the number of features to four only by selecting the ones that provided the best performance in terms of validation accuracy using the SVM classification scheme. Table sdf shows the four best features obtained by averaging the validation accuracy over \num{100} iterations of the classification scheme.
+%
+\begin{figure}[!h]
+  \centering
+  {\includegraphics[width=\linewidth]{boxpl_ACC_1F_best.tex}}
+  % \vspace*{-6mm}
+  \caption{Box plot of validation accuracy obtained after \num{100} iterations}
+  \label{fig:best_features}
+  % \vspace{-2mm}%Put here to reduce too much white space after figure
+\end{figure}
+
+
 
 
 
@@ -738,7 +786,7 @@ This publication was made possible by NPRP grant number NPRP 10-1231-160071 from
 % Can use something like this to put references on a page
 % by themselves when using endfloat and the captionsoff option.
 \ifCLASSOPTIONcaptionsoff
-  \newpage
+\newpage
 \fi
 
 
@@ -792,12 +840,12 @@ This publication was made possible by NPRP grant number NPRP 10-1231-160071 from
 % or if you just want to reserve a space for a photo:
 
 \begin{IEEEbiography}{Michael Shell}
-Biography text here.
+  Biography text here.
 \end{IEEEbiography}
 
 % if you will not have a photo at all:
 \begin{IEEEbiographynophoto}{John Doe}
-Biography text here.
+  Biography text here.
 \end{IEEEbiographynophoto}
 
 % insert where needed to balance the two columns on the last page with
@@ -805,7 +853,7 @@ Biography text here.
 %\newpage
 
 \begin{IEEEbiographynophoto}{Jane Doe}
-Biography text here.
+  Biography text here.
 \end{IEEEbiographynophoto}
 
 % You can push biographies down or up by placing

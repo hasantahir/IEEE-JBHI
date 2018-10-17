@@ -106,6 +106,21 @@ M.~A. Abdul-Ghani and R.~A. DeFronzo, ``\BIBforeignlanguage{en}{Plasma
   {Diabetes}},'' \emph{\BIBforeignlanguage{en}{Diabetes Care}}, vol.~32, no.
   suppl\_2, pp. S194--S198, Nov. 2009.
 
+\bibitem{vapnik_nature_2000}
+V.~N. Vapnik, \emph{The nature of statistical learning theory}, 2nd~ed., ser.
+  Statistics for engineering and information science.\hskip 1em plus 0.5em
+  minus 0.4em\relax New York: Springer, 2000.
+
+\bibitem{vapnik2015uniform}
+V.~N. Vapnik and A.~Y. Chervonenkis, ``On the uniform convergence of relative
+  frequencies of events to their probabilities,'' in \emph{Measures of
+  complexity}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2015, pp.
+  11--30.
+
+\bibitem{cortes1995support}
+C.~Cortes and V.~Vapnik, ``Support vector networks,'' \emph{Machine Learning},
+  vol.~20, pp. 273--297, 1995.
+
 \bibitem{ross2014mutual}
 B.~C. Ross, ``Mutual information between discrete and continuous data sets,''
   \emph{PloS one}, vol.~9, no.~2, p. e87357, 2014.

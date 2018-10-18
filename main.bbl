@@ -117,6 +117,16 @@ V.~N. Vapnik and A.~Y. Chervonenkis, ``On the uniform convergence of relative
   complexity}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2015, pp.
   11--30.
 
+\bibitem{friedman2001elements}
+J.~Friedman, T.~Hastie, and R.~Tibshirani, \emph{The elements of statistical
+  learning}.\hskip 1em plus 0.5em minus 0.4em\relax Springer series in
+  statistics New York, NY, USA:, 2001, vol.~1, no.~10.
+
+\bibitem{scholkopf2002learning}
+B.~Sch{\"o}lkopf, A.~J. Smola, F.~Bach \emph{et~al.}, \emph{Learning with
+  kernels: support vector machines, regularization, optimization, and
+  beyond}.\hskip 1em plus 0.5em minus 0.4em\relax MIT press, 2002.
+
 \bibitem{cortes1995support}
 C.~Cortes and V.~Vapnik, ``Support vector networks,'' \emph{Machine Learning},
   vol.~20, pp. 273--297, 1995.

@@ -29,18 +29,17 @@
 % Some very useful LaTeX packages include:
 % (uncomment the ones you want to load)
 
-\usepackage[cmex10]{amsmath}
-\usepackage{calc}
-\usepackage{amsfonts} % to load math symbols
-\usepackage{mdwmath}
-\usepackage{commath}
+\usepackage{amsmath}
+% \usepackage{calc}
+% \usepackage{amsfonts} % to load math symbols
+\usepackage{commath} % For defining functions
 \usepackage{mdwmath}
 % \usepackage{showframe}
 % \usepackage{mdwtab}
 % \usepackage{minipage}
 % \usepackage[keeplastbox]{flushend}
 \usepackage{graphicx}
-\usepackage{etoolbox}
+% \usepackage{etoolbox}
 \usepackage{color}
 \usepackage{placeins}
 % \usepackage{subfigure}
@@ -56,9 +55,8 @@ urlcolor={black}
 }
 \usepackage{booktabs}
 \usepackage{float}
-\usepackage{tabularx,colortbl}
-\usepackage{newtxtext,newtxmath}
-\usepackage{geometry} % just not to bother with the table width
+% \usepackage{newtxtext,newtxmath}
+% \usepackage{geometry} % just not to bother with the table width
 % \usepackage{standalone}
 \usepackage{filecontents}
 \usepackage{tabularx,colortbl}
@@ -66,12 +64,12 @@ urlcolor={black}
 \usepackage{standalone}
 \usepackage{tikz}
 \tikzset{
-font={\fontsize{9pt}{9}\selectfont}}
+font={\fontsize{8pt}{8}\selectfont}}
 \usepackage{tikzscale} % Scale the figure not the font
 \pgfplotsset{compat=newest}
 %% the following commands are sometimes needed
 \usepackage{grffile}
-\usepackage{mathtools,amssymb,lipsum}
+\usepackage{mathtools}
 \usepackage{siunitx}
 \sisetup{per=slash, load=abbr, output-complex-root = j, complex-root-position = before-number}
 
@@ -517,10 +515,10 @@ At the follow-up assessment, the participants were classified as having type 2 d
   \label{tab:patients}
   % \vspace{-8mm}%Put here to reduce too much white space after table
 \end{table}
-
+%
 % needed in second column of first page if using \IEEEpubid
 %\IEEEpubidadjcol
-
+%
 \subsection{Preparation of the Data}
 %
 The dataset included the glucose and insulin values recorded at the baseline, \num{30}, \num{60} and \num{120} minute intervals, and a distribution of these values marked by the follow-up labels of \texttt{healthy} and \texttt{diabetic} is shown in Fig. \ref{fig:ogtt_mean}. Moreover, the socio-demographic information such as age, ethnicity and body-mass index (BMI) was also part of the dataset. From the glucose and insulin measurements, we computed the slope and area under the curve between all the possible combinations  of a pair of readings. In addition, we also calculated parameters such as the insulinogenic (ratio of insulin and glucose slopes between any two time intervals) and Matsuda indices, as defined in \cite{Matsuda1462,abdul-ghani_plasma_2009}. These variables have shown a good efficacy of diabetes prediction in previous studies \cite{abdul-ghani_what_2007,abdul-ghani_plasma_2009}, since they are used to quantify the amount of insulin required by the body to maintain healthy glucose levels. In total we prepared \num{68} features for the classification problem and removed the rows that had missing entries or contained zero or infinite values.
@@ -529,13 +527,13 @@ The dataset included the glucose and insulin values recorded at the baseline, \n
   \centering
   \begin{subfigure}[b]{\columnwidth}        %% or \columnwidth
     \centering
-    \includegraphics[width=\linewidth]{boxpl_glucose.tex}
+    \includegraphics[width=.9\linewidth]{boxpl_glucose.tex}
     \label{fig:glucose}
   \end{subfigure}
   \hfill
   \begin{subfigure}[b]{\columnwidth}        %% or \columnwidth
     \centering
-    \includegraphics[width=\linewidth]{boxpl_Insulin.tex}
+    \includegraphics[width=.9\linewidth]{boxpl_Insulin.tex}
     \label{fig:insulin}
   \end{subfigure}
   \caption{Box plots of glucose and insulin measurements for healthy and diabetic subjects.}
@@ -547,80 +545,135 @@ The dataset was then partitioned into training and validation sets. As can be ob
 %
 \subsection{Machine Learning Framework}
 %
-We developed a supervised learning scheme in which the classifier output labels were obtained from the follow-up data, and the support vector machine (SVM) technique was used to construct  the future diabetes prediction framework. The SVM works on the principle of \emph{structural risk minimization} (SRM) in which the goal is to develop a model from the given training data such that it generalizes well to new datasets and minimizes the empirical risk associated with misclassification of samples in the training set \cite{vapnik_nature_2000,vapnik2015uniform}. For a binary classification problem, the model constructed by the SVM finds a decision boundary or a separating hyperplane which aims to minimize the overlapping between the two classes in the training set. For problems that may not be amenable to linear separation between the two classes, the SVM technique is very attractive due to fact that the input feature space is first transformed to a higher dimension and then a linear boundary is determined, which generally gives better training performance \cite{friedman2001elements}. Let us consider a training data $(x_1, y_1)$,$(x_2, y_3)$,...,$(x_k, y_k)$ of $k$  pairs containing $x_i \in \mathbb R^N$ features and the binary classes $y_i \in {-1, 1}$. The SVM approach transforms the input features using a nonlinear mapping function $\Phi : x \mapsto \phi(x)$ into a higher dimension space $\mathbb R^P$, where in general $P \gg N$. Due to the transformation, the classes can then be separated using a linear decision boundary in the enlarged space. The non-linear SVM classifier $\mathrm F$ is expressed in terms of the higher dimensional hyperplane,
+We developed a supervised learning scheme in which the classifier output labels were obtained from the follow-up data, and the support vector machine (SVM) technique was used to construct  the future diabetes prediction framework. The SVM works on the principle of \emph{structural risk minimization} (SRM) in which the goal is to develop a model from the given training data such that it generalizes well to new datasets and minimizes the empirical risk associated with misclassification of samples in the training set \cite{vapnik_nature_2000,vapnik2015uniform}. For a binary classification problem, the model constructed by the SVM finds a decision boundary or a separating hyperplane which aims to minimize the overlapping between the two classes in the training set. For problems that may not be amenable to linear separation between the two classes, the SVM technique is very attractive due to fact that the input feature space is first transformed to a higher dimension and then a linear boundary is determined, which generally gives better training performance \cite{friedman2001elements}. Let us consider a training data $(x_1, y_1)$,$(x_2, y_3)$,...,$(x_k, y_k)$ of $k$  pairs containing $x_i \in \mathbb R^N$ features and the binary classes $y_i \in {-1, 1}$. The SVM approach transforms the input features using a nonlinear mapping $\Phi : x \mapsto \phi(x)$ into a higher dimension space $\mathbb R^P$, where in general $P \gg N$. Due to the transformation, the classes can then be separated using a linear decision boundary in the enlarged space. The non-linear SVM classifier $\mathrm F$ is expressed in terms of the higher dimensional hyperplane,
 %
 \begin{equation}
-  \mathrm F = \mathrm{sign} \( \phi(x)^T \beta + \beta_0 \).
+  \mathrm F = \mathrm{sign} \left( \phi(x)^T \beta + \beta_0 \right).
   \label{eq:classifier}
 \end{equation}
 %
 When the classes may not be completely separable, introducing a slack variable $\zeta$ in the higher dimension space $\mathbb R^P$ is a common practice which allows for the classifier output in \eqref{eq:classifier} to be on the incorrect side of the margin.
-Therefore, to find the optimal separating hyperplane that maximizes the distance $M$ from the boundary for all the points, and bounds the value of $\sum_{i}{\zeta}$ and in turn misclassification rate,  we introduce the convex optimization problem,
+Therefore, in order to find the optimal separating hyperplane that maximizes the distance $M$ from the boundary for all the points, and bounds the value of $\sum_{i}{\zeta_i}$ and in turn misclassification rate, we introduce the convex optimization problem,
 %
 \begin{equation}
-  \min_{\beta, \beta_0} \frac{1}{2}||\beta ||^2 + C\sum_{i=i}^{P} \zeta_i,
+  \min_{\beta, \beta_0} \frac{1}{2} \norm{\beta}^2 + C\sum_{i=1}^{P} \zeta_i,
   \label{eq:min}
 \end{equation}
 %
-with the nonlinear constraints $y_i (h(x_i)^T \beta + \beta_0) \ge 1 - \zeta_i \forall i $ and $ \zeta_i \ge 0$, and the coefficient $C$ is termed as the cost parameter which decides the rigidity of the margin of the classifier. The solution of \eqref{eq:min} can be computed using the Lagrange dual multiplier function,
+with the nonlinear constraints $y_i (\phi(x_i)^T \beta + \beta_0) \ge 1 - \zeta_i \quad \forall i $ and $ \zeta_i \ge 0$, and the coefficient $C$ is termed as the cost parameter which decides the rigidity of the margin of the classifier. The solution of \eqref{eq:min} can be computed using the Lagrange primal objective function \cite{friedman2001elements},
+%
+\begin{multline}
+  L_{\mathrm{p}} = \dfrac{1}{2} \norm{\beta} + C \sum \limits_{i =1}^{P} (1 - \mu_i)\zeta_i \\
+  - \sum \limits_{i =1}^{P} \alpha_i \left[ y_i \left( \phi(x_i)^T \beta + \beta_0 \right) - (1 - \zeta_i) \right].
+  \label{eq:l_primal}
+\end{multline}
+%
+By minimizing $L_{\mathrm{primal}}$ with respect to $\beta$, $\beta_0$, and $\zeta_i$, we get the corresponding dual form of the Lagrange function,
 %
 \begin{equation}
-  L_{\mathr{dual}} = \sum_{i = 1}^
+  L_{\mathrm{dual}} = \sum \limits_{i = 1}^{P} \alpha_i - \frac{1}{2} \sum \limits_{i = 1}^{P} \sum_{i' = 1}^{P} \alpha_i \alpha_{i'} y_i y_{i'} \langle \phi(x_i), \phi(x_{i'}) \rangle
+  \label{eq:l_dual}
 \end{equation}
+%
+subject to $0 \le \alpha_i \le C$ and $\sum_{i} \alpha_i y_i = 0$ and the constraints, $\zeta_i, \mu_i \ge 0 \forall i$. The nonzero coefficients $\alpha_i$ and $\beta_0$ are determined using \eqref{eq:classifier}. As the dimension of the input feature space goes up, the computation of the mapping $\Phi$ gets excessive in complexity. With the introduction of a kernel,
 %
 \begin{equation}
-y_i \(h(x_i)^T \beta + \beta_0 \ge M (1 - \zeta_i)\)
+  k(x,x') = \langle \phi(x), \phi(x') \rangle,
+  \label{eq:kernel}
 \end{equation}
-Although the classifier function $\mathrm F$ is linear in the
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-We used the binary support vector machines (SVM) that have proven to be very effective in solving complex classification problems in many application domains, in which the data can not be easily separated into two classes. The SVM method aims to find an optimal hyperplane $\mathbf{w}_{0}\cdot \mathbf{x} + b_{0} = 0$, that maximizes the margin $d \sim 1/||\mathbf{w}||$, separating the two classes. The vector $\mathbf{x}$ denotes the training data and the vector $\mathbf{w}_0$ is a vector of weights expressed as a linear combination of the support vectors, $z_i$,
+%
+we can compute the inner product on \eqref{eq:l_dual} without  computing the mapping $\Phi$ \cite{scholkopf2002learning}, which becomes computationally expensive as the dimension of the input feature space increased. In this paper, we used the Gaussian radial basis function,
 %
 \begin{equation}
-  \mathbf{w}_0 = \sum ^{N}_{i=1} c_i \mathbf{z_i}.
+  K(x,x') = \exp {\left(- \frac{\norm{x -x'}^2}{2\sigma^2}\right)}
+  \label{eq:rbf}
 \end{equation}
 %
-where $N$ is the number of support vectors in the new feature space. Once the optimal hyperplane is obtained through the transformation, the linear decision classification function can be expressed as \cite{cortes1995support}:
+as the kernel where $\sigma$ is a free parameter. During the training, we tuned the values of the parameters $C$ and $\gamma$ through a grid search to obtain the optimal performance of the SVM.
+%
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%55%%%
+\subsection{Feature Selection}
+%
+Before constructing the SVM model to predict the future risk of diabetes, we aim to find the most effective subset of the features in terms of the relevance to the classifier output. This process greatly reduces the computational cost during the model development by reducing the feature space dimension and also dispense useful scientific insight in to the classification problem. We performed a two-step filter selection, first of which was the \emph{filter} method in which ten features that correlated the most to the classifier target class were shortlisted. In order to define the relevance between the feature and the class labels, consider a feature $\mathbf{X}$ from a feature set $\mathcal X$ as a continuous random variable and the class label $\mathbf{Y}$ as a discrete random variable. Their relationship can be described in terms of the mutual information, $I$ defined as \cite{ross2014mutual}:
+%
+\begin{equation}
+  I(\mathbf{X}, \mathbf{Y}) = - \int p_i\ln p_i - \sum \limits_j p_j\ln p_j + \sum_j \int p_{ij}\ln p_{ij},
+  \label{eq:MI}
+\end{equation}
+%
+where $p_{i}$ is the probability of a random variable $\mathbf{X}$ taking a particular value $x_i$ and so forth, and $p_{ij}$ denotes the joint probability $P\{\mathbf{X}= x_i, \mathbf{Y}=y_j\}$. The three terms in \eqref{eq:MI} are the continuous, discrete and joint entropies of the random variables. The features that are most relevant to the class label are the ones that individually yield the maximum $I$. However, a drawback of pursuing this approach is that the selected features may be mutually correlated, and having a redundant list of shortlisted features only adds to the computational cost of the classifier without necessarily improving its performance. Even more so, the addition of extra features commonly result in the deterioration of the classifier performance \cite{trunk1979problem}. Therefore, an instinctive way forward is to keep only one feature from a correlated set of features that provide similar relevance information, and discard the remaining features from the set $\mathcal X$. We follow the minimal-redundancy-maximal-relevance () algorithm \cite{mRMR}, that selects the features, that not only yield the maximal mutual information \eqref{eq:MI} with respect to the class label, but minimizes the mutual correlation among the features expressed in terms of redundancy $R$ as:
+%
+\begin{equation}
+  R(\mathcal X) = \sum \limits_{\mathbf{X}_i, \mathbf{X}_j \in \mathcal{X}} I(\mathbf{X}_i, \mathbf{X}_j).
+  \label{eq:R}
+\end{equation}
+%
+where $I$ is defined in \eqref{eq:MI}. By minimizing $R$, the mRMR framework selects a set of mutually exclusive features that are most relevant to the class label. In this paper, we shortlist a set of ten features that are strong predictors of the future development of type 2 diabetes. With the application of the mRMR algorithm, Table \ref{tab:ranked} shows the list of the ten features ranked in order of their relevance to the class label, where the prefixes $au$ and $sl$ denote the area under the curve and slope respectively and the time interval is shown in the subscripts.
+%
+\begin{table}[!h]
+  \caption{List of ten most relevant features ranked by the mRMR algorithm}
+  % \vspace{-4mm}%Put here to reduce too much white space after table
+  \centering
+  \begin{tabular}{c c}
+    \toprule
+    Rank &  Feature\\
+    \midrule \midrule
+    1 & AuC-Glu\textsubscript{0-120}\\
+    2 & Sl-Glu\textsubscript{120-0}\\
+    3 & Sl-Glu\textsubscript{120-60}\\
+    4 & Sl-Glu\textsubscript{60-0}\\
+    5 & Sl-Glu\textsubscript{30-0}\\
+    6 & AuC-Glu\textsubscript{60-120}\\
+    7 & PG\textsubscript{0}\\
+    8 & PG\textsubscript{120}\\
+    9 & PG\textsubscript{60} \\
+    10 & AuC-Glu\textsubscript{0-30}\\
+    \bottomrule
+  \end{tabular}
+  \label{tab:ranked}
+  % \vspace{4mm}%Put here to reduce too much white space after table
+\end{table}
+%
+In the second phase, we further pruned the number of features to four only by selecting the ones that provided the best performance in terms of validation accuracy using the SVM classification scheme. Table \ref{tab:best_features} shows the four best features obtained by averaging the validation accuracy over \num{100} iterations of the classification scheme.
+%
+\begin{table}[!htbp]
+  \caption{Validation Performance of individual features in \num{100} iterations of running a SVM model with RBF kernel.}
+  \sisetup{
+  round-mode = places,
+  round-precision = 3
+  }%
+  \centering
+  \begin{tabular}{c c}
+    \toprule
+    Features &  Mean Accuracy (Standard Deviation)\\
+    \midrule \midrule
+    AuC-Glu\textsubscript{60-120}	& \num{0.973085106382978}	(\num{0.0133930614140817})\\
+    PG\textsubscript{120}	& \num{0.971276595744680}	(\num{0.0150827692653638})\\
+    PG\textsubscript{60}	& \num{0.967234042553191}	(\num{0.0222062121383667})\\
+    AuC-Glu\textsubscript{0-120}	& \num{0.958404255319148}	(\num{0.0192510470888241})\\
+    AuC-Glu\textsubscript{30-120}	& \num{0.950212765957446}	(\num{0.0176257382363412})\\
+    Sl-Glu\textsubscript{60-0}	& \num{0.946063829787233}	(\num{0.0254033135631271})\\
+    Sl-Glu\textsubscript{120-0}	& \num{0.931276595744681}	(\num{0.0261206217319048})\\
+    \bottomrule
+  \end{tabular}
+  \label{tab:best_features}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\section{Experiments}
+%
 1. Balanced Training -> Unbalanced Validation
 2. Unbalanced Training -> Balanced Validation
 %
-\begin{equation}
-  I(\mathbf{x}) = \mathrm{sign} \sum_{i = 1}^{N} \left( c_i \mathbf{z_i} \cdot \mathbf{x} + b_{0} \right).
-\end{equation}
+Cross-validation
+100 iterations to remove any randomized errors
+grid search of the best parameters C and gamma
 %
 In this study, we employed the linear SVM kernel by utilizing the Matlab's \texttt{svmtrain} function. The training data was first scaled to have a unit standard deviation. The misclassification cost was configured by setting the value of the \texttt{boxconstraint} parameter to a high value of \num{100}, which would cause a stricter partitioning of the data with respect to the class labels.
 
@@ -645,46 +698,40 @@ Before constructing the future diabetes prediction model based on the support ve
 where $p_{i}$ is the probability of a random variable $\mathbf{X}$ taking a particular value $x_i$ and so forth, and $p_{ij}$ denotes the joint probability $P\{\mathbf{X}= x_i, \mathbf{Y}=y_j\}$. The three terms in \eqref{eq:MI} are the continuous, discrete and joint entropies of the random variables. The features that are most relevant to the class label are the ones that individually yield the maximum $I$. However, a drawback of pursuing this approach is that the selected features may be mutually correlated, and having a redundant list of shortlisted features only adds to the computational cost of the classifier without necessarily improving its performance. Even more so, the addition of extra features commonly result in the deterioration of the classifier performance \cite{trunk1979problem}. Therefore, an instinctive way forward is to keep only one feature from a correlated set of features that provide similar relevance information, and discard the remaining features from the set $\mathcal X$. We follow the minimal-redundancy-maximal-relevance () algorithm \cite{mRMR}, that selects the features, that not only yield the maximal mutual information \eqref{eq:MI} with respect to the class label, but minimizes the mutual correlation among the features expressed in terms of redundancy $R$ as:
 %
 \begin{equation}
-  R(\mathcal X) = \sum_{\mathbf{X}_i, \mathbf{X}_j \in \mathcal{X}} I(\mathbf{X}_i, \mathbf{X}_j).
+  R(\mathcal X) = \sum\limits_{\mathbf{X}_i, \mathbf{X}_j \in \mathcal{X}} I(\mathbf{X}_i, \mathbf{X}_j).
   \label{eq:R}
 \end{equation}
 %
 where $I$ is defined in \eqref{eq:MI}. By minimizing $R$, the mRMR framework selects a set of mutually exclusive features that are most relevant to the class label. In this paper, we shortlist a set of ten features that are strong predictors of the future development of type 2 diabetes. With the application of the mRMR algorithm, Table \ref{tab:ranked} shows the list of the ten features ranked in order of their relevance to the class label, where the prefixes $au$ and $sl$ denote the area under the curve and slope respectively and the time interval is shown in the subscripts.
 %
-\begin{table}[!b]
-  \caption{List of ten most relevant features ranked by the mRMR algorithm}
-  % \vspace{-4mm}%Put here to reduce too much white space after table
-  \centering
-  \begin{tabular}{c c}
-    \toprule
-    Rank &  Feature\\
-    \midrule \midrule
-    1 & AuC-Glu\textsubscript{0-120}\\
-    2 & Sl-Glu\textsubscript{120-0}\\
-    3 & Sl-Glu\textsubscript{120-60}\\
-    4 & Sl-Glu\textsubscript{60-0}\\
-    5 & Sl-Glu\textsubscript{30-0}\\
-    6 & AuC-Glu\textsubscript{60-120}\\
-    7 & PG\textsubscript{0}\\
-    8 & PG\textsubscript{120}\\
-    9 & PG\textsubscript{60} \\
-    10 & AuC-Glu\textsubscript{0-30}\\
-    \bottomrule
-  \end{tabular}
-  \label{tab:ranked}
-  % \vspace{4mm}%Put here to reduce too much white space after table
-\end{table}
 %
-In the second phase, we further pruned the number of features to four only by selecting the ones that provided the best performance in terms of validation accuracy using the SVM classification scheme. Table sdf shows the four best features obtained by averaging the validation accuracy over \num{100} iterations of the classification scheme.
+In the second phase, we further pruned the number of features to four with the evaluation criteria of mean classification accuracy on the validation set. For this purpose, we ran the  only by selecting the ones that provided the best performance in terms of validation accuracy using the SVM classification scheme. Table sdf shows the four best features obtained by averaging the validation accuracy over \num{100} iterations of the classification scheme.
 %
-\begin{figure}[!h]
-  \centering
-  {\includegraphics[width=\linewidth]{boxpl_ACC_1F_best.tex}}
-  % \vspace*{-6mm}
-  \caption{Box plot of validation accuracy obtained after \num{100} iterations}
-  \label{fig:best_features}
-  % \vspace{-2mm}%Put here to reduce too much white space after figure
-\end{figure}
+% cc_AuG60_120,acc_PG120, acc_PG60,...
+% acc_AuG0_120, acc_AuG30_120,...
+% acc_SlG60_0, acc_SlG120_0
+% 0.973085106382978
+% 0.971276595744680
+% 0.967234042553191
+% 0.958404255319148
+% 0.950212765957446
+% 0.946063829787233
+% 0.931276595744681
+%
+% 0.0133930614140817
+% 0.0150827692653638
+% 0.0222062121383667
+% 0.0192510470888241
+% 0.0176257382363412
+% 0.0254033135631271
+% 0.0261206217319048
+%
+
+
+\begin{equation}
+\label{eqn_example}
+x = \sum\limits_{i=0}^{z} 2^{i}Q
+\end{equation}
 
 
 

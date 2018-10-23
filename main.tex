@@ -335,7 +335,7 @@ font={\fontsize{8pt}{8}\selectfont}}
 % Personal definitions
 \renewcommand{\v}[1]{\mathbf{#1}} % vectors
 \newcommand{\ti}[1]{\tilde{#1}} % spectral representation
-	\newcommand{\tnsr}[1]{\underline{\underline{#1}}}
+\newcommand{\tnsr}[1]{\underline{\underline{#1}}}
 % Operators
 \renewcommand{\O}{\omega}  % omega
 \newcommand{\E}{\varepsilon}  % epsilon
@@ -485,7 +485,7 @@ The presumption of delaying or even preventing the future development of future 
 
 On the contrary, studies have indicated that only \SI{50}{\percent} of subjects with IGT went on to develop diabetes within a span of \num{10} years \cite{shaw_impaired_1999, writing_committee_impaired_2002}. Furthermore, long-term population studies have shown that around \SI{50}{\percent} future diabetic subjects did not exhibit IGT at all \cite{abdul-ghani_what_2007}. Previously, it has been shown that as compared to the IGT, the glucose concentrations at the \SI{1}{\hour} and \SI{2}{\hour} intervals during the OGTT, correlate more to the future diabetes risk \cite{abdul2009fasting,abdul-ghani_shape_2010,abdul-ghani_plasma_2009}.
 
-Research studies that assess diabetes can be broadly categorized into two themes, first of which deals with the objective to detect any undiagnosed state of diabetes, and the second that aims to identify the person that are high risk of developing diabetes in the future. The clinical significance of such investigations depends upon the data collection methods. Certain studies rely on collecting socio-demographic characteristics such as age, ethnicity, body mass index (BMI) and genealogical information through conducting population surveys, and then assign a probability to individuals of having diabetes \cite{Heikes1040,Gl{\"u}mer727}.  However, such self-assessment techniques can often be misleading and can not be relied upon. On the other hand, the outcomes of the diabetes related studies that involve physiological data such as blood samples collected in a laboratory environment provide an accurate clinical insight. We can further divide these types of enquiries into two types, namely, the screening  of undiagnosed diabetes, and the future prediction of diabetes. The former category has seen an increased amount of research interest in the last ten years. Using statistical and machine learning techniques, various researchers have developed \emph{risk models} for diabetes screening. In \cite{barakat_intelligible_2010}, support vector machine (SVM) framework was employed for the diagnosis of diabetes that also incorporated a tree-based decision making algorithm. A rule-based ensemble method combining SVM and random forest (RF)
+Research studies that assess diabetes can be broadly categorized into two themes, first of which deals with the objective to detect any undiagnosed state of diabetes, and the second that aims to identify the person that are high risk of developing diabetes in the future \cite{noble2011risk}. The clinical significance of such investigations depends upon the data collection methods. Certain studies rely on collecting socio-demographic characteristics such as age, ethnicity, body mass index (BMI) and genealogical information through conducting population surveys, and then assign a probability to individuals of having diabetes \cite{Heikes1040,Glumer727}.  However, such self-assessment techniques can often be misleading and can not be relied upon. On the other hand, the outcomes of the diabetes related studies that involve physiological data such as blood samples collected in a laboratory environment provide an accurate clinical insight. We can further divide these types of enquiries into two types, namely, the screening  of undiagnosed diabetes, and the future prediction of diabetes. The former category has seen an increased amount of research interest in the last ten years. Using statistical and machine learning techniques, various researchers have developed \emph{risk models} for diabetes screening. In \cite{barakat_intelligible_2010}, support vector machine (SVM) framework was employed for the diagnosis of diabetes that also incorporated a tree-based decision making algorithm. A rule-based ensemble method combining SVM and random forest (RF)
 classifiers was used to detect diabetes in \cite{han_rule_2015} which provided an added comprehensibility of the classification mechanism.
 
 Previous investigations designed to identify individuals at high risk of developing type 2 diabetes in future included San Antonio Diabetes prediction model (SADPM) \cite{stern2002identification} where a logistic regression model was constructed using a subject's physiological parameters such as systolic blood pressure and cholesterol level. The underlying causes of type 2 diabetes in the form insulin resistance and insulin secretion were studied to develop a prediction model in \cite{abdul-ghani_what_2007}. In another study,  multivariate logistic models using the plasma glucose values measured in the OGTT were used to predict the future risk of developing type 2 diabetes \cite{abdul-ghani_two-step_2011,abdul2009fasting}.
@@ -540,7 +540,7 @@ The dataset included the glucose and insulin values recorded at the baseline, \n
   \label{fig:ogtt_mean}
 \end{figure*}
 %
-The dataset was then partitioned into training and validation sets. As can be observed from the Table \ref{tab:patients}, the SAHS dataset is intrinsically imbalanced with the class distribution skewed toward the majority class with a ratio of 7.5:1. Considering the Therefore, we took two approaches for the training set, one in which the dataset was balanced by a randomized undersampling of the majority class, and second in which we persisted with natural class distribution. In both the cases, the validation set had the same class distribution representative of the original dataset. A total of \num{1360} samples were used for training that accounted for \SI{91}{\percent} of the dataset, and \num{99} samples, consisting of \num{11} diabetic and \num{83} healthy subjects were reserved for the validation of the trained prediction models.
+The dataset was then partitioned into training and validation sets. As can be observed from the Table \ref{tab:patients}, the SAHS dataset is intrinsically imbalanced with the class distribution skewed toward the majority class with a ratio of 7.5:1. The minority class of diabetic subjects was defined as the positive class with a label of \num{1}, whereas the majority class consiting of healthy persons was termed as the negative class marked by a \num{-1} label.
 %
 %
 \subsection{Machine Learning Framework}
@@ -590,6 +590,8 @@ we can compute the inner product on \eqref{eq:l_dual} without  computing the map
 \end{equation}
 %
 as the kernel where $\sigma$ is a free parameter. During the training, we tuned the values of the parameters $C$ and $\gamma$ through a grid search to obtain the optimal performance of the SVM.
+
+For a linear variant of the SVM, 
 %
 %%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%
@@ -673,9 +675,11 @@ In the second phase, we further refined the number of variables to four by only 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 
-\section{SVM Model Generation}
+\section{Data Experiments}
 %
+In this paper, we employed the non-linear SVM in the form of radial basis functions (RBF) and also its linear variant, with the goal to observe the performance in the presence of inseparable data in terms of the class. Due to the highly imbalanced nature of the dataset, we constructed the models by first balancing the dataset and then retaining the class ratio. In the former case, we created a randomly selected training set of \num{320} samples containing equal instances of the diabetic and healthy classes. In the latter case, \num{1360} samples were used to generate the training set with \num{160} and \num{1200} instances of the diabetic and healthy classes respectively. During the model generation phase, we used \num{10}-fold cross-validation
 
+Therefore, we took two approaches for the training set, one in which the dataset was balanced by a randomized undersampling of the majority class, and second in which we persisted with natural class distribution. In both the cases, the validation set had the same class distribution representative of the original dataset. A total of \num{1360} samples were used for training that accounted for \SI{91}{\percent} of the dataset, and \num{99} samples, consisting of \num{11} diabetic and \num{83} healthy subjects were reserved for the validation of the trained prediction models.
 
 
 

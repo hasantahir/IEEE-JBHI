@@ -1,8 +1,4 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
-Stuff after "}"---line 24 of file main.aux
- : \citation{Heikes1040,Gl{\"u
- :                            }mer727}
-I'm skipping whatever remains of this command
 The style file: IEEEtran.bst
 Database file #1: References.bib
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
@@ -10,4 +6,3 @@ Database file #1: References.bib
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-(There was 1 error message)

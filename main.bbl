@@ -27,23 +27,13 @@ C.~D. Mathers and D.~Loncar, ``\BIBforeignlanguage{en}{Projections of {Global}
   \emph{\BIBforeignlanguage{en}{PLoS Medicine}}, vol.~3, no.~11, p. e442, Nov.
   2006.
 
-\bibitem{organization_definition_2006}
-W.~H. Organization and {others}, ``Definition and diagnosis of diabetes
-  mellitus and intermediate hyperglycaemia: report of a {WHO}/{IDF}
-  consultation,'' 2006.
-
-\bibitem{american_diabetes_association_diagnosis_2005}
-{American Diabetes Association}, ``\BIBforeignlanguage{en}{Diagnosis and
-  {Classification} of {Diabetes} {Mellitus}},''
-  \emph{\BIBforeignlanguage{en}{Diabetes Care}}, vol.~28, no. Supplement 1, pp.
-  S37--S42, Jan. 2005.
-
-\bibitem{tschritter_assessing_2003}
-O.~Tschritter, A.~Fritsche, F.~Shirkavand, F.~Machicao, H.~Haring, and
-  M.~Stumvoll, ``\BIBforeignlanguage{en}{Assessing the {Shape} of the {Glucose}
-  {Curve} {During} an {Oral} {Glucose} {Tolerance} {Test}},''
-  \emph{\BIBforeignlanguage{en}{Diabetes Care}}, vol.~26, no.~4, pp.
-  1026--1033, Apr. 2003.
+\bibitem{tuomilehto2001prevention}
+J.~Tuomilehto, J.~Lindstr{\"o}m, J.~G. Eriksson, T.~T. Valle,
+  H.~H{\"a}m{\"a}l{\"a}inen, P.~Ilanne-Parikka, S.~Kein{\"a}nen-Kiukaanniemi,
+  M.~Laakso, A.~Louheranta, M.~Rastas \emph{et~al.}, ``Prevention of type 2
+  diabetes mellitus by changes in lifestyle among subjects with impaired
+  glucose tolerance,'' \emph{New England Journal of Medicine}, vol. 344,
+  no.~18, pp. 1343--1350, 2001.
 
 \bibitem{shaw_impaired_1999}
 J.~E. Shaw, P.~Z. Zimmet, M.~de~Courten, G.~K. Dowse, P.~Chitson, H.~Gareeboo,
@@ -65,6 +55,53 @@ M.~A. Abdul-Ghani, K.~Williams, R.~A. DeFronzo, and M.~Stern,
   ``\BIBforeignlanguage{en}{What {Is} the {Best} {Predictor} of {Future} {Type}
   2 {Diabetes}?}'' \emph{\BIBforeignlanguage{en}{Diabetes Care}}, vol.~30,
   no.~6, pp. 1544--1548, Jun. 2007.
+
+\bibitem{abdul2009fasting}
+M.~A. Abdul-Ghani, V.~Lyssenko, T.~Tuomi, R.~A. DeFronzo, and L.~Groop,
+  ``Fasting versus postload plasma glucose concentration and the risk for
+  future type 2 diabetes: results from the botnia study,'' \emph{Diabetes
+  care}, vol.~32, no.~2, pp. 281--286, 2009.
+
+\bibitem{abdul-ghani_shape_2010}
+------, ``\BIBforeignlanguage{en}{The shape of plasma glucose concentration
+  curve during {OGTT} predicts future risk of type 2 diabetes},''
+  \emph{\BIBforeignlanguage{en}{Diabetes/Metabolism Research and Reviews}},
+  vol.~26, no.~4, pp. 280--286, May 2010.
+
+\bibitem{abdul-ghani_plasma_2009}
+M.~A. Abdul-Ghani and R.~A. DeFronzo, ``\BIBforeignlanguage{en}{Plasma
+  {Glucose} {Concentration} and {Prediction} of {Future} {Risk} of {Type} 2
+  {Diabetes}},'' \emph{\BIBforeignlanguage{en}{Diabetes Care}}, vol.~32, no.
+  suppl\_2, pp. S194--S198, Nov. 2009.
+
+\bibitem{Heikes1040}
+K.~E. Heikes, D.~M. Eddy, B.~Arondekar, and L.~Schlessinger, ``Diabetes risk
+  calculator,'' \emph{Diabetes Care}, vol.~31, no.~5, pp. 1040--1045, 2008.
+
+\bibitem{barakat_intelligible_2010}
+N.~Barakat, A.~P. Bradley, and M.~N.~H. Barakat, ``Intelligible {Support}
+  {Vector} {Machines} for {Diagnosis} of {Diabetes} {Mellitus},'' \emph{IEEE
+  Transactions on Information Technology in Biomedicine}, vol.~14, no.~4, pp.
+  1114--1120, Jul. 2010.
+
+\bibitem{han_rule_2015}
+L.~Han, S.~Luo, J.~Yu, L.~Pan, and S.~Chen, ``Rule {Extraction} {From}
+  {Support} {Vector} {Machines} {Using} {Ensemble} {Learning} {Approach}: {An}
+  {Application} for {Diagnosis} of {Diabetes},'' \emph{IEEE Journal of
+  Biomedical and Health Informatics}, vol.~19, no.~2, pp. 728--734, Mar. 2015.
+
+\bibitem{stern2002identification}
+M.~P. Stern, K.~Williams, and S.~M. Haffner, ``Identification of persons at
+  high risk for type 2 diabetes mellitus: do we need the oral glucose tolerance
+  test?'' \emph{Annals of internal medicine}, vol. 136, no.~8, pp. 575--581,
+  2002.
+
+\bibitem{abdul-ghani_two-step_2011}
+M.~A. Abdul-Ghani, T.~Abdul-Ghani, M.~P. Stern, J.~Karavic, T.~Tuomi, I.~Bo,
+  R.~A. DeFronzo, and L.~Groop, ``\BIBforeignlanguage{en}{Two-{Step} {Approach}
+  for the {Prediction} of {Future} {Type} 2 {Diabetes} {Risk}},''
+  \emph{\BIBforeignlanguage{en}{Diabetes Care}}, vol.~34, no.~9, pp.
+  2108--2112, Sep. 2011.
 
 \bibitem{burke_rapid_1999}
 J.~P. Burke, K.~Williams, S.~P. Gaskill, H.~P. Hazuda, S.~M. Haffner, and M.~P.
@@ -100,12 +137,6 @@ M.~Matsuda and R.~A. DeFronzo, ``Insulin sensitivity indices obtained from oral
   glucose tolerance testing: comparison with the euglycemic insulin clamp.''
   \emph{Diabetes Care}, vol.~22, no.~9, pp. 1462--1470, 1999.
 
-\bibitem{abdul-ghani_plasma_2009}
-M.~A. Abdul-Ghani and R.~A. DeFronzo, ``\BIBforeignlanguage{en}{Plasma
-  {Glucose} {Concentration} and {Prediction} of {Future} {Risk} of {Type} 2
-  {Diabetes}},'' \emph{\BIBforeignlanguage{en}{Diabetes Care}}, vol.~32, no.
-  suppl\_2, pp. S194--S198, Nov. 2009.
-
 \bibitem{vapnik_nature_2000}
 V.~N. Vapnik, \emph{The nature of statistical learning theory}, 2nd~ed., ser.
   Statistics for engineering and information science.\hskip 1em plus 0.5em
@@ -126,10 +157,6 @@ J.~Friedman, T.~Hastie, and R.~Tibshirani, \emph{The elements of statistical
 B.~Sch{\"o}lkopf, A.~J. Smola, F.~Bach \emph{et~al.}, \emph{Learning with
   kernels: support vector machines, regularization, optimization, and
   beyond}.\hskip 1em plus 0.5em minus 0.4em\relax MIT press, 2002.
-
-\bibitem{cortes1995support}
-C.~Cortes and V.~Vapnik, ``Support vector networks,'' \emph{Machine Learning},
-  vol.~20, pp. 273--297, 1995.
 
 \bibitem{ross2014mutual}
 B.~C. Ross, ``Mutual information between discrete and continuous data sets,''

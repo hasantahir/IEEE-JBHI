@@ -25,12 +25,10 @@
 
 \usepackage[T1]{fontenc}% optional T1 font encoding
 
-
 % Some very useful LaTeX packages include:
 % (uncomment the ones you want to load)
 
-\usepackage{amsmath}
-% \usepackage{calc}
+\usepackage{amsmath,amsfonts}
 % \usepackage{amsfonts} % to load math symbols
 \usepackage{commath} % For defining functions
 \usepackage{mdwmath}
@@ -41,24 +39,24 @@
 \usepackage{graphicx}
 % \usepackage{etoolbox}
 \usepackage{color}
-\usepackage{placeins}
+% \usepackage{placeins}
 % \usepackage{subfigure}
 \usepackage{subcaption}
-\usepackage{hyperref}
+% \usepackage{hyperref}
 % % The following is done to hide ugly color boxes around the links
 \usepackage[table]{xcolor}
-\hypersetup{
-colorlinks,
-linkcolor={black},
-citecolor={black},
-urlcolor={black}
-}
+% \hypersetup{
+% colorlinks,
+% linkcolor={black},
+% citecolor={black},
+% urlcolor={black}
+% }
 \usepackage{booktabs}
 \usepackage{float}
 % \usepackage{newtxtext,newtxmath}
 % \usepackage{geometry} % just not to bother with the table width
 % \usepackage{standalone}
-\usepackage{filecontents}
+% \usepackage{filecontents}
 \usepackage{tabularx,colortbl}
 \usepackage{pgfplots}
 \usepackage{standalone}
@@ -77,261 +75,14 @@ font={\fontsize{8pt}{8}\selectfont}}
 %
 % \usepackage{cite}
 \usepackage[noadjust]{cite}
-% cite.sty was written by Donald Arseneau
-% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
-% \cite{} output to follow that of the IEEE. Loading the cite package will
-% result in citation numbers being automatically sorted and properly
-% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
-% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
-% \cite will automatically add leading space, if needed. Use cite.sty's
-% noadjust option (cite.sty V3.8 and later) if you want to turn this off
-% such as if a citation ever needs to be enclosed in parenthesis.
-% cite.sty is already installed on most LaTeX systems. Be sure and use
-% version 5.0 (2009-03-20) and later if using hyperref.sty.
-% The latest version can be obtained at:
-% http://www.ctan.org/pkg/cite
-% The documentation is contained in the cite.sty file itself.
-
-
-
-
 
 
 % *** GRAPHICS RELATED PACKAGES ***
 %
-\usepackage{graphicx}
+% \usepackage{graphicx}
 % declare the path(s) where your graphic files are
 \graphicspath{{Figures/}}
-% and their extensions so you won't have to specify these with
-% every instance of \includegraphics
-% \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
-% graphicx was written by David Carlisle and Sebastian Rahtz. It is
-% required if you want graphics, photos, etc. graphicx.sty is already
-% installed on most LaTeX systems. The latest version and documentation
-% can be obtained at:
-% http://www.ctan.org/pkg/graphicx
-% Another good source of documentation is "Using Imported Graphics in
-% LaTeX2e" by Keith Reckdahl which can be found at:
-% http://www.ctan.org/pkg/epslatex
 %
-% latex, and pdflatex in dvi mode, support graphics in encapsulated
-% postscript (.eps) format. pdflatex in pdf mode supports graphics
-% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
-% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
-% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
-% which can result in "jaggedy"/blurry rendering of lines and letters as
-% well as large increases in file sizes.
-%
-% You can find documentation about the pdfTeX application at:
-% http://www.tug.org/applications/pdftex
-
-
-
-
-
-% *** MATH PACKAGES ***
-%
-\usepackage{amsmath}
-% A popular package from the American Mathematical Society that provides
-% many useful and powerful commands for dealing with mathematics.
-% Do NOT use the amsbsy package under comsoc mode as that feature is
-% already built into the Times Math font (newtxmath, mathtime, etc.).
-%
-% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
-% thus preventing page breaks from occurring within multiline equations. Use:
-\interdisplaylinepenalty=2500
-% after loading amsmath to restore such page breaks as IEEEtran.cls normally
-% does. amsmath.sty is already installed on most LaTeX systems. The latest
-% version and documentation can be obtained at:
-% http://www.ctan.org/pkg/amsmath
-
-
-% Select a Times math font under comsoc mode or else one will automatically
-% be selected for you at the document start. This is required as Communications
-% Society journals use a Times, not Computer Modern, math font.
-\usepackage[cmintegrals]{newtxmath}
-% The freely available newtxmath package was written by Michael Sharpe and
-% provides a feature rich Times math font. The cmintegrals option, which is
-% the default under IEEEtran, is needed to get the correct style integral
-% symbols used in Communications Society journals. Version 1.451, July 28,
-% 2015 or later is recommended. Also, do *not* load the newtxtext.sty package
-% as doing so would alter the main text font.
-% http://www.ctan.org/pkg/newtx
-%
-% Alternatively, you can use the MathTime commercial fonts if you have them
-% installed on your system:
-%\usepackage{mtpro2}
-%\usepackage{mt11p}
-%\usepackage{mathtime}
-
-
-%\usepackage{bm}
-% The bm.sty package was written by David Carlisle and Frank Mittelbach.
-% This package provides a \bm{} to produce bold math symbols.
-% http://www.ctan.org/pkg/bm
-
-
-
-
-
-% *** SPECIALIZED LIST PACKAGES ***
-%
-%\usepackage{algorithmic}
-% algorithmic.sty was written by Peter Williams and Rogerio Brito.
-% This package provides an algorithmic environment fo describing algorithms.
-% You can use the algorithmic environment in-text or within a figure
-% environment to provide for a floating algorithm. Do NOT use the algorithm
-% floating environment provided by algorithm.sty (by the same authors) or
-% algorithm2e.sty (by Christophe Fiorio) as the IEEE does not use dedicated
-% algorithm float types and packages that provide these will not provide
-% correct IEEE style captions. The latest version and documentation of
-% algorithmic.sty can be obtained at:
-% http://www.ctan.org/pkg/algorithms
-% Also of interest may be the (relatively newer and more customizable)
-% algorithmicx.sty package by Szasz Janos:
-% http://www.ctan.org/pkg/algorithmicx
-
-
-
-
-% *** ALIGNMENT PACKAGES ***
-%
-%\usepackage{array}
-% Frank Mittelbach's and David Carlisle's array.sty patches and improves
-% the standard LaTeX2e array and tabular environments to provide better
-% appearance and additional user controls. As the default LaTeX2e table
-% generation code is lacking to the point of almost being broken with
-% respect to the quality of the end results, all users are strongly
-% advised to use an enhanced (at the very least that provided by array.sty)
-% set of table tools. array.sty is already installed on most systems. The
-% latest version and documentation can be obtained at:
-% http://www.ctan.org/pkg/array
-
-
-% IEEEtran contains the IEEEeqnarray family of commands that can be used to
-% generate multiline equations as well as matrices, tables, etc., of high
-% quality.
-
-
-
-
-% *** SUBFIGURE PACKAGES ***
-%\ifCLASSOPTIONcompsoc
-%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
-%\else
-%  \usepackage[caption=false,font=footnotesize]{subfig}
-%\fi
-% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
-% for subfigure.sty, the latter of which is no longer maintained and is
-% incompatible with some LaTeX packages including fixltx2e. However,
-% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
-% which will override IEEEtran.cls' handling of captions and this will result
-% in non-IEEE style figure/table captions. To prevent this problem, be sure
-% and invoke subfig.sty's "caption=false" package option (available since
-% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
-% handling of captions.
-% Note that the Computer Society format requires a larger sans serif font
-% than the serif footnote size font used in traditional IEEE formatting
-% and thus the need to invoke different subfig.sty package options depending
-% on whether compsoc mode has been enabled.
-%
-% The latest version and documentation of subfig.sty can be obtained at:
-% http://www.ctan.org/pkg/subfig
-
-
-
-
-% *** FLOAT PACKAGES ***
-%
-\usepackage{fixltx2e}
-% fixltx2e, the successor to the earlier fix2col.sty, was written by
-% Frank Mittelbach and David Carlisle. This package corrects a few problems
-% in the LaTeX2e kernel, the most notable of which is that in current
-% LaTeX2e releases, the ordering of single and double column floats is not
-% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
-% single column figure to be placed prior to an earlier double column
-% figure.
-% Be aware that LaTeX2e kernels dated 2015 and later have fixltx2e.sty's
-% corrections already built into the system in which case a warning will
-% be issued if an attempt is made to load fixltx2e.sty as it is no longer
-% needed.
-% The latest version and documentation can be found at:
-% http://www.ctan.org/pkg/fixltx2e
-
-
-\usepackage{stfloats}
-% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
-% the ability to do double column floats at the bottom of the page as well
-% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
-% LaTeX2e). It also provides a command:
-%\fnbelowfloat
-% to enable the placement of footnotes below bottom floats (the standard
-% LaTeX2e kernel puts them above bottom floats). This is an invasive package
-% which rewrites many portions of the LaTeX2e float routines. It may not work
-% with other packages that modify the LaTeX2e float routines. The latest
-% version and documentation can be obtained at:
-% http://www.ctan.org/pkg/stfloats
-% Do not use the stfloats baselinefloat ability as the IEEE does not allow
-% \baselineskip to stretch. Authors submitting work to the IEEE should note
-% that the IEEE rarely uses double column equations and that authors should try
-% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
-% packages (also by Sigitas Tolusis) as the IEEE does not format its papers in
-% such ways.
-% Do not attempt to use stfloats with fixltx2e as they are incompatible.
-% Instead, use Morten Hogholm'a dblfloatfix which combines the features
-% of both fixltx2e and stfloats:
-%
-% \usepackage{dblfloatfix}
-% The latest version can be found at:
-% http://www.ctan.org/pkg/dblfloatfix
-
-
-
-
-%\ifCLASSOPTIONcaptionsoff
-%  \usepackage[nomarkers]{endfloat}
-% \let\MYoriglatexcaption\caption
-% \renewcommand{\caption}[2][\relax]{\MYoriglatexcaption[#2]{#2}}
-%\fi
-% endfloat.sty was written by James Darrell McCauley, Jeff Goldberg and
-% Axel Sommerfeldt. This package may be useful when used in conjunction with
-% IEEEtran.cls'  captionsoff option. Some IEEE journals/societies require that
-% submissions have lists of figures/tables at the end of the paper and that
-% figures/tables without any captions are placed on a page by themselves at
-% the end of the document. If needed, the draftcls IEEEtran class option or
-% \CLASSINPUTbaselinestretch interface can be used to increase the line
-% spacing as well. Be sure and use the nomarkers option of endfloat to
-% prevent endfloat from "marking" where the figures would have been placed
-% in the text. The two hack lines of code above are a slight modification of
-% that suggested by in the endfloat docs (section 8.4.1) to ensure that
-% the full captions always appear in the list of figures/tables - even if
-% the user used the short optional argument of \caption[]{}.
-% IEEE papers do not typically make use of \caption[]'s optional argument,
-% so this should not be an issue. A similar trick can be used to disable
-% captions of packages such as subfig.sty that lack options to turn off
-% the subcaptions:
-% For subfig.sty:
-% \let\MYorigsubfloat\subfloat
-% \renewcommand{\subfloat}[2][\relax]{\MYorigsubfloat[]{#2}}
-% However, the above trick will not work if both optional arguments of
-% the \subfloat command are used. Furthermore, there needs to be a
-% description of each subfigure *somewhere* and endfloat does not add
-% subfigure captions to its list of figures. Thus, the best approach is to
-% avoid the use of subfigure captions (many IEEE journals avoid them anyway)
-% and instead reference/explain all the subfigures within the main caption.
-% The latest version of endfloat.sty and its documentation can obtained at:
-% http://www.ctan.org/pkg/endfloat
-%
-% The IEEEtran \ifCLASSOPTIONcaptionsoff conditional can also be used
-% later in the document, say, to conditionally put the References on a
-% page by themselves.
-
-
-
-
-% *** PDF, URL AND HYPERLINK PACKAGES ***
-%
-%\usepackage{url}
 % Personal definitions
 \renewcommand{\v}[1]{\mathbf{#1}} % vectors
 \newcommand{\ti}[1]{\tilde{#1}} % spectral representation
@@ -441,7 +192,7 @@ of Electrical and Computer Engineering, Texas A\&M University at Qatar, Doha 238
 % As a general rule, do not put math, special symbols or citations
 % in the abstract or keywords.
 \begin{abstract}
-  We present a prediction model that assesses the future risk of developing type 2 diabetes mellitus (T2DM). We use the oral glucose tolerance test (OGTT) data collected from a group of 1,551  healthy subjects to construct a machine learning model employing the support vector machines. We trained and validated the models on the data obtained from the second cohort of the San Antonio Heart Study, using a set of four features derived from the glucose measurements in the OGTT. The results of the proposed scheme show an average validation accuracy of 97.23\% and recall of 77.27\%. The results also show that the plasma glucose based features are the strongest predictors of the future development of T2DM.
+  We present a prediction model that assesses the future risk of developing type 2 diabetes mellitus (T2DM). We use the oral glucose tolerance test (OGTT) data collected from a group of 1,551  healthy subjects to construct a machine learning model employing the support vector machines. We trained and validated the models on the data obtained from the second cohort of the San Antonio Heart Study, using a set of four features derived from the glucose measurements in the OGTT. The results of the proposed scheme show an average validation accuracy of 97.23\% and a hit rate of 77.27\%. The results also show that the plasma glucose based features are the strongest predictors of the future development of T2DM.
 \end{abstract}
 
 % Note that keywords are not normally used for peer-review papers.
@@ -473,7 +224,7 @@ of Electrical and Computer Engineering, Texas A\&M University at Qatar, Doha 238
 % \IEEEPARstart{A}{}demo file is ....
 %
 % Some journals put the first two words in caps:
-% \IEEEPARstart{T}{his demo} file is ....
+% \IEEEP\citeARstart{T}{his demo} file is ....
 %
 % Here we have the typical use of a "T" for an initial drop letter
 % and "HIS" in caps to complete the first word.
@@ -540,7 +291,7 @@ The dataset included the glucose and insulin values recorded at the baseline, \n
   \label{fig:ogtt_mean}
 \end{figure*}
 %
-The dataset was then partitioned into training and validation sets. As can be observed from the Table \ref{tab:patients}, the SAHS dataset is intrinsically imbalanced with the class distribution skewed toward the majority class with a ratio of 7.5:1. The minority class of diabetic subjects was defined as the positive class with a label of \num{1}, whereas the majority class consiting of healthy persons was termed as the negative class marked by a \num{-1} label.
+The dataset was then partitioned into training and validation sets. As can be observed from the Table \ref{tab:patients}, the SAHS dataset is intrinsically imbalanced with the class distribution skewed toward the majority class with a ratio of 7.5:1. The minority class of diabetic subjects was defined as the positive class with a label of \num{1}, whereas the majority class consisting of healthy persons was termed as the negative class marked by a \num{-1} label.
 %
 %
 \subsection{Machine Learning Framework}
@@ -591,7 +342,12 @@ we can compute the inner product on \eqref{eq:l_dual} without  computing the map
 %
 as the kernel where $\sigma$ is a free parameter. During the training, we tuned the values of the parameters $C$ and $\gamma$ through a grid search to obtain the optimal performance of the SVM.
 
-For a linear variant of the SVM, 
+For a linear variant of the SVM, the classifier can expressed without any coordinate mappings,
+%
+\begin{equation}
+    \mathcal F^{\mathrm{lin}} = \mathrm{sign} \left( x^T \beta^{\mathrm{lin}} + \beta^{\mathrm{lin}}_0 \right).
+    \label{eq:lin_classifier}
+\end{equation}
 %
 %%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%
@@ -674,33 +430,38 @@ In the second phase, we further refined the number of variables to four by only 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-
 \section{Data Experiments}
 %
-In this paper, we employed the non-linear SVM in the form of radial basis functions (RBF) and also its linear variant, with the goal to observe the performance in the presence of inseparable data in terms of the class. Due to the highly imbalanced nature of the dataset, we constructed the models by first balancing the dataset and then retaining the class ratio. In the former case, we created a randomly selected training set of \num{320} samples containing equal instances of the diabetic and healthy classes. In the latter case, \num{1360} samples were used to generate the training set with \num{160} and \num{1200} instances of the diabetic and healthy classes respectively. During the model generation phase, we used \num{10}-fold cross-validation
-
-Therefore, we took two approaches for the training set, one in which the dataset was balanced by a randomized undersampling of the majority class, and second in which we persisted with natural class distribution. In both the cases, the validation set had the same class distribution representative of the original dataset. A total of \num{1360} samples were used for training that accounted for \SI{91}{\percent} of the dataset, and \num{99} samples, consisting of \num{11} diabetic and \num{83} healthy subjects were reserved for the validation of the trained prediction models.
+In this paper, we employed the non-linear SVM \eqref{eq:classifier} in the form of radial basis functions (RBF) \eqref{eq:rbf} since the classes can not be linearly separated directly as observed in Fig. \ref{fig:ogtt_mean}. We also used the linear variant of the SVM \eqref{eq:lin_classifier} to compare the classifier performances. Moreover, due to the unbalanced nature of the dataset, we conducted two experiments in the preprocessing phase. In the first the dataset was balanced where we randomly undersampled the majority class, and  took \num{160} instances from each class for the training. In the second experiment, we retained the class ratio of the data set and took \num[group-minimum-digits=4, group-separator = {,}]{1360} samples to generate the training set that contained \num{160} and \num[group-minimum-digits=4, group-separator = {,}]{1200} instances of the diabetic and healthy classes respectively. In order to ensure that the model remained unbiased and generalized well to new data, we performed \num{10}-fold cross-validation during the training and the performance obtained was averaged over all the \num{10} folds. All the experiments were carried out using the statistical and machine learning toolbox of Matlab and the data was normalized prior to the training. The optimal hyperplane parameters $C$ and $\sigma$ in \eqref{eq:min} and \eqref{eq:rbf} respectively corresponded to the `BoxConstraint' and `Gamma' arguments that were set to \num{1.0} and \num{5.0} respectively. These values were obtained through a grid search with a view to maximize the classifier hit rate defined as,
+%
+\begin{equation}
+  \mathrm{Hit~Rate} = \frac{\mathrm{TP}}{\mathrm{TP} + \mathrm{FN}},
+\end{equation}
+%
+where TP and FN refer to the number of correctly and incorrectly classified diabetic subjects respectively.
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\section{Results}
+%
+%
 
 
 
 
 
 1. Balanced Training -> Unbalanced Validation
-2. Unbalanced Training -> Balanced Validation
+2. Unbalanced Training -> UnBalanced Validation
 %
 Cross-validation
+The estimated performance is averaged over all the folds
 100 iterations to remove any randomized errors
 grid search of the best parameters C and gamma
 %
-In this study, we employed the linear SVM kernel by utilizing the Matlab's \texttt{svmtrain} function. The training data was first scaled to have a unit standard deviation. The misclassification cost was configured by setting the value of the \texttt{boxconstraint} parameter to a high value of \num{100}, which would cause a stricter partitioning of the data with respect to the class labels.
-
-To predict the future risk of type 2 diabetes, we defined a positive class (occurrence of diabetes at the follow-up) and a negative class (healthy). As illustrated in Table \ref{tab:patients}, the OGTT data used in this study is heavily unbalanced. With \num{171} positive class instances as compared to \num{1281} that of the negative class, the size of class labels is unbalanced with the ratio of positive-to-negative instances of 1:8. To avoid the problem of overfitting to the majority class during the learning phase of the technique, we under-sampled the majority class (healthy) to the size of the minority class (diabetic) by a randomly selecting equal number of samples. During the prediction model generation, we employed 10-fold cross-validation framework in which \SI{90}{\percent} of the training data, consisting of \num{360} samples was used for training and the remaining \SI{10}{\percent} was used to test the model. To validate the trained models, we used a holdout data set with the same unbalanced ratio of negative-to-positive classes in the original data, i.e., \num{11} samples of the positive class, and \num{88} samples of the negative class. We started our experiments using one feature at a time, and then more number of features were incrementally added. This exercise assists in discovering any feature dependencies. In total, we performed 1,023 classification experiments.  Each of these experiments was trained as a 10-fold cross-validation (CV) and, to minimize the effect of random selection of samples from the majority class, \num{100} iterations were performed for each experiment. Owing to the small sample size of the holdout dataset, this strategy ensures the unbiased reporting of the classifier performance. To maximize reliability of the model to predict diabetes events, we maximized the recall metric during the training phase, which is defined as,
-%
-\begin{equation}
-  Recall = \frac{\mathrm{TP}}{\mathrm{TP} + \mathrm{FN}},
-\end{equation}
-%
-where TP and FN are the true-positives and false-negatives respectively. During the validation phase, we tracked the confusion matrices for all the models yielding the maximum training recall for all the feature combinations.
 
 % cc_AuG60_120,acc_PG120, acc_PG60,...
 % acc_AuG0_120, acc_AuG30_120,...
@@ -848,7 +609,6 @@ where TP and FN are the true-positives and false-negatives respectively. During 
 % Note that, LaTeX2e, unlike IEEE journals/conferences, places
 % footnotes above bottom floats. This can be corrected via the
 % \fnbelowfloat command of the stfloats package.
-
 
 
 

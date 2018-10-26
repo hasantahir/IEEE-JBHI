@@ -28,7 +28,7 @@
 % Some very useful LaTeX packages include:
 % (uncomment the ones you want to load)
 
-\usepackage{amsmath,amsfonts}
+\usepackage{amsmath,amssymb,amsfonts}
 % \usepackage{amsfonts} % to load math symbols
 \usepackage{commath} % For defining functions
 \usepackage{mdwmath}
@@ -53,7 +53,7 @@
 % }
 \usepackage{booktabs}
 \usepackage{float}
-% \usepackage{newtxtext,newtxmath}
+\usepackage{newtxtext,newtxmath}
 % \usepackage{geometry} % just not to bother with the table width
 % \usepackage{standalone}
 % \usepackage{filecontents}
@@ -194,12 +194,12 @@ of Electrical and Computer Engineering, Texas A\&M University at Qatar, Doha 238
 \begin{abstract}
   We present a prediction model that assesses the future risk of developing type 2 diabetes mellitus (T2DM). We use the oral glucose tolerance test (OGTT) data collected from a group of 1,551  healthy subjects to construct a machine learning model employing the support vector machines. We trained and validated the models on the data obtained from the second cohort of the San Antonio Heart Study, using a set of four features derived from the glucose measurements in the OGTT. The results of the proposed scheme show an average validation accuracy of 97.23\% and a hit rate of 77.27\%. The results also show that the plasma glucose based features are the strongest predictors of the future development of T2DM.
 \end{abstract}
-
+%
 % Note that keywords are not normally used for peer-review papers.
 \begin{IEEEkeywords}
   Type 2 Diabetes prediction, machine learning, disease risk assessment, San Antonio heart study.
 \end{IEEEkeywords}
-
+%
 % For peer review papers, you can put extra information on the cover
 % page as needed:
 % \ifCLASSOPTIONpeerreview
@@ -209,9 +209,9 @@ of Electrical and Computer Engineering, Texas A\&M University at Qatar, Doha 238
 % For peerreview papers, this IEEEtran command inserts a page break and
 % creates the second title. It will be ignored for other modes.
 \IEEEpeerreviewmaketitle
-
-
-
+%
+%
+%
 \section{Introduction}
 % The very first letter is a 2 line initial drop letter followed
 % by the rest of the first word in caps.
@@ -229,15 +229,14 @@ of Electrical and Computer Engineering, Texas A\&M University at Qatar, Doha 238
 % Here we have the typical use of a "T" for an initial drop letter
 % and "HIS" in caps to complete the first word.
 \IEEEPARstart{T}{he} global incidence of diabetes was estimated at \num{422} million in the year \num{2014} and its prevalence among the adult population has seen an increase from \SI{4.7}{\percent} in the year \num{1980} to \SI{8.5}{\percent} in \num{2014} \cite{mathers_projections_2006}. In \num{2015} alone, an estimated \num{1.6} million deaths worldwide were attributed to diabetes. In addition, a diabetic patient is at a greater risk of developing cardiovascular diseases, visual impairment and limb amputations, as compared to a non-diabetic person. Due to the substantial socio-economic burdens that are associated with diabetes, its early detection, intervention and prevention has become a worldwide top-level health concern.
-
-
+%
+%
 %%% TALK ABOUT GLUCOSE TOLERANCE
 The presumption of delaying or even preventing the future development of future diabetes is backed by experimental evidence \cite{tuomilehto2001prevention}, provided the person undergoes a lifestyle change that includes managing diet and incorporating exercise, and adheres to a medical treatment. Moreover, one of the first signs of diabetes is the impaired glucose tolerance (IGT) in which the blood sugar level rises beyond the normal levels defined by the World Health Organization (WHO) and the American Diabetes Association (AMA). The oral glucose tolerance test (OGTT) is commonly used to screen the individuals that have IGT, and are at an increased risk of developing diabetes in the future. In an OGTT, the blood glucose and insulin levels are periodically recorded in a \SI{2}{\hour} period from a person that has undergone an overnight fast and administered a standard concentration of glucose. The outcomes of the OGTT provide useful information on the IGT, as well as any impairment in the insulin function of the body.
 
 On the contrary, studies have indicated that only \SI{50}{\percent} of subjects with IGT went on to develop diabetes within a span of \num{10} years \cite{shaw_impaired_1999, writing_committee_impaired_2002}. Furthermore, long-term population studies have shown that around \SI{50}{\percent} future diabetic subjects did not exhibit IGT at all \cite{abdul-ghani_what_2007}. Previously, it has been shown that as compared to the IGT, the glucose concentrations at the \SI{1}{\hour} and \SI{2}{\hour} intervals during the OGTT, correlate more to the future diabetes risk \cite{abdul2009fasting,abdul-ghani_shape_2010,abdul-ghani_plasma_2009}.
 
-Research studies that assess diabetes can be broadly categorized into two themes, first of which deals with the objective to detect any undiagnosed state of diabetes, and the second that aims to identify the person that are high risk of developing diabetes in the future \cite{noble2011risk}. The clinical significance of such investigations depends upon the data collection methods. Certain studies rely on collecting socio-demographic characteristics such as age, ethnicity, body mass index (BMI) and genealogical information through conducting population surveys, and then assign a probability to individuals of having diabetes \cite{Heikes1040,Glumer727}.  However, such self-assessment techniques can often be misleading and can not be relied upon. On the other hand, the outcomes of the diabetes related studies that involve physiological data such as blood samples collected in a laboratory environment provide an accurate clinical insight. We can further divide these types of enquiries into two types, namely, the screening  of undiagnosed diabetes, and the future prediction of diabetes. The former category has seen an increased amount of research interest in the last ten years. Using statistical and machine learning techniques, various researchers have developed \emph{risk models} for diabetes screening. In \cite{barakat_intelligible_2010}, support vector machine (SVM) framework was employed for the diagnosis of diabetes that also incorporated a tree-based decision making algorithm. A rule-based ensemble method combining SVM and random forest (RF)
-classifiers was used to detect diabetes in \cite{han_rule_2015} which provided an added comprehensibility of the classification mechanism.
+Research studies that assess diabetes can be broadly categorized into two themes, first of which deals with the objective to detect any undiagnosed state of diabetes, and the second that aims to identify the person that are high risk of developing diabetes in the future \cite{noble2011risk}. The clinical significance of such investigations depends upon the data collection methods. Certain studies rely on collecting socio-demographic characteristics such as age, ethnicity, body mass index (BMI) and genealogical information through conducting population surveys, and then assign a probability to individuals of having diabetes \cite{Heikes1040,Glumer727}.  However, such self-assessment techniques can often be misleading and can not be relied upon. On the other hand, the outcomes of the diabetes related studies that involve physiological data such as blood samples collected in a laboratory environment provide an accurate clinical insight. We can further divide these types of enquiries into two types, namely, the screening  of undiagnosed diabetes, and the future prediction of diabetes. The former category has seen an increased amount of research interest in the last ten years. Using statistical and machine learning techniques, various researchers have developed \emph{risk models} for diabetes screening. In \cite{barakat_intelligible_2010}, support vector machine (SVM) framework was employed for the diagnosis of diabetes that also incorporated a tree-based decision making algorithm. A rule-based ensemble method combining SVM and random forest (RF) classifiers was used to detect diabetes in \cite{han_rule_2015} which provided an added comprehensibility of the classification mechanism.
 
 Previous investigations designed to identify individuals at high risk of developing type 2 diabetes in future included San Antonio Diabetes prediction model (SADPM) \cite{stern2002identification} where a logistic regression model was constructed using a subject's physiological parameters such as systolic blood pressure and cholesterol level. The underlying causes of type 2 diabetes in the form insulin resistance and insulin secretion were studied to develop a prediction model in \cite{abdul-ghani_what_2007}. In another study,  multivariate logistic models using the plasma glucose values measured in the OGTT were used to predict the future risk of developing type 2 diabetes \cite{abdul-ghani_two-step_2011,abdul2009fasting}.
 
@@ -249,9 +248,11 @@ In this paper, we propose to develop a future diabetes prediction model by first
 %
 We developed the diabetes prediction models using the data extracted from a population-based epidemiological study, the San Antonio Heart Study (SAHS). The aim of the SAHS was to assess the risk factors of diabetes and cardiovascular diseases \cite{burke_rapid_1999, lorenzo_trend_2006}, for which \num[group-minimum-digits=4, group-separator = {,}]{5158} men and non-pregnant women of Mexican-American and non-Hispanic white residents of San Antonio, Texas were recruited. The age of the subjects at the time of recruitment was between \num{25} and \num{64} years. As a part of the data collection, the blood glucose and insulin levels were recorded during an oral glucose tolerance test (OGTT), which measures the subject's body response to a standard \SI{75}{\gram} dose of glucose after fasting overnight. The OGTT was performed both at the baseline and follow-up phases of the study, which had an average span of \num{7.5} years. The SAHS subjects were recruited in \num{2} cohorts, the first during the period \num{1979} to \num{1982}, and the second from \num{1984} to \num{1988} \cite{haffner_hyperinsulinemia_1986}. The reassessment during the follow-up period took place during the years \num{1987} to \num{1990} for the first cohort, and \num{1991} to \num{1996} for the second cohort. For the future T2DM prediction problem, we construct the machine learning model using the data from the second cohort, in which the plasma glucose and insulin levels of \num[group-minimum-digits=4, group-separator = {,}]{1496} of healthy subjects were recorded during the OGTT at times \num{0}, \num{30}, \num{60} and \num{120} minutes in the baseline evaluation. During the course of the study, a total of \num{171} subjects developed T2DM within which \num{10} subjects also reported of at least one cardiovascular event such as a heart attack, stroke or angina.
 
-At the follow-up assessment, the participants were classified as having type 2 diabetes (T2D), cardiovascular disease (CVD) or normal. For T2D diagnosis, the WHO criteria, defining fasting glucose level \SI[round-mode = off,group-separator = {,}]{\ge 126}{\milli\gram\per\deci\liter} or 2-hour glucose level \SI[round-mode = off,group-separator = {,}]{\ge 200}{\milli\gram\per\deci\liter} was followed \cite{wei_effects_1998}. Any participant reportedly taking anti-diabetic medications was also classified as diabetic. For CVD classification, any cardiovascular event such as a heart attack, stroke or angina reported by the participant, was considered as an identifier. Table \ref{tab:patients} outlines the distribution of patient classification used in this study. In order to construct a binary classifier for this study, the subjects categorized under the \texttt{DMI} and \texttt{DMI+CVD} were encoded as the positive class whereas the \texttt{Heahlty}  labels were the negative class. We restricted the classification to only two classes and the samples with the label \texttt{CVD} were ignored.
+At the follow-up assessment, the participants were classified as having type 2 diabetes (T2D), cardiovascular disease (CVD) or normal. For T2D diagnosis, the WHO criteria, defining fasting glucose level \SI[round-mode = off,group-separator = {,}]{\ge 126}{\milli\gram\per\deci\liter} or 2-hour glucose level \SI[round-mode = off,group-separator = {,}]{\ge 200}{\milli\gram\per\deci\liter} was followed \cite{wei_effects_1998}. Any participant reportedly taking anti-diabetic medications was also classified as diabetic. For CVD classification, any cardiovascular event such as a heart attack, stroke or angina reported by the participant, was considered as an identifier. Table \ref{tab:patients} outlines the distribution of patient classification used in this study. In order to construct a binary classifier for this study, the subjects categorized under the `{DMI}' and `{DMI+CVD}' were encoded as the positive class whereas the `{Healthy}' labels were the negative class. We restricted the classification to only two classes and the samples with the label `{CVD}' were ignored.
 %
 \begin{table}[!h]
+  \centering
+  \renewcommand{\arraystretch}{1.3}
   \caption{The classification of the \num[group-minimum-digits=4, group-separator = {,}]{1496} subjects used in this study}
   % \vspace{-4mm}%Put here to reduce too much white space after table
   \centering
@@ -261,14 +262,10 @@ At the follow-up assessment, the participants were classified as having type 2 d
     \midrule \midrule
     \num[group-minimum-digits=4, group-separator = {,}]{1,281} & \num{161} & \num{44} & \num{10}\\
     \SI{85.63}{\percent} & \SI{10.76}{\percent} & \SI[round-precision=3]{2.94}{\percent} & \SI[round-precision=2]{0.67}{\percent} \\
-    \bottomrule \\
+    \bottomrule
   \end{tabular}
   \label{tab:patients}
-  % \vspace{-8mm}%Put here to reduce too much white space after table
 \end{table}
-%
-% needed in second column of first page if using \IEEEpubid
-%\IEEEpubidadjcol
 %
 \subsection{Preparation of the Data}
 %
@@ -374,6 +371,8 @@ where $p_{i}$, and $p_{j}$ are the probabilities of the random variables $x$ and
 where $\mathcal I$ follows its definition in \eqref{eq:MI}. By minimizing $\mathcal R$, the mRMR framework selects a set of mutually exclusive features that are most relevant to the class label. Here, we first shortlist a set of ten features that are strong predictors of the future development of type 2 diabetes, on the basis of yielding maximum $\mathcal{I}$ with respect to the diabetic class. The application of the mRMR algorithm produces the features that are listed in Table \ref{tab:ranked} that are ranked in order of their relevance. The prefixes $AuC$ and $Sl$ denote the area under the curve and slope respectively, and the OGTT time interval corresponding to the feature appears in the subscripts.
 %
 \begin{table}[!h]
+  \centering
+  \renewcommand{\arraystretch}{1.3}
   \caption{List of ten most relevant features ranked by the mRMR algorithm}
   % \vspace{-4mm}%Put here to reduce too much white space after table
   \centering
@@ -401,6 +400,8 @@ where $\mathcal I$ follows its definition in \eqref{eq:MI}. By minimizing $\math
 In the second phase, we further refined the number of variables to four by only selecting the ones which provided the best performance using the SVM classification scheme with the parameters $C$ and $\gamma$ preconfigured to a value of \num{1}. For this purpose, we employed the accuracy achieved in the validation set as the evaluation criterion. Table \ref{tab:best_features} shows the mean validation accuracies of the variables which is  obtained by performing \num{100} iterations of the SVM classifier supplied with only one variable at a time.
 %
 \begin{table}[!htbp]
+  \centering
+  \renewcommand{\arraystretch}{1.3}
   \caption{Average performance of the individual features gauged by the accuracy}
   \sisetup{
   round-mode = places,
@@ -409,7 +410,7 @@ In the second phase, we further refined the number of variables to four by only 
   \centering
   \begin{tabular}{c c c}
     \toprule
-    Features &  Mean Accuracy (Standard Deviation)\\
+    Features &  Mean Accuracy (SD)\\
     \midrule \midrule
     \rowcolor{green!25} AuC-Glu\textsubscript{60-120}	& \num{0.973085106382978}	(\num{0.0133930614140817})\\
     \rowcolor{green!25} PG\textsubscript{120}	& \num{0.971276595744680}	(\num{0.0150827692653638})\\
@@ -450,10 +451,159 @@ where TP and FN refer to the number of correctly and incorrectly classified diab
 %
 %
 
-
-
-
-
+% LIN BAL
+% ans =
+%     0.7855    0.7815    0.7873    0.7867
+% ans =
+%     0.0138    0.0153    0.0139    0.0139
+% ans =
+%     0.7761    0.7780    0.7777    0.7764
+% ans =
+%     0.0126    0.0130    0.0118    0.0113
+% ans =
+%     0.7948    0.7849    0.7969    0.7970
+% ans =
+%     0.0211    0.0229    0.0228    0.0231
+%
+% LIN UNBAL
+% ans =
+%     0.7973    0.7868    0.7974    0.7969
+% ans =
+%     0.0045    0.0038    0.0043    0.0045
+% ans =
+%     0.7774    0.7778    0.7781    0.7776
+% ans =
+%     0.0093    0.0090    0.0092    0.0090
+% ans =
+%     0.7999    0.7880    0.8000    0.7994
+% ans =
+%     0.0044    0.0039    0.0041    0.0044
+%
+% SVM-RBF BAL
+% ans =
+%     0.7881    0.7852    0.7895    0.7869
+% ans =
+%     0.0175    0.0175    0.0187    0.0173
+% ans =
+%     0.7843    0.7864    0.7907    0.7798
+% ans =
+%     0.0201    0.0163    0.0216    0.0198
+% ans =
+%     0.7918    0.7841    0.7884    0.7941
+% ans =
+%     0.0252    0.0258    0.0261    0.0246
+%
+% SVM-RBF UNBAL
+% ans =
+%     0.7851    0.7791    0.7845    0.7790
+% ans =
+%     0.0075    0.0094    0.0060    0.0070
+% ans =
+%     0.7813    0.7800    0.7831    0.7850
+% ans =
+%     0.0132    0.0097    0.0186    0.0119
+% ans =
+%     0.7857    0.7790    0.7847    0.7782
+% ans =
+%     0.0096    0.0114    0.0079    0.0077
+%
+\begin{table}[!h]
+  \centering
+  \tiny
+  \renewcommand{\arraystretch}{1.3}
+  \caption{Mean Training performance of the classifiers}
+  \centering
+  \begin{tabularx}{.85\columnwidth}{c c c c}
+    \toprule
+     &  Accuracy (SD) & Hit Rate (SD) & Specificity (SD)\\
+    \midrule \midrule
+    Linear SVM (Balanced) & \SI{78.73}{\percent} (\num{0.014}) & \SI{77.77}{\percent} (\num{0.012}) & \SI{79.69}{\percent} (\num{0.023})\\
+    Linear SVM (Unbalanced) & \SI{79.74}{\percent} (\num{0.0043}) & \SI{77.81}{\percent} (\num{0.009}) & \SI{80.00}{\percent} (\num{0.004}) \\
+    SVM-RBF (Balanced) & \SI{78.95}{\percent} (\num{0.019}) & \SI{79.07}{\percent} (\num{0.022}) & \SI{78.84}{\percent} (\num{0.026})\\
+    SVM-RBF (Unbalanced) & \SI{78.51}{\percent} (\num{0.008}) & \SI{78.13}{\percent} (\num{0.013}) & \SI{78.57}{\percent} (\num{ 0.010})\\
+    \bottomrule \\
+  \end{tabularx}
+  \label{tab:training}
+  % \vspace{-8mm}%Put here to reduce too much white space after table
+\end{table}
+%
+%
+% LIN BAL
+% ans =
+%     0.9711    0.9729    0.9715    0.9710
+% ans =
+%     0.0147    0.0140    0.0146    0.0146
+% ans =
+%     0.7527    0.7682    0.7564    0.7518
+% ans =
+%     0.1253    0.1194    0.1245    0.1252
+% ans =
+%      1     1     1     1
+% ans =
+%      0     0     0     0
+%
+% LIN UNBAL
+% ans =
+%     0.9661    0.9719    0.9655    0.9663
+% ans =
+%     0.0183    0.0154    0.0188    0.0180
+% ans =
+%     0.7664    0.7682    0.7645    0.7691
+% ans =
+%     0.1287    0.1268    0.1280    0.1282
+% ans =
+%     0.9925    0.9989    0.9922    0.9924
+% ans =
+%     0.0097    0.0039    0.0099    0.0096
+%
+% RBF BAL
+% ans =
+%     0.9761    0.9760    0.9762    0.9754
+% ans =
+%     0.0151    0.0143    0.0148    0.0148
+% ans =
+%     0.7955    0.7945    0.7964    0.7900
+% ans =
+%     0.1295    0.1223    0.1267    0.1264
+% ans =
+%      1     1     1     1
+% ans =
+%      0     0     0     0
+%
+% RBF UNBAL
+% ans =
+%     0.9819    0.9830    0.9851    0.9840
+% ans =
+%     0.0167    0.0135    0.0135    0.0144
+% ans =
+%     0.8545    0.8545    0.8727    0.8636
+% ans =
+%     0.1227    0.1150    0.1150    0.1231
+% ans =
+%     0.9988    1.0000    1.0000    1.0000
+% ans =
+%     0.0038         0         0         0
+%
+\begin{table}[!h]
+  \centering
+  \tiny
+  \renewcommand{\arraystretch}{1.3}
+  \caption{ Mean Training performance classifiers}
+  \centering
+  \begin{tabularx}{.85\columnwidth}{c c c c}
+    \toprule
+     &  Accuracy (SD) & Hit Rate (SD) & Specificity (SD)\\
+    \midrule \midrule
+    Linear SVM (Balanced) & \SI{97.29}{\percent} (\num{0.014}) & \SI{76.82}{\percent} (\num{0.119}) & \SI{100}{\percent} (\num{0})\\
+    Linear SVM (Unbalanced) & \SI{97.19}{\percent} (\num{0.015}) & \SI{76.82}{\percent} (\num{0.127}) & \SI{99.89}{\percent} (\num{0.004}) \\
+    SVM-RBF (Balanced) & \SI{97.62}{\percent} (\num{0.015}) & \SI{79.64}{\percent} (\num{0.127}) & \SI{100}{\percent} (\num{0})\\
+    SVM-RBF (Unbalanced) & \SI{98.51}{\percent} (\num{0.014}) & \SI{87.27}{\percent} (\num{0.115}) & \SI{100}{\percent} (\num{0})\\
+    \bottomrule \\
+  \end{tabularx}
+  \label{tab:validation}
+  % \vspace{-8mm}%Put here to reduce too much white space after table
+\end{table}
+%
 1. Balanced Training -> Unbalanced Validation
 2. Unbalanced Training -> UnBalanced Validation
 %
@@ -462,7 +612,6 @@ The estimated performance is averaged over all the folds
 100 iterations to remove any randomized errors
 grid search of the best parameters C and gamma
 %
-
 % cc_AuG60_120,acc_PG120, acc_PG60,...
 % acc_AuG0_120, acc_AuG30_120,...
 % acc_SlG60_0, acc_SlG120_0
@@ -482,235 +631,52 @@ grid search of the best parameters C and gamma
 % 0.0254033135631271
 % 0.0261206217319048
 %
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-% An example of a floating figure using the graphicx package.
-% Note that \label must occur AFTER (or within) \caption.
-% For figures, \caption should occur after the \includegraphics.
-% Note that IEEEtran v1.7 and later has special internal code that
-% is designed to preserve the operation of \label within \caption
-% even when the captionsoff option is in effect. However, because
-% of issues like this, it may be the safest practice to put all your
-% \label just after \caption rather than within \caption{}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
-% option should be used if it is desired that the figures are to be
-% displayed while in draft mode.
-%
-%\begin{figure}[!t]
-%\centering
-%\includegraphics[width=2.5in]{myfigure}
-% where an .eps filename suffix will be assumed under latex,
-% and a .pdf suffix will be assumed for pdflatex; or what has been declared
-% via \DeclareGraphicsExtensions.
-%\caption{Simulation results for the network.}
-%\label{fig_sim}
-%\end{figure}
-
-% Note that the IEEE typically puts floats only at the top, even when this
-% results in a large percentage of a column being occupied by floats.
-
-
-% An example of a double column floating figure using two subfigures.
-% (The subfig.sty package must be loaded for this to work.)
-% The subfigure \label commands are set within each subfloat command,
-% and the \label for the overall figure must come after \caption.
-% \hfil is used as a separator to get equal spacing.
-% Watch out that the combined width of all the subfigures on a
-% line do not exceed the text width or a line break will occur.
-%
-%\begin{figure*}[!t]
-%\centering
-%\subfloat[Case I]{\includegraphics[width=2.5in]{box}%
-%\label{fig_first_case}}
-%\hfil
-%\subfloat[Case II]{\includegraphics[width=2.5in]{box}%
-%\label{fig_second_case}}
-%\caption{Simulation results for the network.}
-%\label{fig_sim}
-%\end{figure*}
-%
-% Note that often IEEE papers with subfigures do not employ subfigure
-% captions (using the optional argument to \subfloat[]), but instead will
-% reference/describe all of them (a), (b), etc., within the main caption.
-% Be aware that for subfig.sty to generate the (a), (b), etc., subfigure
-% labels, the optional argument to \subfloat must be present. If a
-% subcaption is not desired, just leave its contents blank,
-% e.g., \subfloat[].
-
-
-% An example of a floating table. Note that, for IEEE style tables, the
-% \caption command should come BEFORE the table and, given that table
-% captions serve much like titles, are usually capitalized except for words
-% such as a, an, and, as, at, but, by, for, in, nor, of, on, or, the, to
-% and up, which are usually not capitalized unless they are the first or
-% last word of the caption. Table text will default to \footnotesize as
-% the IEEE normally uses this smaller font for tables.
-% The \label must come after \caption as always.
-%
-%\begin{table}[!t]
-%% increase table row spacing, adjust to taste
-%\renewcommand{\arraystretch}{1.3}
-% if using array.sty, it might be a good idea to tweak the value of
-% \extrarowheight as needed to properly center the text within the cells
-%\caption{An Example of a Table}
-%\label{table_example}
-%\centering
-%% Some packages, such as MDW tools, offer better commands for making tables
-%% than the plain LaTeX2e tabular which is used here.
-%\begin{tabular}{|c||c|}
-%\hline
-%One & Two\\
-%\hline
-%Three & Four\\
-%\hline
-%\end{tabular}
-%\end{table}
-
-
-% Note that the IEEE does not put floats in the very first column
-% - or typically anywhere on the first page for that matter. Also,
-% in-text middle ("here") positioning is typically not used, but it
-% is allowed and encouraged for Computer Society conferences (but
-% not Computer Society journals). Most IEEE journals/conferences use
-% top floats exclusively.
-% Note that, LaTeX2e, unlike IEEE journals/conferences, places
-% footnotes above bottom floats. This can be corrected via the
-% \fnbelowfloat command of the stfloats package.
-
-
-
 \section{Conclusion}
 The conclusion goes here.
-
-
-
-
-
-% if have a single appendix:
-%\appendix[Proof of the Zonklar Equations]
-% or
-%\appendix  % for no appendix heading
-% do not use \section anymore after \appendix, only \section*
-% is possibly needed
-
-% use appendices with more than one appendix
-% then use \section to start each appendix
-% you must declare a \section before using any
-% \subsection or using \label (\appendices by itself
-% starts a section numbered zero.)
 %
-% use section* for acknowledgment
+%
+%
+%
 \section*{Acknowledgment}
 %
 This publication was made possible by NPRP grant number NPRP 10-1231-160071 from the Qatar National Research Fund (a member of Qatar Foundation). The statements made herein are solely the responsibility of the authors.
-
-
+%
+%
 % Can use something like this to put references on a page
 % by themselves when using endfloat and the captionsoff option.
 \ifCLASSOPTIONcaptionsoff
 \newpage
 \fi
-
-
-
-% trigger a \newpage just before the given reference
-% number - used to balance the columns on the last page
-% adjust value as needed - may need to be readjusted if
-% the document is modified later
-%\IEEEtriggeratref{8}
-% The "triggered" command can be changed if desired:
-%\IEEEtriggercmd{\enlargethispage{-5in}}
-
-% references section
-
-% can use a bibliography generated by BibTeX as a .bbl file
-% BibTeX documentation can be easily obtained at:
-% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
-% The IEEEtran BibTeX style support page is at:
-% http://www.michaelshell.org/tex/ieeetran/bibtex/
-%\bibliographystyle{IEEEtran}
-% argument is your BibTeX string definitions and bibliography database(s)
-%\bibliography{IEEEabrv,../bib/paper}
-%
-% <OR> manually copy in the resultant .bbl file
-% set second argument of \begin to the number of references
-% (used to reserve space for the reference number labels box)
 % \balance
 \bibliographystyle{IEEEtran}
 % \bibliographystyle{ieeetr}
 % \atColsEnd{\vfil}
 % argument is your BibTeX string definitions and bibliography database(s)
 \bibliography{References}
-
-% \begin{thebibliography}{1}
-
-% \bibitem{IEEEhowto:kopka}
-% H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
-%   0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
-
-% \end{thebibliography}
-
-% biography section
 %
-% If you have an EPS/PDF photo (graphicx package needed) extra braces are
-% needed around the contents of the optional argument to biography to prevent
-% the LaTeX parser from getting confused when it sees the complicated
-% \includegraphics command within an optional argument. (You could create
-% your own custom macro containing the \includegraphics command to make things
-% simpler here.)
-%\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
-% or if you just want to reserve a space for a photo:
-
+%
 \begin{IEEEbiography}{Michael Shell}
   Biography text here.
 \end{IEEEbiography}
-
+%
 % if you will not have a photo at all:
 \begin{IEEEbiographynophoto}{John Doe}
   Biography text here.
 \end{IEEEbiographynophoto}
-
+%
 % insert where needed to balance the two columns on the last page with
 % biographies
 %\newpage
-
+%
 \begin{IEEEbiographynophoto}{Jane Doe}
   Biography text here.
 \end{IEEEbiographynophoto}
-
+%
 % You can push biographies down or up by placing
 % a \vfill before or after them. The appropriate
 % use of \vfill depends on what kind of text is

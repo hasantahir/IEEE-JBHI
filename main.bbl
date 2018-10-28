@@ -60,7 +60,7 @@ M.~A. Abdul-Ghani, K.~Williams, R.~A. DeFronzo, and M.~Stern,
 M.~A. Abdul-Ghani, V.~Lyssenko, T.~Tuomi, R.~A. DeFronzo, and L.~Groop,
   ``Fasting versus postload plasma glucose concentration and the risk for
   future type 2 diabetes: results from the botnia study,'' \emph{Diabetes
-  care}, vol.~32, no.~2, pp. 281--286, 2009.
+  Care}, vol.~32, no.~2, pp. 281--286, 2009.
 
 \bibitem{abdul-ghani_shape_2010}
 ------, ``\BIBforeignlanguage{en}{The shape of plasma glucose concentration
@@ -76,7 +76,7 @@ M.~A. Abdul-Ghani and R.~A. DeFronzo, ``\BIBforeignlanguage{en}{Plasma
 
 \bibitem{noble2011risk}
 D.~Noble, R.~Mathur, T.~Dent, C.~Meads, and T.~Greenhalgh, ``Risk models and
-  scores for type 2 diabetes: systematic review,'' \emph{Bmj}, vol. 343, p.
+  scores for type 2 diabetes: systematic review,'' \emph{BMJ}, vol. 343, p.
   d7163, 2011.
 
 \bibitem{Heikes1040}
@@ -103,7 +103,7 @@ L.~Han, S.~Luo, J.~Yu, L.~Pan, and S.~Chen, ``Rule {Extraction} {From}
 \bibitem{stern2002identification}
 M.~P. Stern, K.~Williams, and S.~M. Haffner, ``Identification of persons at
   high risk for type 2 diabetes mellitus: do we need the oral glucose tolerance
-  test?'' \emph{Annals of internal medicine}, vol. 136, no.~8, pp. 575--581,
+  test?'' \emph{Annals of Internal Medicine}, vol. 136, no.~8, pp. 575--581,
   2002.
 
 \bibitem{abdul-ghani_two-step_2011}
@@ -174,13 +174,13 @@ B.~C. Ross, ``Mutual information between discrete and continuous data sets,''
 
 \bibitem{trunk1979problem}
 G.~V. Trunk, ``A problem of dimensionality: A simple example,'' \emph{IEEE
-  Transactions on pattern analysis and machine intelligence}, no.~3, pp.
+  Transactions on Pattern Analysis and Machine Intelligence}, no.~3, pp.
   306--307, 1979.
 
 \bibitem{mRMR}
 H.~Peng, F.~Long, and C.~Ding, ``Feature selection based on mutual information:
   criteria of max-dependency, max-relevance, and min-redundancy,'' \emph{IEEE
-  Transactions on pattern analysis and machine intelligence}, pp. 1226--1238,
+  Transactions on Pattern Analysis and Machine Intelligence}, pp. 1226--1238,
   2005.
 
 \end{thebibliography}

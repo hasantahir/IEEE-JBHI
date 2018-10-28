@@ -22,7 +22,7 @@
 % manually specify the path to it like:
 % \documentclass[journal,comsoc]{../sty/IEEEtran}
 
-
+\newcommand\notsotiny{\@setfontsize\notsotiny{6}{7}}
 \usepackage[T1]{fontenc}% optional T1 font encoding
 
 % Some very useful LaTeX packages include:
@@ -68,7 +68,8 @@ font={\fontsize{8pt}{8}\selectfont}}
 %% the following commands are sometimes needed
 \usepackage{grffile}
 \usepackage{mathtools}
-\usepackage{siunitx}
+\usepackage[separate-uncertainty = true,
+  multi-part-units = repeat]{siunitx}
 \sisetup{per=slash, load=abbr, output-complex-root = j, complex-root-position = before-number}
 
 % *** CITATION PACKAGES ***
@@ -192,7 +193,7 @@ of Electrical and Computer Engineering, Texas A\&M University at Qatar, Doha 238
 % As a general rule, do not put math, special symbols or citations
 % in the abstract or keywords.
 \begin{abstract}
-  We present a prediction model that assesses the future risk of developing type 2 diabetes mellitus (T2DM). We use the oral glucose tolerance test (OGTT) data collected from a group of 1,551  healthy subjects to construct a machine learning model employing the support vector machines. We trained and validated the models on the data obtained from the second cohort of the San Antonio Heart Study, using a set of four features derived from the glucose measurements in the OGTT. The results of the proposed scheme show an average validation accuracy of 97.23\% and a hit rate of 77.27\%. The results also show that the plasma glucose based features are the strongest predictors of the future development of T2DM.
+  We present a prediction model that assesses the future risk of developing type 2 diabetes mellitus (T2DM). We used the oral glucose tolerance test (OGTT) data collected from a group of 1,551  healthy subjects to construct a machine learning model employing the support vector machines. We trained and validated the models on the data obtained from the second cohort of the San Antonio Heart Study, using four features derived from the glucose measurements in the OGTT. We show that by only using the plasma glucose features, a personsprediction accuracy of 97.23\% The results of the proposed scheme show an average validation accuracy of 97.23\% and a hit rate of 77.27\%. The results also show that the plasma glucose based features are the strongest predictors of the future development of T2DM.
 \end{abstract}
 %
 % Note that keywords are not normally used for peer-review papers.
@@ -232,9 +233,9 @@ of Electrical and Computer Engineering, Texas A\&M University at Qatar, Doha 238
 %
 %
 %%% TALK ABOUT GLUCOSE TOLERANCE
-The presumption of delaying or even preventing the future development of future diabetes is backed by experimental evidence \cite{tuomilehto2001prevention}, provided the person undergoes a lifestyle change that includes managing diet and incorporating exercise, and adheres to a medical treatment. Moreover, one of the first signs of diabetes is the impaired glucose tolerance (IGT) in which the blood sugar level rises beyond the normal levels defined by the World Health Organization (WHO) and the American Diabetes Association (AMA). The oral glucose tolerance test (OGTT) is commonly used to screen the individuals that have IGT, and are at an increased risk of developing diabetes in the future. In an OGTT, the blood glucose and insulin levels are periodically recorded in a \SI{2}{\hour} period from a person that has undergone an overnight fast and administered a standard concentration of glucose. The outcomes of the OGTT provide useful information on the IGT, as well as any impairment in the insulin function of the body.
+The presumption of delaying or even preventing the future development of future diabetes is backed by experimental evidence \cite{tuomilehto2001prevention}, provided the person undergoes a lifestyle change that includes managing diet and incorporating exercise, and adheres to a pharmacological treatment. Moreover, one of the indicators of the early stages of diabetes is the impaired glucose tolerance (IGT) in which the blood sugar level rises beyond the normal levels defined by the World Health Organization (WHO) and the American Diabetes Association (AMA). Oral glucose tolerance test (OGTT) is recommended by the WHO as a diagnostic tool in which the prevalence of diabetes is indicated by an abnormally high blood glucose level at the \SI{2}{\hour}. It can also assist in screening the individuals that have IGT, and are at an increased risk of developing diabetes in the future. In an OGTT, the blood glucose and insulin levels are periodically recorded in a \SI{2}{\hour} period from a person that has undergone an overnight fast and administered a standard concentration of glucose. The outcomes of the OGTT provide useful information on the IGT, as well as any impairment in the insulin function of the body.
 
-On the contrary, studies have indicated that only \SI{50}{\percent} of subjects with IGT went on to develop diabetes within a span of \num{10} years \cite{shaw_impaired_1999, writing_committee_impaired_2002}. Furthermore, long-term population studies have shown that around \SI{50}{\percent} future diabetic subjects did not exhibit IGT at all \cite{abdul-ghani_what_2007}. Previously, it has been shown that as compared to the IGT, the glucose concentrations at the \SI{1}{\hour} and \SI{2}{\hour} intervals during the OGTT, correlate more to the future diabetes risk \cite{abdul2009fasting,abdul-ghani_shape_2010,abdul-ghani_plasma_2009}.
+On the contrary, studies have indicated that only \SI{50}{\percent} of subjects with IGT went on to develop diabetes within a span of \num{10} years \cite{shaw_impaired_1999, writing_committee_impaired_2002}. Furthermore, long-term population studies have shown that around \SI{50}{\percent} future diabetic subjects did not exhibit IGT at all \cite{abdul-ghani_what_2007}. Previously, it has been shown that compared to the IGT, the glucose concentrations at the \SI{1}{\hour} and \SI{2}{\hour} intervals in an OGTT correlate more to the future diabetes risk \cite{abdul2009fasting,abdul-ghani_shape_2010,abdul-ghani_plasma_2009}.
 
 Research studies that assess diabetes can be broadly categorized into two themes, first of which deals with the objective to detect any undiagnosed state of diabetes, and the second that aims to identify the person that are high risk of developing diabetes in the future \cite{noble2011risk}. The clinical significance of such investigations depends upon the data collection methods. Certain studies rely on collecting socio-demographic characteristics such as age, ethnicity, body mass index (BMI) and genealogical information through conducting population surveys, and then assign a probability to individuals of having diabetes \cite{Heikes1040,Glumer727}.  However, such self-assessment techniques can often be misleading and can not be relied upon. On the other hand, the outcomes of the diabetes related studies that involve physiological data such as blood samples collected in a laboratory environment provide an accurate clinical insight. We can further divide these types of enquiries into two types, namely, the screening  of undiagnosed diabetes, and the future prediction of diabetes. The former category has seen an increased amount of research interest in the last ten years. Using statistical and machine learning techniques, various researchers have developed \emph{risk models} for diabetes screening. In \cite{barakat_intelligible_2010}, support vector machine (SVM) framework was employed for the diagnosis of diabetes that also incorporated a tree-based decision making algorithm. A rule-based ensemble method combining SVM and random forest (RF) classifiers was used to detect diabetes in \cite{han_rule_2015} which provided an added comprehensibility of the classification mechanism.
 
@@ -342,8 +343,8 @@ as the kernel where $\sigma$ is a free parameter. During the training, we tuned 
 For a linear variant of the SVM, the classifier can expressed without any coordinate mappings,
 %
 \begin{equation}
-    \mathcal F^{\mathrm{lin}} = \mathrm{sign} \left( x^T \beta^{\mathrm{lin}} + \beta^{\mathrm{lin}}_0 \right).
-    \label{eq:lin_classifier}
+  \mathcal F^{\mathrm{lin}} = \mathrm{sign} \left( x^T \beta^{\mathrm{lin}} + \beta^{\mathrm{lin}}_0 \right).
+  \label{eq:lin_classifier}
 \end{equation}
 %
 %%%%%%%%%%%%%%%%%%%%
@@ -398,7 +399,7 @@ where $\mathcal I$ follows its definition in \eqref{eq:MI}. By minimizing $\math
 %
 
 In the second phase, we further refined the number of variables to four by only selecting the ones which provided the best performance using the SVM classification scheme with the parameters $C$ and $\gamma$ preconfigured to a value of \num{1}. For this purpose, we employed the accuracy achieved in the validation set as the evaluation criterion. Table \ref{tab:best_features} shows the mean validation accuracies of the variables which is  obtained by performing \num{100} iterations of the SVM classifier supplied with only one variable at a time.
-%
+%++
 \begin{table}[!htbp]
   \centering
   \renewcommand{\arraystretch}{1.3}
@@ -433,7 +434,7 @@ In the second phase, we further refined the number of variables to four by only 
 %
 \section{Data Experiments}
 %
-In this paper, we employed the non-linear SVM \eqref{eq:classifier} in the form of radial basis functions (RBF) \eqref{eq:rbf} since the classes can not be linearly separated directly as observed in Fig. \ref{fig:ogtt_mean}. We also used the linear variant of the SVM \eqref{eq:lin_classifier} to compare the classifier performances. Moreover, due to the unbalanced nature of the dataset, we conducted two experiments in the preprocessing phase. In the first the dataset was balanced where we randomly undersampled the majority class, and  took \num{160} instances from each class for the training. In the second experiment, we retained the class ratio of the data set and took \num[group-minimum-digits=4, group-separator = {,}]{1360} samples to generate the training set that contained \num{160} and \num[group-minimum-digits=4, group-separator = {,}]{1200} instances of the diabetic and healthy classes respectively. In order to ensure that the model remained unbiased and generalized well to new data, we performed \num{10}-fold cross-validation during the training and the performance obtained was averaged over all the \num{10} folds. All the experiments were carried out using the statistical and machine learning toolbox of Matlab and the data was normalized prior to the training. The optimal hyperplane parameters $C$ and $\sigma$ in \eqref{eq:min} and \eqref{eq:rbf} respectively corresponded to the `BoxConstraint' and `Gamma' arguments that were set to \num{1.0} and \num{5.0} respectively. These values were obtained through a grid search with a view to maximize the classifier hit rate defined as,
+In this paper, we employed the non-linear SVM \eqref{eq:classifier} in the form of radial basis functions (RBF) \eqref{eq:rbf} since the classes can not be linearly separated directly as observed in Fig. \ref{fig:ogtt_mean}. We also used the linear variant of the SVM \eqref{eq:lin_classifier} to compare the classifier performances. Moreover, due to the unbalanced nature of the dataset, we conducted two experiments in the preprocessing phase. In the first the dataset was balanced where we randomly undersampled the majority class, and  took \num{160} instances from each class for the training. In the second experiment, we retained the class ratio of the data set and took \num[group-minimum-digits=4, group-separator = {,}]{1360} samples to generate the training set that contained \num{160} and \num[group-minimum-digits=4, group-separator = {,}]{1200} instances of the diabetic and healthy classes respectively. In order to ensure that the model remained unbiased and generalized well to new data, we performed \num{10}-fold cross-validation during the training and the performance obtained was averaged over all the \num{10} folds. All the experiments were carried out using the statistical and machine learning toolbox of Matlab and the data was normalized prior to the training. The optimal hyperplane parameters $C$ and $\sigma$ in \eqref{eq:min} and \eqref{eq:rbf} respectively were determined through a grid search with a view to maximize the classifier hit rate defined as,
 %
 \begin{equation}
   \mathrm{Hit~Rate} = \frac{\mathrm{TP}}{\mathrm{TP} + \mathrm{FN}},
@@ -442,15 +443,36 @@ In this paper, we employed the non-linear SVM \eqref{eq:classifier} in the form 
 where TP and FN refer to the number of correctly and incorrectly classified diabetic subjects respectively.
 %
 %
+\begin{table}[!t]
+  \centering
+  \tiny
+  \renewcommand{\arraystretch}{1.3}
+  \caption{Mean Training performance of the classifiers}
+  \centering
+  \begin{tabularx}{.95\columnwidth}{c c c c}
+    \toprule
+    &  Accuracy \textpm ~SD & Hit Rate \textpm ~SD & Specificity \textpm ~SD\\
+    \midrule \midrule
+    Linear SVM (Balanced) & \SI{78.73 \pm 1.4}{\percent} & \SI{77.77 \pm 1.2}{\percent} & \SI{79.69 \pm 2.3}{\percent} \\
+    Linear SVM (Unbalanced) & \SI{79.74 \pm 0.43}{\percent} & \SI{77.81 \pm 0.9}{\percent} & \SI{80.00 \pm 0.4}{\percent} \\
+    SVM-RBF (Balanced) & \SI{78.95 \pm 1.9}{\percent} & \SI{79.07 \pm 2.2}{\percent} & \SI{78.84 \pm 2.6}{\percent} \\
+    SVM-RBF (Unbalanced) & \SI{78.51 \pm .8}{\percent} & \SI{78.13 \pm 1.3}{\percent} & \SI{78.57 \pm 1.0}{\percent} \\
+    \bottomrule
+  \end{tabularx}
+  \label{tab:training}
+  % \vspace{-8mm}%Put here to reduce too much white space after table
+\end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-\section{Results}
+\section{Results and Discussion}
 %
 %
+In order to correctly predict the future diabetes subjects, the model was trained to maximize the recall or hit rate during the training. To train the predictor model, we used four features, all of which were derived from the blood glucose measurements. Table \ref{tab:training} presents the mean training performance of the linear and non-linear SVM classifiers obtained over \num{100} trials. We used the definition of accuracy as the ratio of number of correctly classified subjects to the total number of subjects, whereas the specificity was the ratio of the correctly classified healthy subjects to the total number of healthy subjects. Most notably, the similarity in the performance for balanced and unbalanced training routines demonstrates that the model in the latter case unbiased toward the majority class. The optimal hyperplane parameters corresponding to the Matlab arguments `BoxConstraint' and `Gamma', were respectively assigned the values of \num{1.0} and \num{5.0}. For the linear version of the SVM, an average of \num{250} and \num[group-minimum-digits=4, group-separator = {,}]{1114} support vectors were used to construct the hyperplane for the balanced and unbalanced datasets respectively. On the other hand, the corresponding values were \num{278} and \num[group-minimum-digits=4, group-separator = {,}]{1198} for the nonlinear SVM with the RBF as the kernel. It should be noted that the difference in the dimensionality of the hyperplanes between the two variants of the SVM is not large, which indicates that the discriminating power of the features used.
 
+Table \ref{tab:validation} displays the validation performance of the classifiers. All the model were validated on a hold-out set \num{100} times set, in which each iteration resulted in a randomly generated set of \num{11} diabetic and \num{83} healthy samples, that were not part of the training data. The best mean performance of \SI{98.51}{\percent} accuracy and  recall of \SI{87.27}{\percent} was obtained from the nonlinear SVM with the RBF kernel. The standard deviation of the two metrics along \num{100} iterations was \SI{1.40}{\percent} and \SI{11.50}{\percent} respectively. We also compared the results of our approach with two other techniques that used the SAHS dataset. The logistic regression based SADPM based on
 % LIN BAL
 % ans =
 %     0.7855    0.7815    0.7873    0.7867
@@ -477,8 +499,7 @@ where TP and FN refer to the number of correctly and incorrectly classified diab
 % ans =
 %     0.7999    0.7880    0.8000    0.7994
 % ans =
-%     0.0044    0.0039    0.0041    0.0044
-%
+%     0.0044    0.0039    0.0041    0.0044%
 % SVM-RBF BAL
 % ans =
 %     0.7881    0.7852    0.7895    0.7869
@@ -507,25 +528,7 @@ where TP and FN refer to the number of correctly and incorrectly classified diab
 % ans =
 %     0.0096    0.0114    0.0079    0.0077
 %
-\begin{table}[!h]
-  \centering
-  \tiny
-  \renewcommand{\arraystretch}{1.3}
-  \caption{Mean Training performance of the classifiers}
-  \centering
-  \begin{tabularx}{.85\columnwidth}{c c c c}
-    \toprule
-     &  Accuracy (SD) & Hit Rate (SD) & Specificity (SD)\\
-    \midrule \midrule
-    Linear SVM (Balanced) & \SI{78.73}{\percent} (\num{0.014}) & \SI{77.77}{\percent} (\num{0.012}) & \SI{79.69}{\percent} (\num{0.023})\\
-    Linear SVM (Unbalanced) & \SI{79.74}{\percent} (\num{0.0043}) & \SI{77.81}{\percent} (\num{0.009}) & \SI{80.00}{\percent} (\num{0.004}) \\
-    SVM-RBF (Balanced) & \SI{78.95}{\percent} (\num{0.019}) & \SI{79.07}{\percent} (\num{0.022}) & \SI{78.84}{\percent} (\num{0.026})\\
-    SVM-RBF (Unbalanced) & \SI{78.51}{\percent} (\num{0.008}) & \SI{78.13}{\percent} (\num{0.013}) & \SI{78.57}{\percent} (\num{ 0.010})\\
-    \bottomrule \\
-  \end{tabularx}
-  \label{tab:training}
-  % \vspace{-8mm}%Put here to reduce too much white space after table
-\end{table}
+
 %
 %
 % LIN BAL
@@ -584,33 +587,28 @@ where TP and FN refer to the number of correctly and incorrectly classified diab
 % ans =
 %     0.0038         0         0         0
 %
-\begin{table}[!h]
+\begin{table}[!t]
   \centering
   \tiny
   \renewcommand{\arraystretch}{1.3}
-  \caption{ Mean Training performance classifiers}
+  \caption{ Validation performance classifiers}
   \centering
-  \begin{tabularx}{.85\columnwidth}{c c c c}
+  \begin{tabularx}{.95\columnwidth}{c c c c}
     \toprule
-     &  Accuracy (SD) & Hit Rate (SD) & Specificity (SD)\\
+    &  Accuracy \textpm ~SD & Hit Rate \textpm ~SD & Specificity \textpm ~SD\\
     \midrule \midrule
-    Linear SVM (Balanced) & \SI{97.29}{\percent} (\num{0.014}) & \SI{76.82}{\percent} (\num{0.119}) & \SI{100}{\percent} (\num{0})\\
-    Linear SVM (Unbalanced) & \SI{97.19}{\percent} (\num{0.015}) & \SI{76.82}{\percent} (\num{0.127}) & \SI{99.89}{\percent} (\num{0.004}) \\
-    SVM-RBF (Balanced) & \SI{97.62}{\percent} (\num{0.015}) & \SI{79.64}{\percent} (\num{0.127}) & \SI{100}{\percent} (\num{0})\\
-    SVM-RBF (Unbalanced) & \SI{98.51}{\percent} (\num{0.014}) & \SI{87.27}{\percent} (\num{0.115}) & \SI{100}{\percent} (\num{0})\\
-    \bottomrule \\
+    Linear SVM (Balanced) & \SI{97.29 \pm 1.4}{\percent}  & \SI{76.82 \pm 11.9}{\percent}  & \SI{100}{\percent} \\
+    Linear SVM (Unbalanced) & \SI{97.19 \pm 1.5}{\percent} & \SI{76.82 \pm 12.70 }{\percent}  & \SI{99.89 \pm 0.4}{\percent} \\
+    SVM-RBF (Balanced) & \SI{97.62 \pm 1.5}{\percent} & \SI{79.64 \pm 12.70}{\percent}  & \SI{100}{\percent} \\
+    SVM-RBF (Unbalanced) & \SI{98.51 \pm 1.40}{\percent} & \SI{87.27 \pm 11.50}{\percent}  & \SI{100}{\percent} \\
+    Two-step Approach \cite{abdul-ghani_two-step_2011} & \SI{77.43}{\percent} & \SI{77.70}{\percent} & \SI{77.40}{\percent} \\
+    SADPM \cite{stern2002identification} & \SI{56.329}{\percent} & \SI{88.80}{\percent} & \SI{52.00}{\percent} \\
+    \bottomrule
   \end{tabularx}
   \label{tab:validation}
   % \vspace{-8mm}%Put here to reduce too much white space after table
 \end{table}
 %
-1. Balanced Training -> Unbalanced Validation
-2. Unbalanced Training -> UnBalanced Validation
-%
-Cross-validation
-The estimated performance is averaged over all the folds
-100 iterations to remove any randomized errors
-grid search of the best parameters C and gamma
 %
 % cc_AuG60_120,acc_PG120, acc_PG60,...
 % acc_AuG0_120, acc_AuG30_120,...
@@ -637,7 +635,11 @@ grid search of the best parameters C and gamma
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 \section{Conclusion}
-The conclusion goes here.
+%
+%
+In this paper, we developed a SVM prediction model to identify the persons that are an increased risk of developing type 2 diabetes in the future. We showed that a high prediction performance can be achieved by extracting information from a person's abnormally high blood glucose levels. The predictive power of our approach in terms of the accuracy and in particular the recall, is significantly greater than the similar techniques used previously.
+
+A drawback of this approach is the specialized nature of the oral glucose tolerance test generating the requisite data, which is expensive and invasive in which samples of the person's blood samples are taken more than once. However, we believe that the cost incurred and the associated inconvenience is compensated by the critical information obtained as a result through which a physician can recommend intervention measures to reduce or avoid the chances of having diabetes in the future.
 %
 %
 %

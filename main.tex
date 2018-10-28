@@ -69,7 +69,7 @@ font={\fontsize{8pt}{8}\selectfont}}
 \usepackage{grffile}
 \usepackage{mathtools}
 \usepackage[separate-uncertainty = true,
-  multi-part-units = repeat]{siunitx}
+multi-part-units = repeat]{siunitx}
 \sisetup{per=slash, load=abbr, output-complex-root = j, complex-root-position = before-number}
 
 % *** CITATION PACKAGES ***
@@ -124,7 +124,6 @@ font={\fontsize{8pt}{8}\selectfont}}
 
 \author{Hasan~Abbas,~
 Lejla~Alic,~
-Shafiqul~Islam,~
 Madhav~Erraguntla,~
 Muhammad Abdul-Ghani,~
 Qammer~Abbasi,~\IEEEmembership{Senior Member,~IEEE,}
@@ -133,10 +132,10 @@ and~Marwa~Qaraqe,~\IEEEmembership{Member,~IEEE}% <-this % stops a space
 of Electrical and Computer Engineering, Texas A\&M University at Qatar, Doha 23874 Qatar;  hasan.abbas@qatar.tamu.edu}% <-this % stops a space
 \thanks{L. Alic was with the Department
 of Electrical and Computer Engineering, Texas A\&M University at Qatar, Doha 23874 Qatar; lejlaresearch@gmail.com}% <-this % stops a space
-\thanks{S. Islam and M. Qaraqe are with the College of Science and Engineering, Hamad Bin Khalifa University Doha, Qatar}% <-this % stops a space
-\thanks{M. Erraguntla is with the Department of Industrial and Systems Engineering, Texas A\&M University, College Station, TX 77843}% <-this % stops a space
-\thanks{M. Abdul-Ghani is with the UT Health, San Antonio, TX 78229}% <-this %
-\thanks{Q. Abbasi is with the School of Engineering, University of Glasgow, UK}% <-this % stops a space
+\thanks{M. Erraguntla is with the Department of Industrial and Systems Engineering, Texas A\&M University, College Station, TX 77843; merraguntla@tamu.edu}% <-this % stops a space
+\thanks{M. Abdul-Ghani is with the UT Health, San Antonio, TX 78229; abdulghani@uthscsa.edu}% <-this %
+\thanks{Q. Abbasi is with the School of Engineering, University of Glasgow, UK; qammer.abbasi@glasgow.ac.uk}% <-this %
+\thanks{M. Qaraqe is with the College of Science and Engineering, Hamad Bin Khalifa University Doha, Qatar; mqaraqe@hbku.edu.qa}% <-this % stops a space stops a space
 \thanks{Manuscript received April 19, 2005; revised August 26, 2015.}}
 
 % note the % following the last \IEEEmembership and also \thanks -
@@ -193,7 +192,7 @@ of Electrical and Computer Engineering, Texas A\&M University at Qatar, Doha 238
 % As a general rule, do not put math, special symbols or citations
 % in the abstract or keywords.
 \begin{abstract}
-  We present a prediction model that assesses the future risk of developing type 2 diabetes mellitus (T2DM). We used the oral glucose tolerance test (OGTT) data collected from a group of 1,551  healthy subjects to construct a machine learning model employing the support vector machines. We trained and validated the models on the data obtained from the second cohort of the San Antonio Heart Study, using four features derived from the glucose measurements in the OGTT. We show that by only using the plasma glucose features, a personsprediction accuracy of 97.23\% The results of the proposed scheme show an average validation accuracy of 97.23\% and a hit rate of 77.27\%. The results also show that the plasma glucose based features are the strongest predictors of the future development of T2DM.
+We present a predictive tool that determines the future risk of developing type 2 diabetes mellitus (T2DM) through machine learning techniques. Data generated from an oral glucose tolerance test (OGTT) was used to develop a predictive model based on the support vector machines. We trained and validated the models on the data collected from a group of 1,551 healthy subjects part of the San Antonio Heart Study. In this paper, we show that just by using the information extracted from a person’s abnormal blood glucose levels, high predictive performance can be obtained. The results of our approach show an average accuracy of 98.51\% and recall of 87.27\% obtained on a holdout set.
 \end{abstract}
 %
 % Note that keywords are not normally used for peer-review papers.
@@ -233,9 +232,9 @@ of Electrical and Computer Engineering, Texas A\&M University at Qatar, Doha 238
 %
 %
 %%% TALK ABOUT GLUCOSE TOLERANCE
-The presumption of delaying or even preventing the future development of future diabetes is backed by experimental evidence \cite{tuomilehto2001prevention}, provided the person undergoes a lifestyle change that includes managing diet and incorporating exercise, and adheres to a pharmacological treatment. Moreover, one of the indicators of the early stages of diabetes is the impaired glucose tolerance (IGT) in which the blood sugar level rises beyond the normal levels defined by the World Health Organization (WHO) and the American Diabetes Association (AMA). Oral glucose tolerance test (OGTT) is recommended by the WHO as a diagnostic tool in which the prevalence of diabetes is indicated by an abnormally high blood glucose level at the \SI{2}{\hour}. It can also assist in screening the individuals that have IGT, and are at an increased risk of developing diabetes in the future. In an OGTT, the blood glucose and insulin levels are periodically recorded in a \SI{2}{\hour} period from a person that has undergone an overnight fast and administered a standard concentration of glucose. The outcomes of the OGTT provide useful information on the IGT, as well as any impairment in the insulin function of the body.
+There is experimental evidence behind the presumption can the development of diabetes can be delayed or even prevented \cite{tuomilehto2001prevention}, provided a person undergoes a lifestyle change that includes managing diet and incorporating exercise, and adheres to a pharmacological treatment. Moreover, one of the indicators of the early stages of diabetes is the impaired glucose tolerance (IGT) in which the blood sugar level rises beyond the normal levels defined by the World Health Organization (WHO) and the American Diabetes Association (AMA). Oral glucose tolerance test (OGTT) is recommended by the WHO as a diagnostic tool in which the prevalence of diabetes is indicated by an abnormally high blood glucose level at the \SI{2}{\hour}. It can also help screen the individuals that have IGT, and are at an increased risk of developing diabetes. In an OGTT, the blood glucose and insulin levels are periodically recorded in a \SI{2}{\hour} period from a person who has undergone an overnight fast and administered a standard concentration of glucose. The outcomes of the OGTT provide useful information on the IGT, and any impairment in the insulin function of the body.
 
-On the contrary, studies have indicated that only \SI{50}{\percent} of subjects with IGT went on to develop diabetes within a span of \num{10} years \cite{shaw_impaired_1999, writing_committee_impaired_2002}. Furthermore, long-term population studies have shown that around \SI{50}{\percent} future diabetic subjects did not exhibit IGT at all \cite{abdul-ghani_what_2007}. Previously, it has been shown that compared to the IGT, the glucose concentrations at the \SI{1}{\hour} and \SI{2}{\hour} intervals in an OGTT correlate more to the future diabetes risk \cite{abdul2009fasting,abdul-ghani_shape_2010,abdul-ghani_plasma_2009}.
+Some studies, on the other hand have shown that only \SI{50}{\percent} of subjects with IGT developed diabetes within \num{10} years \cite{shaw_impaired_1999, writing_committee_impaired_2002}. In addition, long-term population studies have shown that around \SI{50}{\percent} future diabetic subjects did not exhibit IGT at all \cite{abdul-ghani_what_2007}. Other studies concluded that as compared to the IGT, the glucose concentrations at the \SI{1}{\hour} and \SI{2}{\hour} intervals in an OGTT correlate better to the future diabetes risk \cite{abdul2009fasting,abdul-ghani_shape_2010,abdul-ghani_plasma_2009}.
 
 Research studies that assess diabetes can be broadly categorized into two themes, first of which deals with the objective to detect any undiagnosed state of diabetes, and the second that aims to identify the person that are high risk of developing diabetes in the future \cite{noble2011risk}. The clinical significance of such investigations depends upon the data collection methods. Certain studies rely on collecting socio-demographic characteristics such as age, ethnicity, body mass index (BMI) and genealogical information through conducting population surveys, and then assign a probability to individuals of having diabetes \cite{Heikes1040,Glumer727}.  However, such self-assessment techniques can often be misleading and can not be relied upon. On the other hand, the outcomes of the diabetes related studies that involve physiological data such as blood samples collected in a laboratory environment provide an accurate clinical insight. We can further divide these types of enquiries into two types, namely, the screening  of undiagnosed diabetes, and the future prediction of diabetes. The former category has seen an increased amount of research interest in the last ten years. Using statistical and machine learning techniques, various researchers have developed \emph{risk models} for diabetes screening. In \cite{barakat_intelligible_2010}, support vector machine (SVM) framework was employed for the diagnosis of diabetes that also incorporated a tree-based decision making algorithm. A rule-based ensemble method combining SVM and random forest (RF) classifiers was used to detect diabetes in \cite{han_rule_2015} which provided an added comprehensibility of the classification mechanism.
 

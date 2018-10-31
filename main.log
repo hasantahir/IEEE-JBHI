@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.13)  28 OCT 2018 16:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.10.13)  28 OCT 2018 17:05
 entering extended mode
 **./main.tex
 (main.tex
@@ -3198,37 +3198,37 @@ LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
 LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
 (Font)              scaled to size 5.5pt on input line 116.
 
-Underfull \hbox (badness 6047) in paragraph at lines 191--191
+Underfull \hbox (badness 6047) in paragraph at lines 190--190
 [][][]\T1/ntxtlf/m/n/8 H. Ab-bas is with the De-part-ment of Elec-tri-cal and C
 om-puter
  []
 
 
-Underfull \hbox (badness 4995) in paragraph at lines 191--191
+Underfull \hbox (badness 4995) in paragraph at lines 190--190
 \T1/ntxtlf/m/n/8 En-gi-neer-ing, Texas A&M Uni-ver-sity at Qatar, Doha 23874 Qa
 tar;
  []
 
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/sc' will be
-(Font)              scaled to size 10.0pt on input line 216.
+(Font)              scaled to size 10.0pt on input line 215.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 5.5pt on input line 243.
+(Font)              scaled to size 5.5pt on input line 242.
 [1{C:/Users/hasan.abbas/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
 ]
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 260.
+(Font)              scaled to size 8.0pt on input line 259.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.2pt on input line 260.
+(Font)              scaled to size 6.2pt on input line 259.
 LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 260.
+(Font)              scaled to size 7.19995pt on input line 259.
 LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 5.57996pt on input line 260.
+(Font)              scaled to size 5.57996pt on input line 259.
 LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
-(Font)              scaled to size 8.0pt on input line 260.
+(Font)              scaled to size 8.0pt on input line 259.
 LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
-(Font)              scaled to size 6.2pt on input line 260.
+(Font)              scaled to size 6.2pt on input line 259.
 
 (Figures/boxpl_glucose.tex)
 File: Figures/boxpl_glucose.tex Graphic file (type tex)
@@ -3236,15 +3236,15 @@ File: Figures/boxpl_glucose.tex Graphic file (type tex)
 File: Figures/boxpl_Insulin.tex Graphic file (type tex)
  [2] [3]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.2pt on input line 384.
+(Font)              scaled to size 6.2pt on input line 383.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\newtx\ts1ntxtlf.fd")
-Underfull \hbox (badness 10000) in alignment at lines 461--461
+Underfull \hbox (badness 10000) in alignment at lines 460--460
 [][][][] 
  []
 
 [4]
-Underfull \hbox (badness 10000) in alignment at lines 607--607
+Underfull \hbox (badness 10000) in alignment at lines 606--606
 [][][][] 
  []
 
@@ -3322,7 +3322,7 @@ Underfull \hbox (badness 10000) in alignment at lines 607--607
 Here is how much of TeX's memory you used:
  42658 strings out of 492970
  977013 string characters out of 3135836
- 1232601 words of memory out of 3000000
+ 1232666 words of memory out of 3000000
  45808 multiletter control sequences out of 15000+200000
  733420 words of font info for 214 fonts, out of 3000000 for 9000
  1144 hyphenation exceptions out of 8191
@@ -3345,7 +3345,7 @@ ic/newtx/txexs.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/txfonts/txmi
 a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/txfonts/txsyb.pfb><C:/Pro
 gram Files/MiKTeX 2.9/fonts/type1/public/newtx/txsys.pfb><C:/Program Files/MiKT
 eX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (6 pages, 229612 bytes).
+Output written on main.pdf (6 pages, 230156 bytes).
 PDF statistics:
  99 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

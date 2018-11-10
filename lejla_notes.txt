@@ -1,0 +1,44 @@
+Impaired glucose tolerance:
+
+The qualitative definition of the impaired glucose tolerance. 	
+
+
+
+
+[13] and [14] description
+
+[15] how good is the result, Describe it briefly, how the SADPM works
+
+[16]
+
+Put sentences on the 
+
+blood glucose level
+
+
+move the figure 1 to the second page. 
+
+structural risk minimization SRM no italics to emphasize
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+========================================================================
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+major concern -> feature selection
+
+The argument of selecting the four features out of all the combinations is very weak
+
+problem 
+
+Mention that the we tried all possible combinations of four
+
+We can 
+
+The dataset was limited  () 90 -10 iterations
+
+to address the issue of 
+
+Too much 
+
+

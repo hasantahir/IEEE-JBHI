@@ -41,7 +41,9 @@
 \usepackage{color}
 % \usepackage{placeins}
 % \usepackage{subfigure}
-\usepackage{subcaption}
+\usepackage{subfig}
+\usepackage{caption}
+\usepackage[nolist]{acronym}
 % \usepackage{hyperref}
 % % The following is done to hide ugly color boxes around the links
 \usepackage[table]{xcolor}
@@ -62,9 +64,10 @@
 \usepackage{standalone}
 \usepackage{tikz}
 \tikzset{
-font={\fontsize{8pt}{8}\selectfont}}
+font={\fontsize{10pt}{10}\selectfont}}
 \usepackage{tikzscale} % Scale the figure not the font
 \pgfplotsset{compat=newest}
+\usetikzlibrary{patterns}
 %% the following commands are sometimes needed
 \usepackage{grffile}
 \usepackage{mathtools}
@@ -115,26 +118,27 @@ multi-part-units = repeat]{siunitx}
 
 \begin{document}
 %
-\title{A Type 2 Diabetes Prognostic Model based on Support Vector Machine}
+\title{Support Vector Machine to Predict Type 2 Diabetes using Oral Glucose Tolerance Test}
 %
 % use \thanks{} to gain access to the first footnote area
 % a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
 % was not built to handle multiple paragraphs
 %
 
-\author{Hasan~Abbas,~
+\author{Hasan~T.~Abbas,~
 Lejla~Alic,~
 Madhav~Erraguntla,~
 Muhammad Abdul-Ghani,~
-Qammer~Abbasi,~\IEEEmembership{Senior Member,~IEEE,}
+Jim~X.~Ji,~\IEEEmembership{Senior Member,~IEEE,}
+Qammer~H.~Abbasi,~\IEEEmembership{Senior Member,~IEEE,}
 and~Marwa~Qaraqe,~\IEEEmembership{Member,~IEEE}% <-this % stops a space
-\thanks{H. Abbas is with the Department
-of Electrical and Computer Engineering, Texas A\&M University at Qatar, Doha 23874 Qatar;  hasan.abbas@qatar.tamu.edu}% <-this % stops a space
+\thanks{H. T. Abbas and J. X. Ji are with the Department
+of Electrical and Computer Engineering, Texas A\&M University at Qatar, Doha 23874 Qatar;  {hasan.abbas;jim.ji}@qatar.tamu.edu}% <-this % stops a space
 \thanks{L. Alic was with the Department
 of Electrical and Computer Engineering, Texas A\&M University at Qatar, Doha 23874 Qatar; lejlaresearch@gmail.com}% <-this % stops a space
 \thanks{M. Erraguntla is with the Department of Industrial and Systems Engineering, Texas A\&M University, College Station, TX 77843; merraguntla@tamu.edu}% <-this % stops a space
 \thanks{M. Abdul-Ghani is with the UT Health, San Antonio, TX 78229; abdulghani@uthscsa.edu}% <-this %
-\thanks{Q. Abbasi is with the School of Engineering, University of Glasgow, UK; qammer.abbasi@glasgow.ac.uk}% <-this %
+\thanks{Q. H. Abbasi is with the School of Engineering, University of Glasgow, UK; qammer.abbasi@glasgow.ac.uk}% <-this %
 \thanks{M. Qaraqe is with the College of Science and Engineering, Hamad Bin Khalifa University Doha, Qatar; mqaraqe@hbku.edu.qa}% <-this % stops a space stops a space
 \thanks{Manuscript received April 19, 2005; revised August 26, 2015.}}
 
@@ -192,8 +196,10 @@ of Electrical and Computer Engineering, Texas A\&M University at Qatar, Doha 238
 % As a general rule, do not put math, special symbols or citations
 % in the abstract or keywords.
 \begin{abstract}
-We present a predictive tool that determines the future risk of developing type 2 diabetes mellitus (T2DM) through machine learning techniques. Data generated from an oral glucose tolerance test (OGTT) was used to develop a predictive model based on the support vector machines. We trained and validated the models on the data collected from a group of 1,551 healthy subjects part of the San Antonio Heart Study. In this paper, we show that just by using the information extracted from a person’s abnormal blood glucose levels, high predictive performance can be obtained. The results of our approach show an average accuracy of 98.51\% and recall of 87.27\% obtained on a holdout set.
+  Diabetes is a large healthcare burden worldwide. There is substantial evidence that lifestyle modifications and drug intervention can prevent diabetes, therefore, an early identification of high risk individuals is important to design targeted prevention strategies. In this paper, we present an automatic tool that uses machine learning techniques to predict development of type 2 diabetes mellitus (T2DM). Data generated from an oral glucose tolerance test (OGTT) was used to develop a predictive model based on the support vector machine (SVM). We trained and validated the models using the OGTT and demographic data of 1,496 healthy individuals collected during the San Antonio Heart Study. This study collected plasma glucose and insulin concentrations before glucose intake and at three time-points thereafter (30, 60, and 120 minutes). Furthermore, personal information as age, ethnicity and body-mass index was also a part of the dataset. Using 11 blood measurements, we have deduced 61 features, which are then assign a rank and the top ten features are shortlisted using Minimum Redundancy Maximum Relevance feature selection algorithm. All possible combinations of the 10 best ranked features were used to generate the SVM based prediction models.  This research shows that an individual's abnormal plasma glucose levels, and the information derived therefrom have the strongest predictive performance. Significantly, the insulin and demographic features do not provide additional performance improvement for diabetes prediction. The results of this work identify the parsimonious clinical data needed to be collected for an efficient prediction of T2DM. Our approach shows an average accuracy of 96.81\% and a specificity of 80.45\% obtained on a holdout set.
 \end{abstract}
+
+
 %
 % Note that keywords are not normally used for peer-review papers.
 \begin{IEEEkeywords}
@@ -228,152 +234,161 @@ We present a predictive tool that determines the future risk of developing type 
 %
 % Here we have the typical use of a "T" for an initial drop letter
 % and "HIS" in caps to complete the first word.
-\IEEEPARstart{T}{he} global incidence of diabetes was estimated at \num{422} million in the year \num{2014} and its prevalence among the adult population has seen an increase from \SI{4.7}{\percent} in the year \num{1980} to \SI{8.5}{\percent} in \num{2014} \cite{mathers_projections_2006}. In \num{2015} alone, an estimated \num{1.6} million deaths worldwide were attributed to diabetes. In addition, a diabetic patient is at a greater risk of developing cardiovascular diseases, visual impairment and limb amputations, as compared to a non-diabetic person. Due to the substantial socio-economic burdens that are associated with diabetes, its early detection, intervention and prevention has become a worldwide top-level health concern.
-%
-%
-%%% TALK ABOUT GLUCOSE TOLERANCE
-There is experimental evidence behind the presumption can the development of diabetes can be delayed or even prevented \cite{tuomilehto2001prevention}, provided a person undergoes a lifestyle change that includes managing diet and incorporating exercise, and adheres to a pharmacological treatment. Moreover, one of the indicators of the early stages of diabetes is the impaired glucose tolerance (IGT) in which the blood sugar level rises beyond the normal levels defined by the World Health Organization (WHO) and the American Diabetes Association (AMA). Oral glucose tolerance test (OGTT) is recommended by the WHO as a diagnostic tool in which the prevalence of diabetes is indicated by an abnormally high blood glucose level at the \SI{2}{\hour}. It can also help screen the individuals that have IGT, and are at an increased risk of developing diabetes. In an OGTT, the blood glucose and insulin levels are periodically recorded in a \SI{2}{\hour} period from a person who has undergone an overnight fast and administered a standard concentration of glucose. The outcomes of the OGTT provide useful information on the IGT, and any impairment in the insulin function of the body.
+\IEEEPARstart{T}{he} global incidence of diabetes was estimated at \num{422} million in the year \num{2014} and its prevalence among the adult population increased from \SI{4.7}{\percent} in \num{1980} to \SI{8.5}{\percent} in \num{2014} \cite{mathers_projections_2006}. In \num{2015} alone, an estimated \num{1.6} million deaths worldwide were attributed to diabetes. In addition to the high mortality rate, an individual with diabetes is at a greater risk of developing cardiovascular diseases, visual impairment and limb amputations, as compared to a non-diabetic individual. Due to the substantial socio-economic burdens that are associated with diabetes, its early detection, prevention, and management has become a worldwide top-level health concern. There is experimental evidence that the development of diabetes can be delayed or even prevented provided an individual undertakes a lifestyle change that includes diet management, adopting exercise, and adhering to a pharmacological treatment \cite{tuomilehto2001prevention}. The early identification of high risk individuals of diabetes is therefore, essential for targeted prevention strategies \cite{diabetes2015long}.
 
-Some studies, on the other hand have shown that only \SI{50}{\percent} of subjects with IGT developed diabetes within \num{10} years \cite{shaw_impaired_1999, writing_committee_impaired_2002}. In addition, long-term population studies have shown that around \SI{50}{\percent} future diabetic subjects did not exhibit IGT at all \cite{abdul-ghani_what_2007}. Other studies concluded that as compared to the IGT, the glucose concentrations at the \SI{1}{\hour} and \SI{2}{\hour} intervals in an OGTT correlate better to the future diabetes risk \cite{abdul2009fasting,abdul-ghani_shape_2010,abdul-ghani_plasma_2009}.
+Even though the number of clinical studies aimed at diagnosing diabetes have been growing in the last two decades, studies predicting the risk of developing diabetes are limited. This subject has lately received an increased amount of research interest \cite{noble2011risk}. However, the clinical significance of such predictions largely depend on the type and quality of data collected. There are studies that assign a probability to the future risk of diabetes using socio-demographic characteristics such as age, ethnicity, \ac{bmi} and genealogical information collected through population  \cite{Heikes1040, Glumer727}. Due to the unreliable data collection, such techniques can be misleading. The collection of blood samples, on the other hand, provides more reliable data and is a first step towards the disease prognosis with a deeper clinical insight \cite{HELIOVAARA1993181}. \ac{ogtt} is commonly used to screen diabetes \cite{expert-committee} and to provide a critical understanding of its future evolution \cite{stumvoll_use_2000}. In an \ac{ogtt}, the plasma glucose and insulin levels are measured at regular intervals in a 2-hr period after orally administering a standard dose of glucose \cite{stumvoll_use_2000}. The glucose tolerance and insulin resistance are two of the most significant parameters deduced from the \ac{ogtt} that are widely regarded as the major factors in the development of \ac{t2dm}.
 
-Research studies that assess diabetes can be broadly categorized into two themes, first of which deals with the objective to detect any undiagnosed state of diabetes, and the second that aims to identify the person that are high risk of developing diabetes in the future \cite{noble2011risk}. The clinical significance of such investigations depends upon the data collection methods. Certain studies rely on collecting socio-demographic characteristics such as age, ethnicity, body mass index (BMI) and genealogical information through conducting population surveys, and then assign a probability to individuals of having diabetes \cite{Heikes1040,Glumer727}.  However, such self-assessment techniques can often be misleading and can not be relied upon. On the other hand, the outcomes of the diabetes related studies that involve physiological data such as blood samples collected in a laboratory environment provide an accurate clinical insight. We can further divide these types of enquiries into two types, namely, the screening  of undiagnosed diabetes, and the future prediction of diabetes. The former category has seen an increased amount of research interest in the last ten years. Using statistical and machine learning techniques, various researchers have developed \emph{risk models} for diabetes screening. In \cite{barakat_intelligible_2010}, support vector machine (SVM) framework was employed for the diagnosis of diabetes that also incorporated a tree-based decision making algorithm. A rule-based ensemble method combining SVM and random forest (RF) classifiers was used to detect diabetes in \cite{han_rule_2015} which provided an added comprehensibility of the classification mechanism.
+A precursory stage of diabetes, commonly referred to as prediabetes, exists before overt \ac{t2dm}, and is described by an \ac{igt}. According to the \ac{who} diagnostic criteria, the \ac{igt} is defined as fasting plasma glucose level of \SI[round-mode = off,group-separator = {,}]{> 126}{\milli\gram\per\deci\liter} and a 2-hour plasma glucose level in the range of \SIrange[round-mode = off,group-separator = {,}]{140}{199}{\milli\gram\per\deci\liter}, measured during the \ac{ogtt} \cite{organization_definition_2006}. Although prediabetes is considered as an intermediate stage in the natural progression of \ac{t2dm} \cite{defronzo2011assessment}, it has been reported that only \SI{50}{\percent} of the subjects diagnosed with \ac{igt} developed diabetes within 10 years \cite{shaw_impaired_1999, writing_committee_impaired_2002}. Moreover, long-term population studies have also shown that around \SI{50}{\percent} of the diabetic patients did not exhibit \ac{igt} at any time prior to the diagnosis \cite{abdul-ghani_what_2007}. This suggests that the fasting and 2-hour plasma glucose levels used in and of themselves cannot accurately predict the future development of \ac{t2dm}.
 
-Previous investigations designed to identify individuals at high risk of developing type 2 diabetes in future included San Antonio Diabetes prediction model (SADPM) \cite{stern2002identification} where a logistic regression model was constructed using a subject's physiological parameters such as systolic blood pressure and cholesterol level. The underlying causes of type 2 diabetes in the form insulin resistance and insulin secretion were studied to develop a prediction model in \cite{abdul-ghani_what_2007}. In another study,  multivariate logistic models using the plasma glucose values measured in the OGTT were used to predict the future risk of developing type 2 diabetes \cite{abdul-ghani_two-step_2011,abdul2009fasting}.
+\ac{ml} has been proposed as a viable instrument for diabetes screening. In contrast to traditional diagnostic techniques employing population based statistics, \ac{ml} methods develop models that are trained using large amounts of data. Barakat et al used socio-demographic information, and point of care testing from blood and urine to develop diagnostic models of diabetes \cite{barakat_intelligible_2010}. This approach uses \ac{svm} along with a rule-based explanation to provide a comprehensibility of the results to the clinicians. The plasma glucose levels at baseline and 2-hr were among the features used. Han et al employed an ensemble \ac{svm} and random forest learning approaches to develop a decision making algorithm for the diagnosis of diabetes \cite{han_rule_2015}. However, investigations that are designed to identify individuals at high risk of developing \ac{t2dm} in future are limited. The \ac{sadpm} \cite{stern2002identification} uses a logistic regression supported by physiological parameters such as systolic blood pressure and cholesterol level. The underlying causes of \ac{t2dm} in the form insulin resistance and insulin secretion were studied to develop a prediction model in \cite{abdul-ghani_what_2007}. In another study, multivariate logistic models using the plasma glucose values measured in the \ac{ogtt} were used to predict the future risk of developing \ac{t2dm} \cite{abdul-ghani_two-step_2011,abdul2009fasting}. The predictive power of different biomarkers such as the fasting plasma glucose level, \ac{bmi} and hemoglobin A1C (HbA1c) for \ac{t2dm} onset was assessed in \cite{Ozery-Flato2013}. This study focused on individuals with metabolic syndrome, a complex and serious health condition that greatly increases the risk of \ac{cvd} and diabetes.
 
-In this paper, we propose to develop a future diabetes prediction model by first identifying the variables computed from the OGTT that strongly correlate to future diabetes and then develop a support vector machine prediction model using these feature variables. For this purpose, we use the OGTT data generated from the population-based, epidemiological study, the San Antonio Heart Study (SAHS) \cite{burke_rapid_1999, lorenzo_trend_2006}.
+The standard \ac{ml} algorithms are designed to yield optimal performance in terms of accuracy over the full dataset. However, medical applications such as disease diagnosis and prediction require a biased decision-making mechanism that favors one of the classes. This approach inherently maximizes the performance of the class that is more relevant in clinic terms. Therefore, the objective in such applications is to design a classifier that improves the accuracy of the class that is clinically more relevant. Additionally, often the amount of data is highly skewed with the clinically relevant class in an outsized minority. There are various roundabout ways to obtain accurate classifier performance in this scenario that include the method of sampling \cite{chawla2002smote} in which the class distribution is artificially balanced by either under sampling the majority class, over-sampling the minority class or both. Furthermore, feature weighting schemes assign distinct costs to training examples \cite{Domingos} in order to introduce a certain bias. Other techniques introduce evaluation metric such as the \ac{gm} \cite{kubat1997addressing}, that concurrently optimizes the positive class accuracy (sensitivity) and the negative class accuracy (specificity) \cite{Tang_SVM}.
+
+We hypothesized that the features extracted from the \ac{ogtt} will be able to predict the future onset of \ac{t2dm}. In this paper, we therefore propose a screening tool that identifies the most relevant features extracted from the \ac{ogtt} data that strongly correlate with the future development of \ac{t2dm}. We then use \ac{svm} to develop a prediction model by utilizing these relevant features estimated from the longitudinal cohort study, the \ac{sahs} \cite{burke_rapid_1999,lorenzo_trend_2006}.
 %
 \section{Materials and Methods}
 %
 \subsection{San Antonio Heart Study}
 %
-We developed the diabetes prediction models using the data extracted from a population-based epidemiological study, the San Antonio Heart Study (SAHS). The aim of the SAHS was to assess the risk factors of diabetes and cardiovascular diseases \cite{burke_rapid_1999, lorenzo_trend_2006}, for which \num[group-minimum-digits=4, group-separator = {,}]{5158} men and non-pregnant women of Mexican-American and non-Hispanic white residents of San Antonio, Texas were recruited. The age of the subjects at the time of recruitment was between \num{25} and \num{64} years. As a part of the data collection, the blood glucose and insulin levels were recorded during an oral glucose tolerance test (OGTT), which measures the subject's body response to a standard \SI{75}{\gram} dose of glucose after fasting overnight. The OGTT was performed both at the baseline and follow-up phases of the study, which had an average span of \num{7.5} years. The SAHS subjects were recruited in \num{2} cohorts, the first during the period \num{1979} to \num{1982}, and the second from \num{1984} to \num{1988} \cite{haffner_hyperinsulinemia_1986}. The reassessment during the follow-up period took place during the years \num{1987} to \num{1990} for the first cohort, and \num{1991} to \num{1996} for the second cohort. For the future T2DM prediction problem, we construct the machine learning model using the data from the second cohort, in which the plasma glucose and insulin levels of \num[group-minimum-digits=4, group-separator = {,}]{1496} of healthy subjects were recorded during the OGTT at times \num{0}, \num{30}, \num{60} and \num{120} minutes in the baseline evaluation. During the course of the study, a total of \num{171} subjects developed T2DM within which \num{10} subjects also reported of at least one cardiovascular event such as a heart attack, stroke or angina.
+The SAHS is a population-based epidemiological study that was conducted to assess the risk factors of diabetes and cardiovascular diseases in healthy population \cite{burke_rapid_1999,lorenzo_trend_2006}. In total, \num[group-minimum-digits=4, group-separator = {,}]{5158} men and non-pregnant women of \ac{ma} and \ac{nhw} residents of San Antonio, Texas participated in the study in two cohorts. The age of the individuals at the time of recruitment was between \num{25} and \num{64} years. As a part of the data collection, the plasma glucose and insulin concentrations were collected during the oral glucose tolerance test at the baseline and after an average follow-up of \num{7.5} years. The \ac{bmi} was also recorded for each individual at the baseline. In this study, we analyzed only the data generated from the second cohort of the \ac{sahs} which comprised \num[group-minimum-digits=4, group-separator = {,}]{1492} subjects from the second cohort of the SAHS.
 
-At the follow-up assessment, the participants were classified as having type 2 diabetes (T2D), cardiovascular disease (CVD) or normal. For T2D diagnosis, the WHO criteria, defining fasting glucose level \SI[round-mode = off,group-separator = {,}]{\ge 126}{\milli\gram\per\deci\liter} or 2-hour glucose level \SI[round-mode = off,group-separator = {,}]{\ge 200}{\milli\gram\per\deci\liter} was followed \cite{wei_effects_1998}. Any participant reportedly taking anti-diabetic medications was also classified as diabetic. For CVD classification, any cardiovascular event such as a heart attack, stroke or angina reported by the participant, was considered as an identifier. Table \ref{tab:patients} outlines the distribution of patient classification used in this study. In order to construct a binary classifier for this study, the subjects categorized under the `{DMI}' and `{DMI+CVD}' were encoded as the positive class whereas the `{Healthy}' labels were the negative class. We restricted the classification to only two classes and the samples with the label `{CVD}' were ignored.
+\ac{t2dm} was diagnosed at the follow-up using the \ac{who} criteria, i.e. fasting glucose level \SI[round-mode = off,group-separator = {,}]{> 126}{\milli\gram\per\deci\liter} or 2-hr glucose level \SI[round-mode = off,group-separator = {,}]{\ge 200}{\milli\gram\per\deci\liter} \cite{organization_definition_2006}. Furthermore, all individuals taking anti-diabetic medications were also classified as having \ac{t2dm}. Individuals that reported by themselves any cardiovascular event such as heart attack, stroke or angina, were labeled as having \ac{cvd} at the follow-up. All other participants without \ac{t2dm} or self-reported \ac{cvd} were labeled as healthy for the case of this study. During the course of the longitudinal study, a total of \num{171} individuals developed \ac{t2dm} with \num{10} individuals also reporting at least one cardiovascular event. The incidence rate of \ac{t2dm} in the second cohort of the \ac{sahs} population was \SI{10.79}{\percent}. Table \ref{tab:patients} shows the population distribution in terms of the four classes. The distribution in terms of the ethnicity shows a more than double \ac{t2dm} prevalence among the \ac{ma} individuals, as compared to the \ac{nhw} population.
 %
 \begin{table}[!h]
   \centering
   \renewcommand{\arraystretch}{1.3}
-  \caption{The classification of the \num[group-minimum-digits=4, group-separator = {,}]{1496} subjects used in this study}
+  \caption{The classification of the \num[group-minimum-digits=4, group-separator = {,}]{1492} subjects used in this study}
   % \vspace{-4mm}%Put here to reduce too much white space after table
   \centering
-  \begin{tabular}{c c c c}
+  \begin{tabular}{c c c c c}
     \toprule
-    Healthy &  DMI & CVD & DMI+CVD\\
+    & Healthy &  \ac{t2dm} & \ac{cvd} & \ac{t2dm}+\ac{cvd}\\
     \midrule \midrule
-    \num[group-minimum-digits=4, group-separator = {,}]{1,281} & \num{161} & \num{44} & \num{10}\\
-    \SI{85.63}{\percent} & \SI{10.76}{\percent} & \SI[round-precision=3]{2.94}{\percent} & \SI[round-precision=2]{0.67}{\percent} \\
+    Total & \num[group-minimum-digits=4, group-separator = {,}]{1277} & \num{161} & \num{44} & \num{10}\\
+    &\SI{85.56}{\percent} & \SI{10.79}{\percent} & \SI[round-precision=3]{2.95}{\percent} & \SI[round-precision=2]{0.67}{\percent} \\
+    \midrule
+    \ac{ma} & \num[group-minimum-digits=4, group-separator = {,}]{836} & \num{131} & \num{24} & \num{7}\\
+    &\SI{83.77}{\percent} & \SI{13.13}{\percent} & \SI[round-precision=3]{2.40}{\percent} & \SI[round-precision=2]{0.70}{\percent} \\
+    \midrule
+    \ac{nhw} & \num[group-minimum-digits=4, group-separator = {,}]{441} & \num{30} & \num{20} & \num{3}\\
+    &\SI{89.27}{\percent} & \SI{6.07}{\percent} & \SI[round-precision=3]{4.05}{\percent} & \SI[round-precision=2]{0.61}{\percent} \\
     \bottomrule
   \end{tabular}
   \label{tab:patients}
 \end{table}
 %
-\subsection{Preparation of the Data}
-%
-The dataset included the glucose and insulin values recorded at the baseline, \num{30}, \num{60} and \num{120} minute intervals, and a distribution of these values marked by the follow-up labels of `healthy' and `diabetic' is shown in Fig. \ref{fig:ogtt_mean}. Moreover, the socio-demographic information such as age, ethnicity and body-mass index (BMI) was also part of the dataset. From the glucose and insulin measurements, we computed the slope and area under the curve between all the possible combinations  of a pair of readings. In addition, we also calculated parameters such as the insulinogenic (ratio of insulin and glucose slopes between any two time intervals) and Matsuda indices, as defined in \cite{Matsuda1462,abdul-ghani_plasma_2009}. These variables have shown a good efficacy of diabetes prediction in previous studies \cite{abdul-ghani_what_2007,abdul-ghani_plasma_2009}, since they are used to quantify the amount of insulin required by the body to maintain healthy glucose levels. In total we prepared \num{68} features for the classification problem and removed the rows that had missing entries or contained zero or infinite values.
-%
-\begin{figure*}
-  \centering
-  \begin{subfigure}[b]{\columnwidth}        %% or \columnwidth
-    \centering
-    \includegraphics[width=.9\linewidth]{boxpl_glucose.tex}
-    \label{fig:glucose}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}[b]{\columnwidth}        %% or \columnwidth
-    \centering
-    \includegraphics[width=.9\linewidth]{boxpl_Insulin.tex}
-    \label{fig:insulin}
-  \end{subfigure}
-  \caption{Box plots of glucose and insulin measurements for healthy and diabetic subjects.}
+\begin{figure*}[t!]
+	\centering
+	\subfloat[Plasma Glucose]
+  {
+  \includegraphics[width=.45\textwidth]{boxpl_glucose.tikz}
+	\label{fig:glucose}
+  }
+	\subfloat[Serum Insulin]
+  {
+  \includegraphics[width=.45\textwidth]{boxpl_Insulin.tikz}
+  \label{fig:insulin}
+  }
+	\caption{Box plots of glucose and insulin levels for healthy and diabetic subjects measured at the baseline \ac{ogtt}.}
   \label{fig:ogtt_mean}
 \end{figure*}
-%
-The dataset was then partitioned into training and validation sets. As can be observed from the Table \ref{tab:patients}, the SAHS dataset is intrinsically imbalanced with the class distribution skewed toward the majority class with a ratio of 7.5:1. The minority class of diabetic subjects was defined as the positive class with a label of \num{1}, whereas the majority class consisting of healthy persons was termed as the negative class marked by a \num{-1} label.
+% \begin{figure*}[t!]
+%   \centering
+%   \begin{subfigure}[b]{\columnwidth}        %% or \columnwidth
+%     \centering
+%     \includegraphics[width=.9\linewidth]{boxpl_glucose.tikz}
+%     \label{fig:glucose}
+%   \end{subfigure}
+%   \hfill
+%   \begin{subfigure}[b]{\columnwidth}        %% or \columnwidth
+%     \centering
+%     \includegraphics[width=.9\linewidth]{boxpl_Insulin.tikz}
+%     \label{fig:insulin}
+%   \end{subfigure}
+%   \caption{Box plots of glucose and insulin levels for healthy and diabetic subjects measured at the baseline \ac{ogtt}.}
+%   \label{fig:ogtt_mean}
+% \end{figure*}
+The data used in this study consists of the plasma glucose and insulin concentrations sampled at baseline, and at \num{30}, \num{60} and \SI{120}{\minute} thereafter. The individuals are labeled at the SAHS follow-up using the current standard of care \cite{burke_rapid_1999}. Figure \ref{fig:ogtt_mean} shows the distributions of the data used in this study.
 %
 %
 \subsection{Machine Learning Framework}
 %
-We developed a supervised learning scheme in which the classifier output labels were obtained from the follow-up data, and the support vector machine (SVM) technique was used to construct  the future diabetes prediction framework. The SVM works on the principle of \emph{structural risk minimization} (SRM) in which the goal is to develop a model from the given training data such that it generalizes well to new datasets and minimizes the empirical risk associated with misclassification of samples in the training set \cite{vapnik_nature_2000,vapnik2015uniform}. For a binary classification problem, the model constructed by the SVM finds a decision boundary or a separating hyperplane which aims to minimize the overlapping between the two classes in the training set. For problems that may not be amenable to linear separation between the two classes, the SVM technique is very attractive due to fact that the input feature space is first transformed to a higher dimension and then a linear boundary is determined, which generally gives better training performance \cite{friedman2001elements}. Let us consider a training data $(x_1, y_1)$,$(x_2, y_3)$,...,$(x_k, y_k)$ of $k$  pairs containing $x_i \in \mathbb R^N$ features and the binary classes $y_i \in {-1, 1}$. The SVM approach transforms the input features using a nonlinear mapping $\Phi : x \mapsto \phi(x)$ into a higher dimension space $\mathbb R^P$, where in general $P \gg N$. Due to the transformation, the classes can then be separated using a linear decision boundary in the enlarged space. The non-linear SVM classifier $\mathcal F$ is expressed in terms of the higher dimensional hyperplane,
+In this paper, we implemented \ac{svm} to construct the models for prediction of future \ac{t2dm}. The \ac{svm} develops models from a given training dataset such that it generalizes well to a new dataset and minimizes the empirical risk associated with misclassification of samples in the training set \cite{vapnik_nature_2000,vapnik2015uniform}. A model constructed by the \ac{svm} minimizes the overlap between the classes in the training set by optimizing the separating hyperplane. For problems that may not be amenable to linear separation between the two classes, the \ac{svm} technique is very attractive due to fact that the input feature space can be transformed to a higher dimension space,  and a linear boundary can then be determined. This approach generally provides a better training performance but potentially increases computational complexity excessively with the increase of the dimensionality of the input feature space \cite{friedman2001elements}. Introduction of a kernel alleviates the need to determine the transformation by calculating the inner product between the coordinates of the input feature space instead. In this paper, we used the Gaussian \ac{rbf},  as the kernel. The performance of the \ac{svm} can be optimized by tuning the free parameter of the kernel $\sigma$ and specifying a cost that controls the rigidity of the class margin. This process is normally carried out through a grid search.
+%
+%
+%
+%
+\subsection{Feature Extraction}
+%
+We extracted all the features from the \ac{sahs} data acquired at the baseline. The dataset consists of the plasma glucose and insulin concentrations recorded before glucose intake and at three time-points thereafter (\num{30}, \num{60}, and \SI{120}{\minute}). The labels (healthy and diabetes) were generated at the \num{7.5} years follow-up using the current standard of care diagnostics \cite{burke_rapid_1999}. From the glucose and insulin concentrations, we computed the slope and area under the curve between all the possible combinations of a pair of measurements. In addition, we also calculated three empirical markers that describe the relationship between the glucose intake and insulin response. The first is the \ac{igi} \cite{seino1975insulinogenic}, which is a direct measure of the insulin response to glucose. It is calculated as the ratio of the slope of insulin curve to the slope of glucose curve between any two progressive time intervals in the \ac{ogtt}. The second marker, \ac{mi}  $\mathrm M$, evaluates the insulin sensitivity from the \ac{ogtt} using a product of the weighted averages of the glucose and insulin concentrations \cite{Matsuda1462},
 %
 \begin{equation}
-  \mathcal F = \mathrm{sign} \left( \phi(x)^T \beta + \beta_0 \right).
-  \label{eq:classifier}
+  \mathrm{M} = \frac{10,000}{\sqrt{Glu_0 \times Ins_0 \times \frac{15 Glu_0 + 30 Glu_{30} + 30 Glu_{60} + 30 Glu_{90} + 15 Glu_{120}}{120} \times \frac{15 Ins_0 + 30 Ins_{30} + 30 Ins_{60} + 30 Ins_{90} + 15 Ins_{120}}{120}}},
+  \label{eq:mat_idx}
 \end{equation}
 %
-When the classes may not be completely separable, introducing a slack variable $\zeta$ in the higher dimension space $\mathbb R^P$ is a common practice which allows for the classifier output in \eqref{eq:classifier} to be on the incorrect side of the margin.
-Therefore, in order to find the optimal separating hyperplane that maximizes the distance $M$ from the boundary for all the points, and bounds the value of $\sum_{i}{\zeta_i}$ and in turn misclassification rate, we introduce the convex optimization problem,
+where the subscripts depict the time point of the OGTT. In case when the value at 90 minutes is not available, the average of 60 and 120 minutes is used instead \cite{Matsuda1462}. The third marker, \ac{homair} \cite{matthews1985homeostasis} evaluates the beta-cell function. It is defined as the product of fasting plasma glucose concentration and fasting blood insulin concentration divided by \num{22.5}. These markers have been used to estimate abnormalities in the insulin sensitivity. A total of \num{61} features (illustrated in Fig. 2) are used in this study. The prefix AuC denotes the area under the curve and the slope is denoted by the symbol $\Delta$. The term T\textsubscript{half} represents the linearly interpolated value between any two intervals. The \ac{ogtt} time interval in minutes corresponding to the feature appears in the subscripts.
 %
-\begin{equation}
-  \min_{\beta, \beta_0} \frac{1}{2} \norm{\beta}^2 + C\sum_{i=1}^{P} \zeta_i,
-  \label{eq:min}
-\end{equation}
+\begin{figure*}[t!]
+  \centering
+  \includegraphics[width=.9\linewidth]{features_define_text.pdf}
+  \caption{Illustration of all 61 features extracted from the \ac{sahs} dataset.}
+  \label{fig:features}
+\end{figure*}
 %
-with the nonlinear constraints $y_i (\phi(x_i)^T \beta + \beta_0) \ge 1 - \zeta_i \quad \forall i $ and $ \zeta_i \ge 0$, and the coefficient $C$ is termed as the cost parameter which decides the rigidity of the margin of the classifier. The solution of \eqref{eq:min} can be computed using the Lagrange primal objective function \cite{friedman2001elements},
 %
-\begin{multline}
-  \mathcal L_{\mathrm{p}} = \dfrac{1}{2} \norm{\beta}^2 + C \sum \limits_{i =1}^{P} (1 - \mu_i)\zeta_i \\
-  - \sum \limits_{i =1}^{P} \alpha_i \left[ y_i \left( \phi(x_i)^T \beta + \beta_0 \right) - (1 - \zeta_i) \right].
-  \label{eq:l_primal}
-\end{multline}
 %
-By minimizing $\mathcal L_{\mathrm{primal}}$ with respect to $\beta$, $\beta_0$, and $\zeta_i$, we get the corresponding dual form of the Lagrange function,
 %
-\begin{equation}
-  \mathcal L_{\mathrm{dual}} = \sum \limits_{i = 1}^{P} \alpha_i - \frac{1}{2} \sum \limits_{i = 1}^{P} \sum_{i' = 1}^{P} \alpha_i \alpha_{i'} y_i y_{i'} \langle \phi(x_i), \phi(x_{i'}) \rangle
-  \label{eq:l_dual}
-\end{equation}
-%
-subject to $0 \le \alpha_i \le C$ and $\sum_{i} \alpha_i y_i = 0$ and the constraints, $\zeta_i, \mu_i \ge 0 \forall i$. The nonzero coefficients $\alpha_i$ and $\beta_0$ are determined using \eqref{eq:classifier}. As the dimension of the input feature space goes up, the computation of the mapping $\Phi$ gets excessive in complexity. With the introduction of a kernel,
-%
-\begin{equation}
-  \mathcal K(x,x') = \langle \phi(x), \phi(x') \rangle,
-  \label{eq:kernel}
-\end{equation}
-%
-we can compute the inner product on \eqref{eq:l_dual} without  computing the mapping $\Phi$ \cite{scholkopf2002learning}, which becomes computationally expensive as the dimension of the input feature space increased. In this paper, we used the Gaussian radial basis function,
-%
-\begin{equation}
-  \mathcal K(x,x') = \exp {\left(- \frac{\norm{x -x'}^2}{2\sigma^2}\right)}
-  \label{eq:rbf}
-\end{equation}
-%
-as the kernel where $\sigma$ is a free parameter. During the training, we tuned the values of the parameters $C$ and $\gamma$ through a grid search to obtain the optimal performance of the SVM.
-
-For a linear variant of the SVM, the classifier can expressed without any coordinate mappings,
-%
-\begin{equation}
-  \mathcal F^{\mathrm{lin}} = \mathrm{sign} \left( x^T \beta^{\mathrm{lin}} + \beta^{\mathrm{lin}}_0 \right).
-  \label{eq:lin_classifier}
-\end{equation}
-%
-%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%55%%%
 \subsection{Feature Selection}
 %
-Before constructing the SVM model to predict the future risk of diabetes, we aim to find the most effective subset of the features in terms of the relevance to the classifier output. This process greatly reduces the computational cost during the model development by reducing the feature space dimension and also dispense useful scientific insight in to the classification problem. We performed a two-step feature selection, where first ten features that correlated the most to the classifier target class were shortlisted. In the second step, we ranked the shortlisted features by evaluating the accuracy through SVM classification and selected only the four best features.
-
-In order to define the relevance between the feature and the class labels, consider a feature $x$ in the input feature space $\mathbb R^N$ as a continuous random variable and the class label $y$ as a discrete random variable. Their relationship can be described in terms of the mutual information, $\mathcal I$ defined as \cite{ross2014mutual}:
+Before constructing the \ac{svm} model to predict a future diabetes occurrence, we search for the most effective subset of features in terms of relevance to the classifier output, i.e. incidence of \ac{t2dm} at the follow-up. As a first step, we selected the ten most relevant features from the \num{61} available features using the \ac{mrmr} algorithm \cite{mRMR}, which selects the most relevant features with minimum correlation among them. The \ac{mrmr} algorithm determines the relevance between a feature ($x$ as continuous random variable) and the class label ($y$ as discrete random variable) in terms of the mutual information $\mathcal I$ defined as \cite{ross2014mutual},
 %
 \begin{equation}
   \mathcal I(x, y) = - \int p_i \ln p_i \diff x - \sum \limits_j p_j\ln p_j + \sum_j \int p_{ij}\ln p_{ij} \diff x,
   \label{eq:MI}
 \end{equation}
 %
-where $p_{i}$, and $p_{j}$ are the probabilities of the random variables $x$ and $y$ taking a particular value $x_i$ and $y_j \in (-1,1) \, \forall j$ respectively. The term $p_{ij}$ denotes the joint probability $P\{x= x_i, y=y_j\}$. The three terms in \eqref{eq:MI} represent the continuous, discrete and joint entropies of the random variables in the respective order. The features that are most relevant to the class label are the ones that individually yield the maximum $\mathcal I$. However, a drawback of pursuing this approach is that the selected features may be mutually correlated, and having a redundant list of shortlisted features only adds to the computational cost of the classifier without necessarily improving its performance. Even more so, the addition of extra features commonly result in the deterioration of the classifier performance \cite{trunk1979problem}. Therefore, an instinctive way forward is to keep only one feature from a correlated set of features that provides similar relevance information, and discard the remaining features from the set $\mathbb X$. We follow the minimal-redundancy-maximal-relevance (mRMR) algorithm \cite{mRMR}, that selects the features, that not only yield the maximal mutual information \eqref{eq:MI} with respect to the class label, but minimizes the mutual correlation among the features expressed in terms of redundancy $\mathcal R$ as:
+where $p_{i}$, and $p_{j}$ are the probabilities of the random variables $x$ and $y$ taking a particular value $x_i$ and $y_j \in (-1,1) \, \forall j$ respectively. The term $p_{ij}$ denotes the joint probability $P\{x= x_i, y=y_j\}$. The three terms in \eqref{eq:MI} represent the continuous, discrete and joint entropies of the random variables in the respective order. The features that are most relevant to the class label are the ones that maximize $\mathcal I$. A heuristic approach is to keep only one a single feature from a correlated set of features that provides similar relevance information, and discard the remaining features. In order to ensure this, the \ac{mrmr} algorithm minimizes the mutual correlation among the features expressed in terms of redundancy $\mathcal R$,
 %
 \begin{equation}
   \mathcal R(\mathbb X) = \sum \limits_{x_i, x_j \in \mathbb{X}} \mathcal {I}(x_i, x_j).
   \label{eq:R}
 \end{equation}
 %
-where $\mathcal I$ follows its definition in \eqref{eq:MI}. By minimizing $\mathcal R$, the mRMR framework selects a set of mutually exclusive features that are most relevant to the class label. Here, we first shortlist a set of ten features that are strong predictors of the future development of type 2 diabetes, on the basis of yielding maximum $\mathcal{I}$ with respect to the diabetic class. The application of the mRMR algorithm produces the features that are listed in Table \ref{tab:ranked} that are ranked in order of their relevance. The prefixes $AuC$ and $Sl$ denote the area under the curve and slope respectively, and the OGTT time interval corresponding to the feature appears in the subscripts.
+where $\mathcal I$ follows its definition in \eqref{eq:MI}. This procedure yielding maximum $\mathcal I$ with respect to the diabetic class, along with minimal $\mathcal R$, shortlists a set of ten features that are potentially strong predictors of the future development of \ac{t2dm}.
 %
-\begin{table}[!h]
+%
+%
+%
+\subsection{Classification}
+%
+We developed a supervised learning scheme using the baseline \ac{sahs} dataset and the labels (healthy, \ac{t2dm}) obtained at the follow-up after an average of \num{7.5} years. In each experiment, we used a kernel-based binary \ac{svm} method to train, test and validate the performance of the diabetes prediction models.  We excluded the \num{44} \ac{cvd} entries as the only way of defining this class was based upon self-reporting and not on quantitative assessment. Furthermore, we also removed all entries with any information missing. That resulted in a total of \num[group-minimum-digits=4, group-separator = {,}]{1492} instances that were used in this study, out of which \num{171} were from the minority class and \num[group-minimum-digits=4, group-separator = {,}]{1321} were majority instances. As shown in Table \ref{tab:patients}, the \ac{sahs} dataset is intrinsically unbalanced with the class distribution skewed toward the majority class with a ratio of 7.5:1. We considered the minority class of diabetic subjects as the positive class with a label of 1, whereas the majority class consisting of healthy persons was termed as the negative class marked by a `-1' label. To standardize the feature range prior to training, the feature space was scaled to unit variance around the respective mean for each feature respectively. To ensure that a model was unbiased, robust, and generalized well to the new data, we performed 10-fold \ac{cv}.
+
+
+For each \ac{cv}, we first randomly select a hold-out set consisting of \num{11} minority and \num{83} majority instances and then randomly sampled the remaining data into \num{100} different train and test sets.  In each of these 10 attempts we have compared the performances of a linear and non-linear SVM for all \num[group-minimum-digits=4, group-separator = {,}]{1023} possible combinations of ten most relevant features by increasing  the number of features incrementally from single feature to a combination of all ten features. The optimal hyperplane parameters of the kernel were determined through a grid search.   To select the best feature set, we have used the geometric mean of specificity and sensitivity \cite{kubat1997addressing}. All experiments were performed by an in-house developed software using Matlab \textregistered (version 9.2.0 MathWorks Inc., Natick, Massachusetts, USA).
+%
+%
+%
+%
+\section{Results and Discussion}
+%
+%
+The \ac{mrmr} algorithm produces a sequential list of ten ranked features, shown in Table \ref{tab:ranked}. Besides ethnicity (ranked fourth), all other features are notably derived form the \ac{ogtt} measurements. The list contains six features derived from plasma glucose concentrations, while only three features are deduced from insulin concentrations.
+% We considered the minority class of diabetic subjects as the positive class with a label of 1, whereas the majority class consisting of healthy persons was termed as the negative class marked by a `-1' label. As shown in Table \ref{tab:patients}, the \ac{sahs} dataset is intrinsically unbalanced with the class distribution skewed toward the majority class with a ratio of 7.5:1.  To standardize the feature range prior to training, the feature space was scaled to unit variance around the mean for each feature respectively. For each combination of features, the data partitioning into training and validation sets were randomly performed 100 times. To analyze the influence of class imbalance on the classification performance we defined the following experiments:
+%
+% The features that are most relevant to the class label are the ones that individually yield the maximum $\mathcal I$. However, a drawback of pursuing this approach is that the selected features may be mutually correlated, and having a redundant list of shortlisted features only adds to the computational cost of the classifier without necessarily improving its performance. Even more so, the addition of extra features commonly result in the deterioration of the classifier performance \cite{trunk1979problem}. Therefore, an instinctive way forward is to keep only one feature from a correlated set of features that provides similar relevance information, and discard the remaining features from the set $\mathbb X$. We follow the minimal-redundancy-maximal-relevance (mRMR) algorithm \cite{mRMR}, that selects the features, that not only yield the maximal mutual information \eqref{eq:MI} with respect to the class label, but minimizes the mutual correlation among the features expressed in terms of redundancy $\mathcal R$ as:
+% %
+% \begin{equation}
+%   \mathcal R(\mathbb X) = \sum \limits_{x_i, x_j \in \mathbb{X}} \mathcal {I}(x_i, x_j).
+%   \label{eq:R}
+% \end{equation}
+% %
+% where $\mathcal I$ follows its definition in \eqref{eq:MI}. By minimizing $\mathcal R$, the mRMR framework selects a set of mutually exclusive features that are most relevant to the class label. Here, we first shortlist a set of ten features that are strong predictors of the future development of type 2 diabetes, on the basis of yielding maximum $\mathcal{I}$ with respect to the diabetic class. The application of the mRMR algorithm produces the features that are listed in Table \ref{tab:ranked} that are ranked in order of their relevance. The prefixes $AuC$ and $Sl$ denote the area under the curve and slope respectively, and the OGTT time interval corresponding to the feature appears in the subscripts.
+%
+\begin{table}[!b]
   \centering
   \renewcommand{\arraystretch}{1.3}
-  \caption{List of ten most relevant features ranked by the mRMR algorithm}
+  \caption{List of ten most relevant features ranked by the \ac{mrmr} algorithm}
   % \vspace{-4mm}%Put here to reduce too much white space after table
   \centering
   \begin{tabular}{c c}
@@ -381,21 +396,62 @@ where $\mathcal I$ follows its definition in \eqref{eq:MI}. By minimizing $\math
     Rank &  Feature\\
     \midrule \midrule
     1 & AuC-Glu\textsubscript{0-120}\\
-    2 & Sl-Glu\textsubscript{120-0}\\
-    3 & Sl-Glu\textsubscript{120-60}\\
-    4 & Sl-Glu\textsubscript{60-0}\\
-    5 & Sl-Glu\textsubscript{30-0}\\
-    6 & AuC-Glu\textsubscript{60-120}\\
-    7 & PG\textsubscript{0}\\
-    8 & PG\textsubscript{120}\\
-    9 & PG\textsubscript{60} \\
-    10 & AuC-Glu\textsubscript{30-120}\\
+    2 & $\Delta$Glu\textsubscript{120-0}\\
+    3 & $\Delta$Glu\textsubscript{120-60}\\
+    4 & Ethnicity \\
+    5 & $\Delta$Ins\textsubscript{120-0}\\
+    6 & $\Delta$Glu\textsubscript{60-0}\\
+    7 & $\Delta$Glu\textsubscript{30-0}\\
+    8 & $\Delta$Glu\textsubscript{60-30}\\
+    9 & $\Delta$Ins\textsubscript{120-60}\\
+    10 & $\Delta$Ins\textsubscript{60-0}\\
     \bottomrule
   \end{tabular}
   \label{tab:ranked}
   % \vspace{4mm}%Put here to reduce too much white space after table
 \end{table}
 %
+In all the classification experiments, we aimed to maximize the ability to correctly predict the diabetic class. The bar plots in Fig. \ref{fig:gmean} show the \ac{gm} of the sensitivity and specificity obtained from the linear and \ac{rbf} kernels. For each number of features used, we selected the combination that generated the maximum \ac{gm}. All the results presented here are averaged over \num{100} iterations of the respective classifiers. The accuracy and specificity of the same feature combinations are illustrated separately in Fig. \ref{fig:sn_acc}.
+%
+\begin{figure*}[h!]
+	\centering
+	\subfloat[Linear]
+  {
+  \includegraphics[width=0.45\textwidth]{gmean_lin_unbal_xbar.tikz}
+	\label{fig:gmean_lin_unbal}
+  }
+	\subfloat[\ac{rbf}]
+  {
+  \includegraphics[width=0.45\textwidth]{gmean_rbf_unbal_xbar.tikz}
+	\label{fig:gmean_rbf_unbal}
+  }
+	\caption{The geometric mean of sensitivity and specificity for (a) linear, and (b) \ac{rbf} kernels.}
+	\label{fig:gmean}
+\end{figure*}
+%
+\begin{figure*}[t!]
+	\centering
+	\subfloat[Linear]
+  {
+  \includegraphics[width=0.45\textwidth]{sn_acc_lin_unbal.tikz}
+	\label{fig:sn_acc_lin_unbal}
+  }
+	\subfloat[\ac{rbf}]
+  {
+  \includegraphics[width=0.45\textwidth]{sn_acc_rbf_unbal.tikz}
+	\label{fig:sn_acc_rbf_unbal}
+  }
+	\caption{The classifier performance in terms of accuracy and sensitivity for the best feature combinations.}
+	\label{fig:sn_acc}
+\end{figure*}
+%
+
+As illustrated in Fig. \ref{fig:gmean}, the \ac{gm} for the linear SVM ranges from \num{0.7587} to \num{0.7643}, and for non-linear SVM from \num{0.7461} to \num{0.7934}.
+
+ More observations from Fig. 4… A combination of four features, namely AuC-Glu0-120, ΔGlu120-0, ΔGlu120-60 and ΔGlu30-0 provided the best classification performance  using a non-linear SVM: g-mean of 0.89, accuracy of 96.8 %, and sensitivity of 80.5.
+
+
+
 
 In the second phase, we further refined the number of variables to four by only selecting the ones which provided the best performance using the SVM classification scheme with the parameters $C$ and $\gamma$ preconfigured to a value of \num{1}. For this purpose, we employed the accuracy achieved in the validation set as the evaluation criterion. Table \ref{tab:best_features} shows the mean validation accuracies of the variables which is  obtained by performing \num{100} iterations of the SVM classifier supplied with only one variable at a time.
 %++
@@ -433,10 +489,10 @@ In the second phase, we further refined the number of variables to four by only 
 %
 \section{Data Experiments}
 %
-In this paper, we employed the non-linear SVM \eqref{eq:classifier} in the form of radial basis functions (RBF) \eqref{eq:rbf} since the classes can not be linearly separated directly as observed in Fig. \ref{fig:ogtt_mean}. We also used the linear variant of the SVM \eqref{eq:lin_classifier} to compare the classifier performances. Moreover, due to the unbalanced nature of the dataset, we conducted two experiments in the preprocessing phase. In the first the dataset was balanced where we randomly undersampled the majority class, and  took \num{160} instances from each class for the training. In the second experiment, we retained the class ratio of the data set and took \num[group-minimum-digits=4, group-separator = {,}]{1360} samples to generate the training set that contained \num{160} and \num[group-minimum-digits=4, group-separator = {,}]{1200} instances of the diabetic and healthy classes respectively. In order to ensure that the model remained unbiased and generalized well to new data, we performed \num{10}-fold cross-validation during the training and the performance obtained was averaged over all the \num{10} folds. All the experiments were carried out using the statistical and machine learning toolbox of Matlab and the data was normalized prior to the training. The optimal hyperplane parameters $C$ and $\sigma$ in \eqref{eq:min} and \eqref{eq:rbf} respectively were determined through a grid search with a view to maximize the classifier hit rate defined as,
+In this paper, we employed the non-linear SVM \eqref{eq:classifier} in the form of radial basis functions (RBF) \eqref{eq:rbf} since the classes can not be linearly separated directly as observed in Fig. \ref{fig:ogtt_mean}. We also used the linear variant of the SVM \eqref{eq:lin_classifier} to compare the classifier performances. Moreover, due to the unbalanced nature of the dataset, we conducted two experiments in the preprocessing phase. In the first the dataset was balanced where we randomly undersampled the majority class, and  took \num{160} instances from each class for the training. In the second experiment, we retained the class ratio of the data set and took \num[group-minimum-digits=4, group-separator = {,}]{1360} samples to generate the training set that contained \num{160} and \num[group-minimum-digits=4, group-separator = {,}]{1200} instances of the diabetic and healthy classes respectively. In order to ensure that the model remained unbiased and generalized well to new data, we performed \num{10}-fold cross-validation during the training and the performance obtained was averaged over all the \num{10} folds. All the experiments were carried out using the statistical and machine learning toolbox of Matlab and the data was normalized prior to the training. The optimal hyperplane parameters $C$ and $\sigma$ in \eqref{eq:min} and \eqref{eq:rbf} respectively were determined through a grid search with a view to maximize the classifier sensitivity defined as,
 %
 \begin{equation}
-  \mathrm{Hit~Rate} = \frac{\mathrm{TP}}{\mathrm{TP} + \mathrm{FN}},
+  \mathrm{Sensitivity} = \frac{\mathrm{TP}}{\mathrm{TP} + \mathrm{FN}},
 \end{equation}
 %
 where TP and FN refer to the number of correctly and incorrectly classified diabetic subjects respectively.
@@ -450,7 +506,7 @@ where TP and FN refer to the number of correctly and incorrectly classified diab
   \centering
   \begin{tabularx}{.95\columnwidth}{c c c c}
     \toprule
-    &  Accuracy \textpm ~SD & Hit Rate \textpm ~SD & Specificity \textpm ~SD\\
+    &  Accuracy \textpm ~SD & Sensitivity \textpm ~SD & Specificity \textpm ~SD\\
     \midrule \midrule
     Linear SVM (Balanced) & \SI{78.73 \pm 1.4}{\percent} & \SI{77.77 \pm 1.2}{\percent} & \SI{79.69 \pm 2.3}{\percent} \\
     Linear SVM (Unbalanced) & \SI{79.74 \pm 0.43}{\percent} & \SI{77.81 \pm 0.9}{\percent} & \SI{80.00 \pm 0.4}{\percent} \\
@@ -469,9 +525,9 @@ where TP and FN refer to the number of correctly and incorrectly classified diab
 \section{Results and Discussion}
 %
 %
-In order to correctly predict the future diabetes subjects, the model was trained to maximize the recall or hit rate during the training. To train the predictor model, we used four features, all of which were derived from the blood glucose measurements. Table \ref{tab:training} presents the mean training performance of the linear and non-linear SVM classifiers obtained over \num{100} trials. We used the definition of accuracy as the ratio of number of correctly classified subjects to the total number of subjects, whereas the specificity was the ratio of the correctly classified healthy subjects to the total number of healthy subjects. Most notably, the similarity in the performance for balanced and unbalanced training routines demonstrates that the model in the latter case unbiased toward the majority class. The optimal hyperplane parameters corresponding to the Matlab arguments `BoxConstraint' and `Gamma', were respectively assigned the values of \num{1.0} and \num{5.0}. For the linear version of the SVM, an average of \num{250} and \num[group-minimum-digits=4, group-separator = {,}]{1114} support vectors were used to construct the hyperplane for the balanced and unbalanced datasets respectively. On the other hand, the corresponding values were \num{278} and \num[group-minimum-digits=4, group-separator = {,}]{1198} for the nonlinear SVM with the RBF as the kernel. It should be noted that the difference in the dimensionality of the hyperplanes between the two variants of the SVM is not large, which indicates that the discriminating power of the features used.
+In order to correctly predict the future diabetes subjects, the model was trained to maximize the sensitivity. To train the predictor model, we used four features, all of which were derived from the plasma glucose measurements. Table \ref{tab:training} presents the mean training performance of the linear and non-linear SVM classifiers obtained over \num{100} trials. We used the definition of accuracy as the ratio of number of correctly classified subjects to the total number of subjects, whereas the specificity was the ratio of the correctly classified healthy subjects to the total number of healthy subjects. Most notably, the similarity in the performance for balanced and unbalanced training routines demonstrates that the model in the latter case unbiased toward the majority class. The optimal hyperplane parameters corresponding to the Matlab arguments `BoxConstraint' and `Gamma', were respectively assigned the values of \num{1.0} and \num{5.0}. For the linear version of the SVM, an average of \num{250} and \num[group-minimum-digits=4, group-separator = {,}]{1114} support vectors were used to construct the hyperplane for the balanced and unbalanced datasets respectively. On the other hand, the corresponding values were \num{278} and \num[group-minimum-digits=4, group-separator = {,}]{1198} for the nonlinear SVM with the RBF as the kernel. It should be noted that the difference in the dimensionality of the hyperplanes between the two variants of the SVM is not large, which indicates that the discriminating power of the features used.
 
-Table \ref{tab:validation} displays the validation performance of the classifiers. All the model were validated on a hold-out set \num{100} times set, in which each iteration resulted in a randomly generated set of \num{11} diabetic and \num{83} healthy samples, that were not part of the training data. The best mean performance of \SI{98.51}{\percent} accuracy and  recall of \SI{87.27}{\percent} was obtained from the nonlinear SVM with the RBF kernel. The standard deviation of the two metrics along \num{100} iterations was \SI{1.40}{\percent} and \SI{11.50}{\percent} respectively. We also compared the results of our approach with two other techniques that used the SAHS dataset. The logistic regression based SADPM based on
+Table \ref{tab:validation} displays the validation performance of the classifiers. All the model were validated on a hold-out set \num{100} times set, in which each iteration resulted in a randomly generated set of \num{11} diabetic and \num{83} healthy samples, that were not part of the training data. The best mean performance of \SI{98.51}{\percent} accuracy and  specificity of \SI{87.27}{\percent} was obtained from the nonlinear SVM with the RBF kernel. The standard deviation of the two metrics along \num{100} iterations was \SI{1.40}{\percent} and \SI{11.50}{\percent} respectively. We also compared the results of our approach with two other techniques that used the SAHS dataset. The logistic regression based SADPM based on
 % LIN BAL
 % ans =
 %     0.7855    0.7815    0.7873    0.7867
@@ -594,7 +650,7 @@ Table \ref{tab:validation} displays the validation performance of the classifier
   \centering
   \begin{tabularx}{.95\columnwidth}{c c c c}
     \toprule
-    &  Accuracy \textpm ~SD & Hit Rate \textpm ~SD & Specificity \textpm ~SD\\
+    &  Accuracy \textpm ~SD & Specificity \textpm ~SD & Specificity \textpm ~SD\\
     \midrule \midrule
     Linear SVM (Balanced) & \SI{97.29 \pm 1.4}{\percent}  & \SI{76.82 \pm 11.9}{\percent}  & \SI{100}{\percent} \\
     Linear SVM (Unbalanced) & \SI{97.19 \pm 1.5}{\percent} & \SI{76.82 \pm 12.70 }{\percent}  & \SI{99.89 \pm 0.4}{\percent} \\
@@ -636,9 +692,10 @@ Table \ref{tab:validation} displays the validation performance of the classifier
 \section{Conclusion}
 %
 %
-In this paper, we developed a SVM prediction model to identify the persons that are an increased risk of developing type 2 diabetes in the future. We showed that a high prediction performance can be achieved by extracting information from a person's abnormally high blood glucose levels. The predictive power of our approach in terms of the accuracy and in particular the recall, is significantly greater than the similar techniques used previously.
+In this paper, we present a most promising set of features that are used to develop a non-linear \ac{svm} based future \ac{t2dm} prediction model. The features were derived from the OGTT data and were augmented by personal information such as age, ethnicity and \ac{bmi}. Using a feature selection algorithm, we demonstrate that the features deduced from the plasma glucose concentrations provide the optimal feature subset and have the strongest predictive power for the future development of \ac{t2dm}. Moreover, the performance of the presented prediction model is significantly better in terms of accuracy and sensitivity combined, as compared to other \ac{t2dm} prediction schemes. In order to address the unbalanced nature of the \ac{sahs} dataset, we chose the \ac{gm} of sensitivity and specificity as the performance evaluation criteria.
 
-A drawback of this approach is the specialized nature of the oral glucose tolerance test generating the requisite data, which is expensive and invasive in which samples of the person's blood samples are taken more than once. However, we believe that the cost incurred and the associated inconvenience is compensated by the critical information obtained as a result through which a physician can recommend intervention measures to reduce or avoid the chances of having diabetes in the future.
+The principal contribution of this study includes a \ac{t2dm} prediction model based on the features derived only from the plasma glucose concentrations measured during an \ac{ogtt}. The findings of this paper provide a complementary and cost-effective tool for the clinicians to screen individuals that are at an increased risk of developing \ac{t2dm} in future.
+
 %
 %
 %
@@ -689,7 +746,7 @@ This publication was made possible by NPRP grant number NPRP 10-1231-160071 from
 % Can be used to pull up biographies so that the bottom of the last one
 % is flush with the other column.
 %\enlargethispage{-5in}
-
+\input{./acronym.tex}
 
 
 % that's all folks

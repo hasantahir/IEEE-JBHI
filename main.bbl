@@ -35,6 +35,61 @@ J.~Tuomilehto, J.~Lindstr{\"o}m, J.~G. Eriksson, T.~T. Valle,
   glucose tolerance,'' \emph{New England Journal of Medicine}, vol. 344,
   no.~18, pp. 1343--1350, 2001.
 
+\bibitem{diabetes2015long}
+D.~P. P.~R. Group \emph{et~al.}, ``Long-term effects of lifestyle intervention
+  or metformin on diabetes development and microvascular complications over
+  15-year follow-up: the diabetes prevention program outcomes study,''
+  \emph{The Lancet Diabetes \& Endocrinology}, vol.~3, no.~11, pp. 866--875,
+  2015.
+
+\bibitem{noble2011risk}
+D.~Noble, R.~Mathur, T.~Dent, C.~Meads, and T.~Greenhalgh, ``Risk models and
+  scores for type 2 diabetes: systematic review,'' \emph{BMJ}, vol. 343, p.
+  d7163, 2011.
+
+\bibitem{Heikes1040}
+K.~E. Heikes, D.~M. Eddy, B.~Arondekar, and L.~Schlessinger, ``Diabetes risk
+  calculator,'' \emph{Diabetes Care}, vol.~31, no.~5, pp. 1040--1045, 2008.
+
+\bibitem{Glumer727}
+C.~Gl{\"u}mer, B.~Carstensen, A.~Sandb{\ae}k, T.~Lauritzen, T.~J{\o}rgensen,
+  and K.~Borch-Johnsen, ``A danish diabetes risk score for targeted
+  screening,'' \emph{Diabetes Care}, vol.~27, no.~3, pp. 727--733, 2004.
+
+\bibitem{HELIOVAARA1993181}
+\BIBentryALTinterwordspacing
+M.~Heliövaara, A.~Aromaa, T.~Klaukka, P.~Knekt, M.~Joukamaa, and O.~Impivaara,
+  ``Reliability and validity of interview data on chronic diseases the
+  mini-finland health survey,'' \emph{Journal of Clinical Epidemiology},
+  vol.~46, no.~2, pp. 181 -- 191, 1993. [Online]. Available:
+  \url{http://www.sciencedirect.com/science/article/pii/0895435693900567}
+\BIBentrySTDinterwordspacing
+
+\bibitem{expert-committee}
+\BIBentryALTinterwordspacing
+, ``Report of the expert committee on the diagnosis and classification of
+  diabetes mellitus,'' \emph{Diabetes Care}, vol.~20, no.~7, pp. 1183--1197,
+  1997. [Online]. Available:
+  \url{http://care.diabetesjournals.org/content/20/7/1183}
+\BIBentrySTDinterwordspacing
+
+\bibitem{stumvoll_use_2000}
+M.~Stumvoll, A.~Mitrakou, W.~Pimenta, T.~Jenssen, H.~Yki-Järvinen,
+  T.~Van~Haeften, W.~Renn, and J.~Gerich, ``Use of the oral glucose tolerance
+  test to assess insulin release and insulin sensitivity.'' \emph{Diabetes
+  Care}, vol.~23, no.~3, pp. 295--301, 2000.
+
+\bibitem{organization_definition_2006}
+W.~H. Organization and {others}, ``Definition and diagnosis of diabetes
+  mellitus and intermediate hyperglycaemia: report of a {WHO}/{IDF}
+  consultation,'' 2006.
+
+\bibitem{defronzo2011assessment}
+R.~A. DeFronzo and M.~Abdul-Ghani, ``Assessment and treatment of cardiovascular
+  risk in prediabetes: Impaired glucose tolerance and impaired fasting
+  glucose,'' \emph{The American Journal of Cardiology}, vol. 108, no.~3, pp.
+  3B--24B, 2011.
+
 \bibitem{shaw_impaired_1999}
 J.~E. Shaw, P.~Z. Zimmet, M.~de~Courten, G.~K. Dowse, P.~Chitson, H.~Gareeboo,
   F.~Hemraj, D.~Fareed, J.~Tuomilehto, and K.~G. Alberti,
@@ -55,38 +110,6 @@ M.~A. Abdul-Ghani, K.~Williams, R.~A. DeFronzo, and M.~Stern,
   ``\BIBforeignlanguage{en}{What {Is} the {Best} {Predictor} of {Future} {Type}
   2 {Diabetes}?}'' \emph{\BIBforeignlanguage{en}{Diabetes Care}}, vol.~30,
   no.~6, pp. 1544--1548, Jun. 2007.
-
-\bibitem{abdul2009fasting}
-M.~A. Abdul-Ghani, V.~Lyssenko, T.~Tuomi, R.~A. DeFronzo, and L.~Groop,
-  ``Fasting versus postload plasma glucose concentration and the risk for
-  future type 2 diabetes: results from the botnia study,'' \emph{Diabetes
-  Care}, vol.~32, no.~2, pp. 281--286, 2009.
-
-\bibitem{abdul-ghani_shape_2010}
-------, ``\BIBforeignlanguage{en}{The shape of plasma glucose concentration
-  curve during {OGTT} predicts future risk of type 2 diabetes},''
-  \emph{\BIBforeignlanguage{en}{Diabetes/Metabolism Research and Reviews}},
-  vol.~26, no.~4, pp. 280--286, May 2010.
-
-\bibitem{abdul-ghani_plasma_2009}
-M.~A. Abdul-Ghani and R.~A. DeFronzo, ``\BIBforeignlanguage{en}{Plasma
-  {Glucose} {Concentration} and {Prediction} of {Future} {Risk} of {Type} 2
-  {Diabetes}},'' \emph{\BIBforeignlanguage{en}{Diabetes Care}}, vol.~32, no.
-  suppl\_2, pp. S194--S198, Nov. 2009.
-
-\bibitem{noble2011risk}
-D.~Noble, R.~Mathur, T.~Dent, C.~Meads, and T.~Greenhalgh, ``Risk models and
-  scores for type 2 diabetes: systematic review,'' \emph{BMJ}, vol. 343, p.
-  d7163, 2011.
-
-\bibitem{Heikes1040}
-K.~E. Heikes, D.~M. Eddy, B.~Arondekar, and L.~Schlessinger, ``Diabetes risk
-  calculator,'' \emph{Diabetes Care}, vol.~31, no.~5, pp. 1040--1045, 2008.
-
-\bibitem{Glumer727}
-C.~Gl{\"u}mer, B.~Carstensen, A.~Sandb{\ae}k, T.~Lauritzen, T.~J{\o}rgensen,
-  and K.~Borch-Johnsen, ``A danish diabetes risk score for targeted
-  screening,'' \emph{Diabetes Care}, vol.~27, no.~3, pp. 727--733, 2004.
 
 \bibitem{barakat_intelligible_2010}
 N.~Barakat, A.~P. Bradley, and M.~N.~H. Barakat, ``Intelligible {Support}
@@ -113,6 +136,36 @@ M.~A. Abdul-Ghani, T.~Abdul-Ghani, M.~P. Stern, J.~Karavic, T.~Tuomi, I.~Bo,
   \emph{\BIBforeignlanguage{en}{Diabetes Care}}, vol.~34, no.~9, pp.
   2108--2112, Sep. 2011.
 
+\bibitem{abdul2009fasting}
+M.~A. Abdul-Ghani, V.~Lyssenko, T.~Tuomi, R.~A. DeFronzo, and L.~Groop,
+  ``Fasting versus postload plasma glucose concentration and the risk for
+  future type 2 diabetes: results from the botnia study,'' \emph{Diabetes
+  Care}, vol.~32, no.~2, pp. 281--286, 2009.
+
+\bibitem{chawla2002smote}
+N.~V. Chawla, K.~W. Bowyer, L.~O. Hall, and W.~P. Kegelmeyer, ``Smote:
+  synthetic minority over-sampling technique,'' \emph{Journal of Artificial
+  Intelligence Research}, vol.~16, pp. 321--357, 2002.
+
+\bibitem{Domingos}
+\BIBentryALTinterwordspacing
+P.~Domingos, ``Metacost: A general method for making classifiers
+  cost-sensitive,'' in \emph{Proceedings of the Fifth ACM SIGKDD International
+  Conference on Knowledge Discovery and Data Mining}, ser. KDD '99.\hskip 1em
+  plus 0.5em minus 0.4em\relax New York, NY, USA: ACM, 1999, pp. 155--164.
+  [Online]. Available: \url{http://doi.acm.org/10.1145/312129.312220}
+\BIBentrySTDinterwordspacing
+
+\bibitem{kubat1997addressing}
+M.~Kubat, S.~Matwin \emph{et~al.}, ``Addressing the curse of imbalanced
+  training sets: one-sided selection,'' in \emph{ICML}, vol.~97.\hskip 1em plus
+  0.5em minus 0.4em\relax Nashville, USA, 1997, pp. 179--186.
+
+\bibitem{Tang_SVM}
+Y.~Tang, Y.~Zhang, N.~V. Chawla, and S.~Krasser, ``Svms modeling for highly
+  imbalanced classification,'' \emph{IEEE Transactions on Systems, Man, and
+  Cybernetics, Part B (Cybernetics)}, vol.~39, no.~1, pp. 281--288, Feb 2009.
+
 \bibitem{burke_rapid_1999}
 J.~P. Burke, K.~Williams, S.~P. Gaskill, H.~P. Hazuda, S.~M. Haffner, and M.~P.
   Stern, ``\BIBforeignlanguage{en}{Rapid {Rise} in the {Incidence} of {Type} 2
@@ -127,25 +180,6 @@ C.~Lorenzo, K.~Williams, K.~J. Hunt, and S.~M. Haffner,
   {The} {San} {Antonio} {Heart} {Study}},''
   \emph{\BIBforeignlanguage{en}{Diabetes Care}}, vol.~29, no.~3, pp. 625--630,
   Mar. 2006.
-
-\bibitem{haffner_hyperinsulinemia_1986}
-S.~M. Haffner, M.~P. Stern, H.~P. Haztjda, J.~A. Pugh, and J.~K. Patterson,
-  ``\BIBforeignlanguage{en}{Hyperinsulinemia in a {Population} at {High} {Risk}
-  for {Non}-{Insulin}-{Dependent} {Diabetes} {Mellitus}},''
-  \emph{\BIBforeignlanguage{en}{New England Journal of Medicine}}, vol. 315,
-  no.~4, pp. 220--224, Jul. 1986.
-
-\bibitem{wei_effects_1998}
-M.~Wei, S.~P. Gaskill, S.~M. Haffner, and M.~P. Stern,
-  ``\BIBforeignlanguage{en}{Effects of {Diabetes} and {Level} of {Glycemia} on
-  {All}-{Cause} and {Cardiovascular} {Mortality}: {The} {San} {Antonio} {Heart}
-  {Study}},'' \emph{\BIBforeignlanguage{en}{Diabetes Care}}, vol.~21, no.~7,
-  pp. 1167--1172, Jul. 1998.
-
-\bibitem{Matsuda1462}
-M.~Matsuda and R.~A. DeFronzo, ``Insulin sensitivity indices obtained from oral
-  glucose tolerance testing: comparison with the euglycemic insulin clamp.''
-  \emph{Diabetes Care}, vol.~22, no.~9, pp. 1462--1470, 1999.
 
 \bibitem{vapnik_nature_2000}
 V.~N. Vapnik, \emph{The nature of statistical learning theory}, 2nd~ed., ser.
@@ -163,24 +197,30 @@ J.~Friedman, T.~Hastie, and R.~Tibshirani, \emph{The elements of statistical
   learning}.\hskip 1em plus 0.5em minus 0.4em\relax Springer series in
   statistics New York, NY, USA:, 2001, vol.~1, no.~10.
 
-\bibitem{scholkopf2002learning}
-B.~Sch{\"o}lkopf, A.~J. Smola, F.~Bach \emph{et~al.}, \emph{Learning with
-  kernels: support vector machines, regularization, optimization, and
-  beyond}.\hskip 1em plus 0.5em minus 0.4em\relax MIT press, 2002.
+\bibitem{seino1975insulinogenic}
+Y.~Seino, M.~Ikeda, M.~Yawata, and H.~Imura, ``The insulinogenic index in
+  secondary diabetes,'' \emph{Hormone and Metabolic Research}, vol.~7, no.~02,
+  pp. 107--115, 1975.
 
-\bibitem{ross2014mutual}
-B.~C. Ross, ``Mutual information between discrete and continuous data sets,''
-  \emph{PloS one}, vol.~9, no.~2, p. e87357, 2014.
+\bibitem{Matsuda1462}
+M.~Matsuda and R.~A. DeFronzo, ``Insulin sensitivity indices obtained from oral
+  glucose tolerance testing: comparison with the euglycemic insulin clamp.''
+  \emph{Diabetes Care}, vol.~22, no.~9, pp. 1462--1470, 1999.
 
-\bibitem{trunk1979problem}
-G.~V. Trunk, ``A problem of dimensionality: A simple example,'' \emph{IEEE
-  Transactions on Pattern Analysis and Machine Intelligence}, no.~3, pp.
-  306--307, 1979.
+\bibitem{matthews1985homeostasis}
+D.~Matthews, J.~Hosker, A.~Rudenski, B.~Naylor, D.~Treacher, and R.~Turner,
+  ``Homeostasis model assessment: insulin resistance and $\beta$-cell function
+  from fasting plasma glucose and insulin concentrations in man,''
+  \emph{Diabetologia}, vol.~28, no.~7, pp. 412--419, 1985.
 
 \bibitem{mRMR}
 H.~Peng, F.~Long, and C.~Ding, ``Feature selection based on mutual information:
   criteria of max-dependency, max-relevance, and min-redundancy,'' \emph{IEEE
   Transactions on Pattern Analysis and Machine Intelligence}, pp. 1226--1238,
   2005.
+
+\bibitem{ross2014mutual}
+B.~C. Ross, ``Mutual information between discrete and continuous data sets,''
+  \emph{PloS one}, vol.~9, no.~2, p. e87357, 2014.
 
 \end{thebibliography}

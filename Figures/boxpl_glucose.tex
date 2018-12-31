@@ -21,17 +21,18 @@
 xmin=0.5,
 xmax=4.5,
 xtick={1,2,3,4},
-xticklabels={{0},{30},{60},{120}},
+xticklabels={{Basal},{30},{60},{120}},
 xlabel style={font=\color{white!15!black}},
 xlabel={$t$ [minutes]},
 ymin=40,
-ymax=250,
+ymax=300,
 ylabel style={font=\color{white!15!black}},
 ylabel={Glucose [mg/dL]},
 axis background/.style={fill=white},
-legend style={legend cell align=left, align=left, draw=white!15!black}
+legend style={legend cell align=left, align=left, draw=white!15!black},
+legend pos = north west
 ]
-\addplot [color=mycolor1, draw=none, mark size=0.3pt, mark=*, mark options={solid, fill=black, black}, forget plot]
+\addplot [color=mycolor1, draw=none, mark size=0.3pt, mark=*, mark options={solid, fill=black, black}, forget plot,xshift=0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 1	108.55\\
 1	109.6\\
@@ -53,7 +54,7 @@ legend style={legend cell align=left, align=left, draw=white!15!black}
 1	120.6\\
 1	121.95\\
 };
-\addplot [color=mycolor2, draw=none, mark size=0.3pt, mark=*, mark options={solid, fill=black, black}, forget plot]
+\addplot [color=mycolor2, draw=none, mark size=0.3pt, mark=*, mark options={solid, fill=black, black}, forget plot,xshift=0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 1	24.7\\
 1	46.35\\
@@ -61,28 +62,28 @@ legend style={legend cell align=left, align=left, draw=white!15!black}
 1	59.5\\
 1	59.7\\
 };
-\addplot [color=mycolor3, dotted, forget plot]
+\addplot [color=mycolor3, dotted, forget plot,xshift=0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 1	108.4\\
 1	60.25\\
 };
-\addplot [color=mycolor3, forget plot]
+\addplot [color=mycolor3, forget plot,xshift=0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 0.95	108.4\\
 1.05	108.4\\
 };
-\addplot [color=mycolor3, forget plot]
+\addplot [color=mycolor3, forget plot,xshift=0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 0.95	60.25\\
 1.05	60.25\\
 };
-\draw[fill=white!60!green, draw=black] (axis cs:0.95,78.275) rectangle (axis cs:1.05,90.375);
-\addplot [color=black, line width=1.5pt, forget plot]
+\draw[fill=white!60!green, draw=black,xshift=0.5*\pgfplotbarwidth] (axis cs:0.95,78.275) rectangle (axis cs:1.05,90.375);
+\addplot [color=black, line width=1.5pt, forget plot,xshift=0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 0.95	84.1\\
 1.05	84.1\\
 };
-\addplot [color=mycolor4, draw=none, mark size=0.3pt, mark=*, mark options={solid, fill=black, black}, forget plot]
+\addplot [color=mycolor4, draw=none, mark size=0.3pt, mark=*, mark options={solid, fill=black, black}, forget plot,xshift=0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 2	220.85\\
 2	221.45\\
@@ -99,33 +100,33 @@ legend style={legend cell align=left, align=left, draw=white!15!black}
 2	258.5\\
 2	587.95\\
 };
-\addplot [color=mycolor5, draw=none, mark size=0.3pt, mark=*, mark options={solid, fill=black, black}, forget plot]
+\addplot [color=mycolor5, draw=none, mark size=0.3pt, mark=*, mark options={solid, fill=black, black}, forget plot,xshift=0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 2	51.25\\
 2	53.85\\
 };
-\addplot [color=mycolor3, dotted, forget plot]
+\addplot [color=mycolor3, dotted, forget plot,xshift=0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 2	214.6\\
 2	57.3\\
 };
-\addplot [color=mycolor3, forget plot]
+\addplot [color=mycolor3, forget plot,xshift=0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 1.95	214.6\\
 2.05	214.6\\
 };
-\addplot [color=mycolor3, forget plot]
+\addplot [color=mycolor3, forget plot,xshift=0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 1.95	57.3\\
 2.05	57.3\\
 };
-\draw[fill=white!60!green, draw=black] (axis cs:1.95,116) rectangle (axis cs:2.05,155.8);
-\addplot [color=black, line width=1.5pt, forget plot]
+\draw[fill=white!60!green, draw=black,xshift=0.5*\pgfplotbarwidth] (axis cs:1.95,116) rectangle (axis cs:2.05,155.8);
+\addplot [color=black, line width=1.5pt, forget plot,xshift=0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 1.95	135.5\\
 2.05	135.5\\
 };
-\addplot [color=mycolor6, draw=none, mark size=0.3pt, mark=*, mark options={solid, fill=black, black}, forget plot]
+\addplot [color=mycolor6, draw=none, mark size=0.3pt, mark=*, mark options={solid, fill=black, black}, forget plot,xshift=0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 3	223.15\\
 3	225.7\\
@@ -146,28 +147,28 @@ legend style={legend cell align=left, align=left, draw=white!15!black}
 3	276.95\\
 3	286.05\\
 };
-\addplot [color=mycolor3, dotted, forget plot]
+\addplot [color=mycolor3, dotted, forget plot,xshift=0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 3	220.65\\
 3	26.6\\
 };
-\addplot [color=mycolor3, forget plot]
+\addplot [color=mycolor3, forget plot,xshift=0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 2.95	220.65\\
 3.05	220.65\\
 };
-\addplot [color=mycolor3, forget plot]
+\addplot [color=mycolor3, forget plot,xshift=0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 2.95	26.6\\
 3.05	26.6\\
 };
-\draw[fill=white!60!green, draw=black] (axis cs:2.95,100.1) rectangle (axis cs:3.05,149.15);
-\addplot [color=black, line width=1.5pt, forget plot]
+\draw[fill=white!60!green, draw=black,xshift=0.5*\pgfplotbarwidth] (axis cs:2.95,100.1) rectangle (axis cs:3.05,149.15);
+\addplot [color=black, line width=1.5pt, forget plot,xshift=0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 2.95	121.55\\
 3.05	121.55\\
 };
-\addplot [color=mycolor7, draw=none, mark size=0.3pt, mark=*, mark options={solid, fill=black, black}, forget plot]
+\addplot [color=mycolor7, draw=none, mark size=0.3pt, mark=*, mark options={solid, fill=black, black}, forget plot,xshift=0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 4	193.15\\
 4	194.1\\
@@ -185,23 +186,23 @@ legend style={legend cell align=left, align=left, draw=white!15!black}
 4	232.775\\
 4	236.375\\
 };
-\addplot [color=mycolor3, dotted, forget plot]
+\addplot [color=mycolor3, dotted, forget plot,xshift=0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 4	189.275\\
 4	44.925\\
 };
-\addplot [color=mycolor3, forget plot]
+\addplot [color=mycolor3, forget plot,xshift=0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 3.95	189.275\\
 4.05	189.275\\
 };
-\addplot [color=mycolor3, forget plot]
+\addplot [color=mycolor3, forget plot,xshift=0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 3.95	44.925\\
 4.05	44.925\\
 };
-\draw[fill=white!60!green, draw=black] (axis cs:3.95,91.875) rectangle (axis cs:4.05,132.225);
-\addplot [color=black, line width=1.5pt, forget plot]
+\draw[fill=white!60!green, draw=black,xshift=0.5*\pgfplotbarwidth] (axis cs:3.95,91.875) rectangle (axis cs:4.05,132.225);
+\addplot [color=black, line width=1.5pt, forget plot,xshift=0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 3.95	109.9\\
 4.05	109.9\\
@@ -209,100 +210,100 @@ legend style={legend cell align=left, align=left, draw=white!15!black}
 \addlegendimage{area legend,fill=white!60!green,draw=black}
 \addlegendentry{Healthy}
 
-\addplot [color=mycolor8, dotted, forget plot]
+\addplot [color=mycolor8, dotted, forget plot,xshift=-0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 1	125.1\\
 1	69.3\\
 };
-\addplot [color=mycolor8, forget plot]
+\addplot [color=mycolor8, forget plot,xshift=-0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 0.95	125.1\\
 1.05	125.1\\
 };
-\addplot [color=mycolor8, forget plot]
+\addplot [color=mycolor8, forget plot,xshift=-0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 0.95	69.3\\
 1.05	69.3\\
 };
-\draw[fill=mycolor13, draw=black] (axis cs:0.95,86.75) rectangle (axis cs:1.05,104.65);
-\addplot [color=black, line width=1.5pt, forget plot]
+\draw[fill=mycolor13, draw=black,xshift=-0.5*\pgfplotbarwidth] (axis cs:0.95,86.75) rectangle (axis cs:1.05,104.65);
+\addplot [color=black, line width=1.5pt, forget plot,xshift=-0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 0.95	94.1\\
 1.05	94.1\\
 };
-\addplot [color=mycolor9, draw=none, mark size=0.3pt, mark=+, mark options={solid, fill=black, black}, forget plot]
+\addplot [color=mycolor9, draw=none, mark size=0.3pt, mark=+, mark options={solid, fill=black, black}, forget plot,xshift=-0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 2	258.25\\
 2	275.75\\
 };
-\addplot [color=mycolor8, dotted, forget plot]
+\addplot [color=mycolor8, dotted, forget plot,xshift=-0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 2	249.5\\
 2	94.8\\
 };
-\addplot [color=mycolor8, forget plot]
+\addplot [color=mycolor8, forget plot,xshift=-0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 1.95	249.5\\
 2.05	249.5\\
 };
-\addplot [color=mycolor8, forget plot]
+\addplot [color=mycolor8, forget plot,xshift=-0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 1.95	94.8\\
 2.05	94.8\\
 };
-\draw[fill=mycolor13, draw=black] (axis cs:1.95,147.45) rectangle (axis cs:2.05,188.95);
-\addplot [color=black, line width=1.5pt, forget plot]
+\draw[fill=mycolor13, draw=black,xshift=-0.5*\pgfplotbarwidth] (axis cs:1.95,147.45) rectangle (axis cs:2.05,188.95);
+\addplot [color=black, line width=1.5pt, forget plot,xshift=-0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 1.95	165.1\\
 2.05	165.1\\
 };
-\addplot [color=mycolor1, draw=none, mark size=0.3pt, mark=+, mark options={solid, fill=black, black}, forget plot]
+\addplot [color=mycolor1, draw=none, mark size=0.3pt, mark=+, mark options={solid, fill=black, black}, forget plot,xshift=-0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 3	285.25\\
 };
-\addplot [color=mycolor2, draw=none, mark size=0.3pt, mark=+, mark options={solid, fill=black, black}, forget plot]
+\addplot [color=mycolor2, draw=none, mark size=0.3pt, mark=+, mark options={solid, fill=black, black}, forget plot,xshift=-0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 3	72.95\\
 3	75.6\\
 };
-\addplot [color=mycolor8, dotted, forget plot]
+\addplot [color=mycolor8, dotted, forget plot,xshift=-0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 3	273.4\\
 3	92.5\\
 };
-\addplot [color=mycolor8, forget plot]
+\addplot [color=mycolor8, forget plot,xshift=-0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 2.95	273.4\\
 3.05	273.4\\
 };
-\addplot [color=mycolor8, forget plot]
+\addplot [color=mycolor8, forget plot,xshift=-0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 2.95	92.5\\
 3.05	92.5\\
 };
-\draw[fill=mycolor13, draw=black] (axis cs:2.95,156.375) rectangle (axis cs:3.05,204.875);
-\addplot [color=black, line width=1.5pt, forget plot]
+\draw[fill=mycolor13, draw=black,xshift=-0.5*\pgfplotbarwidth] (axis cs:2.95,156.375) rectangle (axis cs:3.05,204.875);
+\addplot [color=black, line width=1.5pt, forget plot,xshift=-0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 2.95	183.2\\
 3.05	183.2\\
 };
-\addplot [color=mycolor8, dotted, forget plot]
+\addplot [color=mycolor8, dotted, forget plot,xshift=-0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 4	234.2\\
 4	80.2\\
 };
-\addplot [color=mycolor8, forget plot]
+\addplot [color=mycolor8, forget plot,xshift=-0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 3.95	234.2\\
 4.05	234.2\\
 };
-\addplot [color=mycolor8, forget plot]
+\addplot [color=mycolor8, forget plot,xshift=-0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 3.95	80.2\\
 4.05	80.2\\
 };
-\draw[fill=mycolor13, draw=black] (axis cs:3.95,139.85) rectangle (axis cs:4.05,185.4875);
-\addplot [color=black, line width=1.5pt, forget plot]
+\draw[fill=mycolor13, draw=black,xshift=-0.5*\pgfplotbarwidth] (axis cs:3.95,139.85) rectangle (axis cs:4.05,185.4875);
+\addplot [color=black, line width=1.5pt, forget plot,xshift=-0.5*\pgfplotbarwidth]
   table[row sep=crcr]{%
 3.95	162.75\\
 4.05	162.75\\

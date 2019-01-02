@@ -1,0 +1,18 @@
+Hasan,
+
+I finished reading the first paper (SVM) paper.  I thought it was very well written and easy to read.  It needs some proof reading, but can easily be done.  I can fix or comment if you provide word doc in the next round.  Some specific inputs:
+
+1.	 Quantitative definition of IGT will help.  without that Page 1, Column 2, Para 2 is difficult to understand.  If clinical diagnosis of IGT glucose above a threshold at 120 Min?
+2.	Fig 1 is misleading when the boxes overlap.  It will be better to display healthy and diabetic in separate columns rather than a single column.
+3.	The write up on SVM is good, but if this is from a source, need proper attribution.  Same with mRMR.
+4.	In the feature selection - you use "first 10 features".  It is better to use "top ten features based on relevance to prediction and minimizing redundancy".
+5.	The motivation for using only 4 features in step 2 is not clearly explained.  Why did you use only 4 instead of all 10.  Most machine learning algo can easily handle all the 10 features.
+6.	One way to address comment 5 is - because collecting data involves cost and time in performing the tests, our goal was to generate the most parsimonious model with minimal features while having good predictive accuracy..  That is why you selected top 4 features based on just 1 test (Glucose).   
+7.	In table 2, AUC and SL are explained.  But PG is not explained.  Is this plasma glucose?  Is that different from blood glucose?
+8.	For readers not familiar with AUC and Slope, it might help to explain with a figure and example.  Also, the notation 0-120 meaning slope and AUC between times 0 and 120 needs to be explained properly.
+9.	It is interesting that validation error is more than training.  To prevent reviewers comments we should note this and may be discuss that this indicates that the models are not over trained and are generalizable.
+10.	Last paragraph is discussion is not complete.
+11.	Last paragraph in conclusion ends on a negative note - cost.  It will be good to highlight how your work addresses this by limiting to only 1 feature (Glucose) at 0, 60 and 120 mins.   Compared to other possible combinations.
+12.	I am surprised to see that there are no insulin based features in Table 3.  I remember seeing some insulin based features in a previous PowerPoint.  If possible, it will be good to include some insulin based features in Table III so that you can argue that you eliminated insulin based features and developed an efficient predictor based on just glucose in the final model.
+
+Hope the comments are useful.  If you like, I can edit the manuscript if you provide a word file in the next iteration.

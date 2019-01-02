@@ -1,0 +1,51 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\definecolor{mycolor1}{rgb}{1.00000,0.20000,0.10000}%
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=4.521in,
+height=2.813in,
+at={(0.758in,1.474in)},
+scale only axis,
+bar shift auto,
+ymin=-0.2,
+ymax=11.2,
+ytick={1,2,3,4,5,6,7,8,9,10},
+yticklabels={{1},{1,6},{1,2,3},{1,2,3,7},{1,2,3,4,6},{1,2,3,4,6,10},{1,2,3,4,6,7,8},{1,2,3,4,6,7,8,10},{1,2,3,4,5,6,7,8,10},{All}},
+yticklabel style={rotate=00},
+ylabel style={font=\color{white!15!black}},
+ylabel={Feature Comb.},
+every axis y label/.style={at={(rel axis cs:0,1.)},anchor=east},
+xmin=0.8,
+xmax=0.9,
+xlabel style={font=\color{white!15!black}},
+xlabel={$\sqrt{\mathrm{ Sens.} \times \mathrm{Spec.}}$},
+axis background/.style={fill=white},
+xmajorgrids,
+ymajorgrids,
+bar shift=0pt, % --> added
+legend style={legend cell align=left, align=left, draw=white!15!black}
+]
+\addplot[xbar, bar width=0.6, fill=gray, draw=black, area legend] table[row sep=crcr] {%
+    0.8638    1.0000\\
+    0.8678    2.0000\\
+    0.8822    3.0000\\
+    0.8859    5.0000\\
+    0.8876    6.0000\\
+    0.8860    7.0000\\
+    0.8855    8.0000\\
+    0.8841    9.0000\\
+    0.8834   10.0000\\
+};
+\addplot[xbar, bar width=0.6, fill=orange, draw=black, postaction={pattern=north east lines}, step=0.1cm] table[row sep=crcr]{%
+    0.8907    4.0000\\
+    };%
+
+\end{axis}
+\end{tikzpicture}%

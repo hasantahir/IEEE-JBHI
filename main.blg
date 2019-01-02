@@ -1,13 +1,12 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
 The style file: IEEEtran.bst
-Database file #1: References.bib
+Database file #1: References_clean.bib
+Warning--entry type for "organization_definition_2006" isn't style-file defined
+--line 334 of file References_clean.bib
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
-Name 1 in "," has a comma at the end for entry expert-committee
-while executing---line 2403 of file IEEEtran.bst
 Warning--empty author in expert-committee
-Warning--empty journal in organization_definition_2006
 
 Done.
-(There was 1 error message)
+(There were 2 warnings)

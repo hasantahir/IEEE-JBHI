@@ -1,0 +1,142 @@
+%% Creator: Inkscape inkscape 0.92.3, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'features_define.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  Ins_{tead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  Ins_{tead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% Ins_{talled) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%%
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{692.7670643bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.39702454)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{features_define.pdf}}%
+    \put(0.00275729,0.00019735){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Baseline\end{tabular}}}}%
+    \put(0.17669745,0.00019735){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}30\end{tabular}}}}%
+    \put(0.33331572,0.00019735){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}60\end{tabular}}}}%
+    \put(0.48614487,0.00019735){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}120\end{tabular}}}}%
+    \put(0.01376388,0.01409091){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.00726819,0.08835831){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}50\end{tabular}}}}%
+    \put(-0.00031012,0.16262567){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}100\end{tabular}}}}%
+    \put(-0.00031012,0.23689307){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}150\end{tabular}}}}%
+    \put(-0.00031012,0.31116043){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}200\end{tabular}}}}%
+    \put(-0.00031012,0.38542783){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}250\end{tabular}}}}%
+    \put(0.43526197,0.3620017){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Glucose\end{tabular}}}}%
+    \put(0.43526197,0.3460623){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Insulin\end{tabular}}}}%
+    \put(0.22372616,0.07215428){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}AuC-Glu_{30-60}\end{tabular}}}}%
+    \put(0.38947422,0.15823362){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Delta$Glu_{120-60}\end{tabular}}}}%
+    \put(0.32928103,0.32086753){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Ins_{60}\end{tabular}}}}%
+    \put(0.3259346,0.14999644){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Glu_{60}\end{tabular}}}}%
+    \put(0.08056597,0.14566571){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}T_{half}Glu_{15}\end{tabular}}}}%
+    \put(0.55074177,0.34751221){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1. AuC-Glu_{0-30}\end{tabular}}}}%
+    \put(0.77054582,0.34722359){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}25. T_{half}Glu_{15}\end{tabular}}}}%
+    \put(0.67313585,0.34751221){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}13. $\Delta$Glu_{30-0}\end{tabular}}}}%
+    \put(0.86334623,0.34751221){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}37. $\Delta$Ins_{/$\Delta$Glu_{30-0}\end{tabular}}}}%
+    \put(0.55074177,0.32849548){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2. AuC-Glu_{0-60}\end{tabular}}}}%
+    \put(0.77054582,0.32820686){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}26. T_{half}Glu_{30}\end{tabular}}}}%
+    \put(0.67313585,0.32849548){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}14. $\Delta$Glu_{60-0}\end{tabular}}}}%
+    \put(0.86334623,0.32849548){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}38. $\Delta$Ins_{/$\Delta$Glu_{60-0}\end{tabular}}}}%
+    \put(0.55074177,0.30947867){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3. AuC-Glu_{0-120}\end{tabular}}}}%
+    \put(0.77054582,0.30919004){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}27. T_{half}Glu_{45}\end{tabular}}}}%
+    \put(0.67313585,0.30947867){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}15. $\Delta$Glu_{120-0}\end{tabular}}}}%
+    \put(0.86334623,0.30947867){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}39. $\Delta$Ins_{/$\Delta$Glu_{120-0}\end{tabular}}}}%
+    \put(0.55074177,0.29046189){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}4. AuC-Glu_{30-60}\end{tabular}}}}%
+    \put(0.67313585,0.29046189){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}16. $\Delta$Glu_{60-30}\end{tabular}}}}%
+    \put(0.77054582,0.29017327){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}28. T_{half}Glu_{60}\end{tabular}}}}%
+    \put(0.86334623,0.29046189){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}40. $\Delta$Ins_{/$\Delta$Glu_{60-30}\end{tabular}}}}%
+    \put(0.55074177,0.27144508){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}5. AuC-Glu_{30-120}\end{tabular}}}}%
+    \put(0.67313585,0.27144508){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}17. $\Delta$Glu_{120-30}\end{tabular}}}}%
+    \put(0.77054582,0.27117478){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}29. T_{half}Glu_{75}\end{tabular}}}}%
+    \put(0.86334623,0.27144508){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}41. $\Delta$Ins_{/$\Delta$Glu_{120-30}\end{tabular}}}}%
+    \put(0.55074177,0.25242826){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}6. AuC-Glu_{60-120}\end{tabular}}}}%
+    \put(0.67313585,0.25242826){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}18. $\Delta$Glu_{120-60}\end{tabular}}}}%
+    \put(0.77054582,0.25215796){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}30. T_{half}Glu_{90}\end{tabular}}}}%
+    \put(0.86334623,0.25242826){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}42. $\Delta$Ins_{/$\Delta$Glu_{120-60}\end{tabular}}}}%
+    \put(0.55074177,0.21439471){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}8. AuC-Ins_{0-60}\end{tabular}}}}%
+    \put(0.67313585,0.21439471){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}20. $\Delta$Ins_{60-0}\end{tabular}}}}%
+    \put(0.77054582,0.21410609){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}32. T_{half}Ins_{30}\end{tabular}}}}%
+    \put(0.86334623,0.21439471){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}44. $\Delta$Ins_{/$\Delta$Glu_{60-0}\end{tabular}}}}%
+    \put(0.96463328,0.21475338){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}x M}\end{tabular}}}}%
+    \put(0.55074177,0.23341149){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}7. AuC-Ins_{0-30}\end{tabular}}}}%
+    \put(0.67313585,0.23341149){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}19. $\Delta$Ins_{30-0}\end{tabular}}}}%
+    \put(0.77054582,0.23312286){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}31. T_{half}Ins_{15}\end{tabular}}}}%
+    \put(0.86334623,0.23341149){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}43. $\Delta$Ins_{/$\Delta$Glu_{30-0}\end{tabular}}}}%
+    \put(0.96415769,0.23328471){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}x M}\end{tabular}}}}%
+    \put(0.55074177,0.19428793){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}9. AuC-Ins_{0-120}\end{tabular}}}}%
+    \put(0.67313585,0.19428793){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}21. $\Delta$Ins_{120-0}\end{tabular}}}}%
+    \put(0.77054582,0.19673544){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}33. T_{half}Ins_{45}\end{tabular}}}}%
+    \put(0.86334623,0.19428793){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}45. $\Delta$Ins_{/$\Delta$Glu_{120-0}\end{tabular}}}}%
+    \put(0.96879414,0.19418106){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}x M}\end{tabular}}}}%
+    \put(0.55074177,0.17636108){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10. AuC-Ins_{30-60}\end{tabular}}}}%
+    \put(0.67313585,0.17636108){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}22. $\Delta$Ins_{60-30}\end{tabular}}}}%
+    \put(0.77054582,0.17607245){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}34. T_{half}Ins_{60}\end{tabular}}}}%
+    \put(0.86334623,0.17636108){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}46. $\Delta$Ins_{/$\Delta$Glu_{60-30}\end{tabular}}}}%
+    \put(0.96831864,0.17590752){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}x M}\end{tabular}}}}%
+    \put(0.55074177,0.15734431){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}11. AuC-Ins_{30-120}\end{tabular}}}}%
+    \put(0.67313585,0.15734431){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}23. $\Delta$Ins_{120-30}\end{tabular}}}}%
+    \put(0.77054582,0.15707405){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}35. T_{half}Ins_{75}\end{tabular}}}}%
+    \put(0.86334623,0.15734431){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}47. $\Delta$Ins_{/$\Delta$Glu_{120-30}\end{tabular}}}}%
+    \put(0.97295509,0.15725735){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}x M}\end{tabular}}}}%
+    \put(0.55074177,0.13832753){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}12. AuC-Ins_{60-120}\end{tabular}}}}%
+    \put(0.67313585,0.13832753){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}24. $\Delta$Ins_{120-60}\end{tabular}}}}%
+    \put(0.77054582,0.13805723){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}36. T_{half}Ins_{90}\end{tabular}}}}%
+    \put(0.86334623,0.13832753){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}48. $\Delta$Ins_{/$\Delta$Glu_{120-60}\end{tabular}}}}%
+    \put(0.97295509,0.13836947){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}x M}\end{tabular}}}}%
+    \put(0.55074177,0.1087765){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}49. Glu_{0}\end{tabular}}}}%
+    \put(0.55074177,0.09510241){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}50. Glu_{30}\end{tabular}}}}%
+    \put(0.55074177,0.08142836){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}51. Glu_{60}\end{tabular}}}}%
+    \put(0.55074177,0.06775426){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}52. Glu_{120}\end{tabular}}}}%
+    \put(0.55074177,0.05337777){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}53. Ins_{0}\end{tabular}}}}%
+    \put(0.55074177,0.03970367){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}54. Ins_{30}\end{tabular}}}}%
+    \put(0.55074177,0.02602962){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}55. Ins_{60}\end{tabular}}}}%
+    \put(0.55074177,0.01235553){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}56. Ins_{120}\end{tabular}}}}%
+    \put(0.67179087,0.1087765){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}57. Age}\end{tabular}}}}%
+    \put(0.67179087,0.09510241){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}58. Ethnicity}\end{tabular}}}}%
+    \put(0.67179087,0.08142836){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}59. BMI}\end{tabular}}}}%
+    \put(0.67179087,0.06775426){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}60. HOMA-IR}\end{tabular}}}}%
+    \put(0.67179087,0.05337777){\color[rgb]{0.14901961,0.14901961,0.14901961}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}61. Matsuda  Index}\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

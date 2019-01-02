@@ -1,0 +1,80 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\begin{tikzpicture}
+%
+\begin{axis}[
+width=4.48in,
+height=3.213in,
+at={(0.758in,1.234in)},
+scale only axis,
+xmin=0,xmax=11,
+xtick={1,2,3,4,5,6,7,8,9,10},
+xticklabels={{1},{1,6},{1,2,3},{1,2,3,7},{1,2,3,4,6},{1,2,3,4,6,10},{1,2,3,4,6,7,8},{1,2,3,4,6,7,8,10},{1,2,3,4,5,6,7,8,9},{All}},
+xticklabel style={rotate=270},
+xlabel style={font=\color{white!15!black}},
+xlabel={Features},
+axis y line*=left,
+xlabel={Features},
+ylabel=Accuracy,
+ylabel style={font=\color{red}},
+y tick label style={font=\color{red}},
+ymin=0.95,
+ymax=.98,
+xmajorgrids,
+ymajorgrids,
+axis background/.style={fill=white},
+legend style={legend cell align=left, align=left, draw=white!15!black}]
+%
+\addplot[color=black, line width=1.2pt, draw=none, mark size=5.0pt, mark=*, mark options={solid, fill=red, black}]
+  table[row sep=crcr]{%
+1	0.953936170212765\\
+2	0.960106382978723\\
+3	0.96563829787234\\
+4	0.968085106382978\\
+5	0.966063829787233\\
+6	0.966808510638297\\
+7	0.967127659574467\\
+8	0.967021276595744\\
+9	0.965106382978722\\
+10	0.964680851063828\\
+}; \label{plot_one}
+\addlegendentry{Accuracy}
+\end{axis}
+%
+\begin{axis}
+[width=4.48in,
+height=3.213in,
+at={(0.758in,1.234in)},
+scale only axis,
+xmin=0,xmax=11,
+axis y line*=right,
+ylabel=Sensitivity,
+ylabel style={font=\color{blue}},
+y tick label style={font=\color{blue}},
+xticklabels={,,},
+ymin=0.76,
+ymax=0.81,
+legend style={legend cell align=left, align=left, draw=white!15!black}]
+%
+\addlegendimage{/pgfplots/refstyle=plot_one}\addlegendentry{Accuracy}
+\addplot [color=black, line width=1.2pt, draw=none, mark size=3.5pt, mark=square*, mark options={solid, fill=blue, black}]
+  table[row sep=crcr]{%
+1	0.761818181818182\\
+2	0.763636363636363\\
+3	0.786363636363636\\
+4	0.800909090909091\\
+5	0.793636363636363\\
+6	0.796363636363636\\
+7	0.792727272727272\\
+8	0.791818181818181\\
+9	0.79090909090909\\
+10	0.789999999999999\\
+};
+\addlegendentry{Sensitivity}
+%
+\end{axis}
+\end{tikzpicture}%

@@ -1,0 +1,127 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\thispagestyle{empty}
+% \newcommand\notsotiny{\@setfontsize\notsotiny{6}{7}}
+\usepackage[T1]{fontenc}% optional T1 font encoding
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+\usepackage{times}
+\usepackage{amsmath,amssymb,amsfonts}
+% \usepackage{amsfonts} % to load math symbols
+\usepackage{commath} % For defining functions
+%\usepackage{mdwmath}
+\usepackage[nolist]{acronym}
+% \usepackage{showframe}\\
+
+% \usepackage{mdwtab}
+% \usepackage{minipage}
+% \usepackage[keeplastbox]{flushend}
+\usepackage{graphicx}
+% \usepackage{etoolbox}
+\usepackage{color}
+% \usepackage{placeins}
+\usepackage{subfig}
+\usepackage{caption}
+% \usepackage{etoolbox}
+\usepackage[table]{xcolor}
+% \hypersetup{
+% colorlinks,
+% linkcolor={black},
+% citecolor={black},
+% urlcolor={black}
+% }
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{newtxtext,newtxmath}
+% \usepackage{geometry} % just not to bother with the table width
+% \usepackage{standalone}
+% \usepackage{filecontents}
+\usepackage{tabularx,colortbl}
+\usepackage{pgfplots}
+\usepackage{standalone}
+\usepackage{tikz}
+\tikzset{
+font={\fontsize{10pt}{10}\selectfont}}
+\usepackage{tikzscale} % Scale the figure not the font
+\pgfplotsset{compat=newest}
+%% the following commands are sometimes needed
+\usepackage{grffile}
+\pgfplotsset{compat=newest}
+% *** GRAPHICS RELATED PACKAGES ***
+% \usepackage{graphicx}
+% declare the path(s) where your graphic files are
+%
+%
+\definecolor{mycolor1}{rgb}{0.89412,0.10196,0.10980}%
+\definecolor{mycolor2}{rgb}{0.21569,0.49412,0.72157}%
+\definecolor{mycolor3}{rgb}{0.30196,0.68627,0.29020}%
+\definecolor{mycolor4}{rgb}{0.59608,0.30588,0.63922}%
+\definecolor{mycolor5}{rgb}{1.00000,0.49804,0.00000}%
+\definecolor{mycolor6}{rgb}{1.00000,1.00000,0.20000}%
+\definecolor{mycolor7}{rgb}{0.65098,0.33725,0.15686}%
+\definecolor{mycolor8}{rgb}{0.96863,0.50588,0.74902}%
+\begin{document}
+%
+% \begin{figure*}[t!]
+% 	\centering
+% 	\subfloat[Glucose]
+% 	{
+% 		\includegraphics[width=.9\linewidth]{boxpl_glucose.tikz}
+% 		\label{fig:day1}
+% 	}
+% 	\hfill
+% 	\subfloat[Insulin]
+% 	{
+% 		\includegraphics[width=.9\linewidth]{boxpl_Insulin.tikz}
+% 		\label{fig:day4}
+% 	}
+%   \caption{Box plots of glucose and insulin measurements for healthy and diabetic subjects.}
+%   \label{fig:ogtt_mean}
+% \end{figure*}
+\begin{figure*}[t!]
+	\centering
+	\subfloat[Linear]{\includegraphics[height=0.45\textwidth]{gmean_lin_unbal.tikz}
+	\label{fig:baby_eps}
+	\includegraphics[height=0.45\textwidth]{sn_acc_lin_unbal.tikz}}
+	\label{fig:basil_eps}
+	\medskip
+	\subfloat[RBF]{\includegraphics[height=0.45\textwidth]{gmean_rbf_unbal.tikz}
+	\label{fig:coriander_eps}
+	\includegraphics[height=0.45\textwidth]{sn_acc_rbf_unbal.tikz}}
+	\label{fig:lettuce_eps}
+% 	\caption{Real part of permittivity of all nine leaves measured on four consecutive days. Leaves become transparent to electromagnetic waves with the passage of days as seen by the decrease in the permittivity}
+	\label{fig:Permittivity_all_leaves}
+\end{figure*}
+% \begin{figure*}[t!]
+% 	\centering
+% 	\subfloat[Linear Balanced]{\includegraphics[width=0.495\textwidth]{sp_sn_lin_bal.png}}
+% 	\label{fig:baby_eps} \hfill
+% 	\subfloat[Linear Unbalanced]{\includegraphics[width=0.495\textwidth]{sp_sn_lin_unbal.png}}
+% 	\label{fig:basil_eps}
+% 	\medskip
+% 	\subfloat[RBF Balanced]{\includegraphics[width=0.495\textwidth]{sp_sn_rbf_bal.png}}
+% 	\label{fig:coriander_eps} \hfill
+% 	\subfloat[RBF Unbalanced]{\includegraphics[width=0.495\textwidth]{sp_sn_rbf_unbal.png}}
+% 	\label{fig:lettuce_eps}
+% % 	\caption{Real part of permittivity of all nine leaves measured on four consecutive days. Leaves become transparent to electromagnetic waves with the passage of days as seen by the decrease in the permittivity}
+% 	\label{fig:Permittivity_all_leaves}
+% \end{figure*}
+
+
+% \begin{figure*}[t!]
+% 	\centering
+% 	\subfloat[Linear Balanced]{\includegraphics[width=0.495\textwidth]{sn_acc_lin_bal.png}}
+% 	\label{fig:baby_eps} \hfill
+% 	\subfloat[Linear Unbalanced]{\includegraphics[width=0.495\textwidth]{sn_acc_lin_unbal.png}}
+% 	\label{fig:basil_eps}
+% 	\medskip
+% 	\subfloat[RBF Balanced]{\includegraphics[width=0.495\textwidth]{sn_acc_rbf_bal.png}}
+% 	\label{fig:coriander_eps} \hfill
+% 	\subfloat[RBF Unbalanced]{\includegraphics[width=0.495\textwidth]{sn_acc_rbf_unbal.png}}
+% 	\label{fig:lettuce_eps}
+% % 	\caption{Real part of permittivity of all nine leaves measured on four consecutive days. Leaves become transparent to electromagnetic waves with the passage of days as seen by the decrease in the permittivity}
+% 	\label{fig:Permittivity_all_leaves}
+% \end{figure*}
+
+\end{document}

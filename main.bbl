@@ -57,21 +57,15 @@ C.~Gl{\"u}mer, B.~Carstensen, A.~Sandb{\ae}k, T.~Lauritzen, T.~J{\o}rgensen,
   screening,'' \emph{Diabetes Care}, vol.~27, no.~3, pp. 727--733, 2004.
 
 \bibitem{HELIOVAARA1993181}
-\BIBentryALTinterwordspacing
 M.~Heliövaara, A.~Aromaa, T.~Klaukka, P.~Knekt, M.~Joukamaa, and O.~Impivaara,
   ``Reliability and validity of interview data on chronic diseases the
   mini-finland health survey,'' \emph{Journal of Clinical Epidemiology},
-  vol.~46, no.~2, pp. 181 -- 191, 1993. [Online]. Available:
-  \url{http://www.sciencedirect.com/science/article/pii/0895435693900567}
-\BIBentrySTDinterwordspacing
+  vol.~46, no.~2, pp. 181 -- 191, 1993.
 
 \bibitem{expert-committee}
-\BIBentryALTinterwordspacing
-, ``Report of the expert committee on the diagnosis and classification of
+``Report of the expert committee on the diagnosis and classification of
   diabetes mellitus,'' \emph{Diabetes Care}, vol.~20, no.~7, pp. 1183--1197,
-  1997. [Online]. Available:
-  \url{http://care.diabetesjournals.org/content/20/7/1183}
-\BIBentrySTDinterwordspacing
+  1997.
 
 \bibitem{stumvoll_use_2000}
 M.~Stumvoll, A.~Mitrakou, W.~Pimenta, T.~Jenssen, H.~Yki-Järvinen,
@@ -80,9 +74,9 @@ M.~Stumvoll, A.~Mitrakou, W.~Pimenta, T.~Jenssen, H.~Yki-Järvinen,
   Care}, vol.~23, no.~3, pp. 295--301, 2000.
 
 \bibitem{organization_definition_2006}
-W.~H. Organization and {others}, ``Definition and diagnosis of diabetes
-  mellitus and intermediate hyperglycaemia: report of a {WHO}/{IDF}
-  consultation,'' 2006.
+{World Health Organization} and {International Diabetes Federation},
+  ``Definition and diagnosis of diabetes mellitus and intermediate
+  hyperglycaemia: report of a {WHO}/{IDF} consultation,'' 2006.
 
 \bibitem{defronzo2011assessment}
 R.~A. DeFronzo and M.~Abdul-Ghani, ``Assessment and treatment of cardiovascular
@@ -142,19 +136,23 @@ M.~A. Abdul-Ghani, V.~Lyssenko, T.~Tuomi, R.~A. DeFronzo, and L.~Groop,
   future type 2 diabetes: results from the botnia study,'' \emph{Diabetes
   Care}, vol.~32, no.~2, pp. 281--286, 2009.
 
+\bibitem{Ozery-Flato2013}
+M.~Ozery-Flato, N.~Parush, T.~El-Hay, {\v{Z}}.~Visockien{\.{e}},
+  L.~Ryli{\v{s}}kyt{\.{e}}, J.~Badarien{\.{e}}, S.~Solovjova, M.~Kovait{\.{e}},
+  R.~Navickas, and A.~Laucevi{\v{c}}ius, ``Predictive models for type 2
+  diabetes onset in middle-aged subjects with the metabolic syndrome,''
+  \emph{Diabetology {\&} Metabolic Syndrome}, vol.~5, no.~1, p.~36, Jul 2013.
+
 \bibitem{chawla2002smote}
 N.~V. Chawla, K.~W. Bowyer, L.~O. Hall, and W.~P. Kegelmeyer, ``Smote:
   synthetic minority over-sampling technique,'' \emph{Journal of Artificial
   Intelligence Research}, vol.~16, pp. 321--357, 2002.
 
 \bibitem{Domingos}
-\BIBentryALTinterwordspacing
 P.~Domingos, ``Metacost: A general method for making classifiers
   cost-sensitive,'' in \emph{Proceedings of the Fifth ACM SIGKDD International
   Conference on Knowledge Discovery and Data Mining}, ser. KDD '99.\hskip 1em
   plus 0.5em minus 0.4em\relax New York, NY, USA: ACM, 1999, pp. 155--164.
-  [Online]. Available: \url{http://doi.acm.org/10.1145/312129.312220}
-\BIBentrySTDinterwordspacing
 
 \bibitem{kubat1997addressing}
 M.~Kubat, S.~Matwin \emph{et~al.}, ``Addressing the curse of imbalanced

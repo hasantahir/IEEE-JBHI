@@ -27,12 +27,16 @@
 \newlabel{acro:t2dm}{{I}{1}}
 \acronymused{t2dm}
 \acronymused{t2dm}
+\AC@undonewlabel{acro:ifg}
+\newlabel{acro:ifg}{{I}{1}}
+\acronymused{ifg}
 \AC@undonewlabel{acro:igt}
 \newlabel{acro:igt}{{I}{1}}
 \acronymused{igt}
 \AC@undonewlabel{acro:who}
 \newlabel{acro:who}{{I}{1}}
 \acronymused{who}
+\acronymused{ifg}
 \acronymused{igt}
 \acronymused{ogtt}
 \acronymused{t2dm}
@@ -95,6 +99,7 @@
 \AC@undonewlabel{acro:nhw}
 \newlabel{acro:nhw}{{\unhbox \voidb@x \hbox {II-A}}{2}}
 \acronymused{nhw}
+\acronymused{ogtt}
 \acronymused{bmi}
 \acronymused{sahs}
 \acronymused{t2dm}
@@ -109,14 +114,13 @@
 \acronymused{t2dm}
 \acronymused{ma}
 \acronymused{nhw}
-\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces The classification of the \num [group-minimum-digits=4, group-separator = {,}]{1492} subjects used in this study\relax }}{2}}
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces The classification of the \num [group-minimum-digits=4, group-separator = {,}]{1492} subjects used in this study based on the ethnicity.\relax }}{2}}
 \acronymused{t2dm}
 \acronymused{cvd}
 \acronymused{t2dm}
 \acronymused{cvd}
 \acronymused{ma}
 \acronymused{nhw}
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{tab:patients}{{I}{2}}
 \citation{burke_rapid_1999}
 \citation{seino1975insulinogenic}
@@ -125,6 +129,7 @@
 \citation{matthews1985homeostasis}
 \citation{mRMR}
 \citation{ross2014mutual}
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:glucose}{{1a}{3}}
 \newlabel{sub@fig:glucose}{{(a)}{a}}
 \newlabel{fig:insulin}{{1b}{3}}
@@ -132,8 +137,8 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Box plots of glucose and insulin levels for healthy and diabetic subjects measured at the baseline \ac {ogtt}.\relax }}{3}}
 \acronymused{ogtt}
 \newlabel{fig:ogtt_mean}{{1}{3}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{3}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{3}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Plasma Glucose}}}{3}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Serum Insulin}}}{3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-B}}Machine Learning Framework}{3}}
 \acronymused{svm}
 \acronymused{t2dm}
@@ -155,10 +160,10 @@
 \acronymused{mi}
 \acronymused{ogtt}
 \newlabel{eq:mat_idx}{{1}{3}}
+\acronymused{ogtt}
 \AC@undonewlabel{acro:homair}
 \newlabel{acro:homair}{{\unhbox \voidb@x \hbox {II-C}}{3}}
 \acronymused{homair}
-\acronymused{ogtt}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-D}}Feature Selection}{3}}
 \acronymused{svm}
 \acronymused{t2dm}
@@ -167,7 +172,7 @@
 \acronymused{mrmr}
 \acronymused{mrmr}
 \citation{kubat1997addressing}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Illustration of all 61 features extracted from the \ac {sahs} dataset.\relax }}{4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Illustration of all \num {61} features extracted from the \ac {sahs} dataset.\relax }}{4}}
 \acronymused{sahs}
 \newlabel{fig:features}{{2}{4}}
 \newlabel{eq:MI}{{2}{4}}
@@ -184,58 +189,74 @@
 \newlabel{acro:cv}{{\unhbox \voidb@x \hbox {II-E}}{4}}
 \acronymused{cv}
 \acronymused{cv}
-\@writefile{toc}{\contentsline {section}{\numberline {III}Results and Discussion}{4}}
+\acronymused{svm}
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces List of ten most relevant features ranked by the \ac {mrmr} algorithm\relax }}{4}}
 \acronymused{mrmr}
-\acronymused{ogtt}
-\acronymused{gm}
-\acronymused{rbf}
-\acronymused{gm}
-\acronymused{gm}
-\@writefile{toc}{\contentsline {section}{\numberline {IV}Data Experiments}{5}}
-\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces List of ten most relevant features ranked by the \ac {mrmr} algorithm\relax }}{5}}
-\acronymused{mrmr}
-\newlabel{tab:ranked}{{II}{5}}
-\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Average performance of the individual features gauged by the accuracy\relax }}{5}}
-\newlabel{tab:best_features}{{III}{5}}
-\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Mean Training performance of the classifiers\relax }}{5}}
-\newlabel{tab:training}{{IV}{5}}
-\@writefile{toc}{\contentsline {section}{\numberline {V}Results and Discussion}{5}}
+\newlabel{tab:ranked}{{II}{4}}
+\expandafter \gdef \csname pgfplots@labelstyle@plot_one\endcsname {color={black},line width={1.0pt},draw={none},mark size={5.0pt},mark={*},mark options={solid, fill=red, black}}
+\expandafter \gdef \csname pgfplots@show@ref@plot_one\endcsname {\begingroup \def \pgfplots@draw@image {\def \tikz@plot@handler {\pgfkeys {/pgf/plots/@handler options/.cd, start=\relax , end macro=\relax , point macro=\pgfutil@gobble , jump macro=\relax , special macro=\pgfutil@gobble , point macro=\pgf@plot@line@handler , jump=\global \let \pgf@plotstreampoint \pgf@plot@line@handler@move }\begingroup \escapechar =-1 \edef \pgfplotsplothandlername {\string \pgfplothandlerlineto }\pgfmath@smuggleone \pgfplotsplothandlername \endgroup \def \pgfplotsplothandlerLUAfactory {function(axis, pointmetainputhandler) return pgfplots.GenericPlothandler.new("\pgfplotsplothandlername ", axis,pointmetainputhandler) end}\def \pgfplotsplothandlerLUAvisualizerfactory {pgfplots.defaultPlotVisualizerFactory}}\pgfkeysdef {/pgfplots/legend image code}{\draw [/pgfplots/mesh=false,bar width=3pt,bar shift=0pt,mark repeat=2,mark phase=2,] plot coordinates { (0cm,0cm) (0.3cm,0cm) (0.6cm,0cm)};}\pgfkeysdef {/pgfplots/every legend image post}{}\pgfkeyssetvalue {/pgfplots/mark list fill}{.!80!black}\pgfkeysdef {/pgfplots/every crossref picture}{\pgfkeysalso {baseline,yshift=0.3em}}\pgfplots@show@small@legendplots {color={black},line width={1.0pt},draw={none},mark size={5.0pt},mark={*},mark options={solid, fill=red, black}}{}}\ifpgfpicture \scope [/pgfplots/every crossref picture]\pgfplots@draw@image \endscope \else \expandafter \ifx \csname tikzappendtofigurename\endcsname \relax \else \begingroup \tikzappendtofigurename {_crossref}\fi \tikz [/pgfplots/every crossref picture]{\pgfplots@draw@image }\expandafter \ifx \csname tikzappendtofigurename\endcsname \relax \else \endgroup \fi \fi \endgroup }
+\expandafter \gdef \csname pgfplots@labelstyle@plot_one\endcsname {color={black},line width={1.0pt},draw={none},mark size={5.0pt},mark={*},mark options={solid, fill=red, black}}
+\expandafter \gdef \csname pgfplots@show@ref@plot_one\endcsname {\begingroup \def \pgfplots@draw@image {\def \tikz@plot@handler {\pgfkeys {/pgf/plots/@handler options/.cd, start=\relax , end macro=\relax , point macro=\pgfutil@gobble , jump macro=\relax , special macro=\pgfutil@gobble , point macro=\pgf@plot@line@handler , jump=\global \let \pgf@plotstreampoint \pgf@plot@line@handler@move }\begingroup \escapechar =-1 \edef \pgfplotsplothandlername {\string \pgfplothandlerlineto }\pgfmath@smuggleone \pgfplotsplothandlername \endgroup \def \pgfplotsplothandlerLUAfactory {function(axis, pointmetainputhandler) return pgfplots.GenericPlothandler.new("\pgfplotsplothandlername ", axis,pointmetainputhandler) end}\def \pgfplotsplothandlerLUAvisualizerfactory {pgfplots.defaultPlotVisualizerFactory}}\pgfkeysdef {/pgfplots/legend image code}{\draw [/pgfplots/mesh=false,bar width=3pt,bar shift=0pt,mark repeat=2,mark phase=2,] plot coordinates { (0cm,0cm) (0.3cm,0cm) (0.6cm,0cm)};}\pgfkeysdef {/pgfplots/every legend image post}{}\pgfkeyssetvalue {/pgfplots/mark list fill}{.!80!black}\pgfkeysdef {/pgfplots/every crossref picture}{\pgfkeysalso {baseline,yshift=0.3em}}\pgfplots@show@small@legendplots {color={black},line width={1.0pt},draw={none},mark size={5.0pt},mark={*},mark options={solid, fill=red, black}}{}}\ifpgfpicture \scope [/pgfplots/every crossref picture]\pgfplots@draw@image \endscope \else \expandafter \ifx \csname tikzappendtofigurename\endcsname \relax \else \begingroup \tikzappendtofigurename {_crossref}\fi \tikz [/pgfplots/every crossref picture]{\pgfplots@draw@image }\expandafter \ifx \csname tikzappendtofigurename\endcsname \relax \else \endgroup \fi \fi \endgroup }
+\expandafter \gdef \csname pgfplots@labelstyle@plot_one\endcsname {color={black},line width={1.0pt},draw={none},mark size={5.0pt},mark={*},mark options={solid, fill=red, black}}
+\expandafter \gdef \csname pgfplots@show@ref@plot_one\endcsname {\begingroup \def \pgfplots@draw@image {\def \tikz@plot@handler {\pgfkeys {/pgf/plots/@handler options/.cd, start=\relax , end macro=\relax , point macro=\pgfutil@gobble , jump macro=\relax , special macro=\pgfutil@gobble , point macro=\pgf@plot@line@handler , jump=\global \let \pgf@plotstreampoint \pgf@plot@line@handler@move }\begingroup \escapechar =-1 \edef \pgfplotsplothandlername {\string \pgfplothandlerlineto }\pgfmath@smuggleone \pgfplotsplothandlername \endgroup \def \pgfplotsplothandlerLUAfactory {function(axis, pointmetainputhandler) return pgfplots.GenericPlothandler.new("\pgfplotsplothandlername ", axis,pointmetainputhandler) end}\def \pgfplotsplothandlerLUAvisualizerfactory {pgfplots.defaultPlotVisualizerFactory}}\pgfkeysdef {/pgfplots/legend image code}{\draw [/pgfplots/mesh=false,bar width=3pt,bar shift=0pt,mark repeat=2,mark phase=2,] plot coordinates { (0cm,0cm) (0.3cm,0cm) (0.6cm,0cm)};}\pgfkeysdef {/pgfplots/every legend image post}{}\pgfkeyssetvalue {/pgfplots/mark list fill}{.!80!black}\pgfkeysdef {/pgfplots/every crossref picture}{\pgfkeysalso {baseline,yshift=0.3em}}\pgfplots@show@small@legendplots {color={black},line width={1.0pt},draw={none},mark size={5.0pt},mark={*},mark options={solid, fill=red, black}}{}}\ifpgfpicture \scope [/pgfplots/every crossref picture]\pgfplots@draw@image \endscope \else \expandafter \ifx \csname tikzappendtofigurename\endcsname \relax \else \begingroup \tikzappendtofigurename {_crossref}\fi \tikz [/pgfplots/every crossref picture]{\pgfplots@draw@image }\expandafter \ifx \csname tikzappendtofigurename\endcsname \relax \else \endgroup \fi \fi \endgroup }
+\expandafter \gdef \csname pgfplots@labelstyle@plot_one\endcsname {color={black},line width={1.0pt},draw={none},mark size={5.0pt},mark={*},mark options={solid, fill=red, black}}
+\expandafter \gdef \csname pgfplots@show@ref@plot_one\endcsname {\begingroup \def \pgfplots@draw@image {\def \tikz@plot@handler {\pgfkeys {/pgf/plots/@handler options/.cd, start=\relax , end macro=\relax , point macro=\pgfutil@gobble , jump macro=\relax , special macro=\pgfutil@gobble , point macro=\pgf@plot@line@handler , jump=\global \let \pgf@plotstreampoint \pgf@plot@line@handler@move }\begingroup \escapechar =-1 \edef \pgfplotsplothandlername {\string \pgfplothandlerlineto }\pgfmath@smuggleone \pgfplotsplothandlername \endgroup \def \pgfplotsplothandlerLUAfactory {function(axis, pointmetainputhandler) return pgfplots.GenericPlothandler.new("\pgfplotsplothandlername ", axis,pointmetainputhandler) end}\def \pgfplotsplothandlerLUAvisualizerfactory {pgfplots.defaultPlotVisualizerFactory}}\pgfkeysdef {/pgfplots/legend image code}{\draw [/pgfplots/mesh=false,bar width=3pt,bar shift=0pt,mark repeat=2,mark phase=2,] plot coordinates { (0cm,0cm) (0.3cm,0cm) (0.6cm,0cm)};}\pgfkeysdef {/pgfplots/every legend image post}{}\pgfkeyssetvalue {/pgfplots/mark list fill}{.!80!black}\pgfkeysdef {/pgfplots/every crossref picture}{\pgfkeysalso {baseline,yshift=0.3em}}\pgfplots@show@small@legendplots {color={black},line width={1.0pt},draw={none},mark size={5.0pt},mark={*},mark options={solid, fill=red, black}}{}}\ifpgfpicture \scope [/pgfplots/every crossref picture]\pgfplots@draw@image \endscope \else \expandafter \ifx \csname tikzappendtofigurename\endcsname \relax \else \begingroup \tikzappendtofigurename {_crossref}\fi \tikz [/pgfplots/every crossref picture]{\pgfplots@draw@image }\expandafter \ifx \csname tikzappendtofigurename\endcsname \relax \else \endgroup \fi \fi \endgroup }
+\expandafter \gdef \csname pgfplots@labelstyle@plot_one\endcsname {color={black},line width={1.0pt},draw={none},mark size={5.0pt},mark={*},mark options={solid, fill=red, black}}
+\expandafter \gdef \csname pgfplots@show@ref@plot_one\endcsname {\begingroup \def \pgfplots@draw@image {\def \tikz@plot@handler {\pgfkeys {/pgf/plots/@handler options/.cd, start=\relax , end macro=\relax , point macro=\pgfutil@gobble , jump macro=\relax , special macro=\pgfutil@gobble , point macro=\pgf@plot@line@handler , jump=\global \let \pgf@plotstreampoint \pgf@plot@line@handler@move }\begingroup \escapechar =-1 \edef \pgfplotsplothandlername {\string \pgfplothandlerlineto }\pgfmath@smuggleone \pgfplotsplothandlername \endgroup \def \pgfplotsplothandlerLUAfactory {function(axis, pointmetainputhandler) return pgfplots.GenericPlothandler.new("\pgfplotsplothandlername ", axis,pointmetainputhandler) end}\def \pgfplotsplothandlerLUAvisualizerfactory {pgfplots.defaultPlotVisualizerFactory}}\pgfkeysdef {/pgfplots/legend image code}{\draw [/pgfplots/mesh=false,bar width=3pt,bar shift=0pt,mark repeat=2,mark phase=2,] plot coordinates { (0cm,0cm) (0.3cm,0cm) (0.6cm,0cm)};}\pgfkeysdef {/pgfplots/every legend image post}{}\pgfkeyssetvalue {/pgfplots/mark list fill}{.!80!black}\pgfkeysdef {/pgfplots/every crossref picture}{\pgfkeysalso {baseline,yshift=0.3em}}\pgfplots@show@small@legendplots {color={black},line width={1.0pt},draw={none},mark size={5.0pt},mark={*},mark options={solid, fill=red, black}}{}}\ifpgfpicture \scope [/pgfplots/every crossref picture]\pgfplots@draw@image \endscope \else \expandafter \ifx \csname tikzappendtofigurename\endcsname \relax \else \begingroup \tikzappendtofigurename {_crossref}\fi \tikz [/pgfplots/every crossref picture]{\pgfplots@draw@image }\expandafter \ifx \csname tikzappendtofigurename\endcsname \relax \else \endgroup \fi \fi \endgroup }
+\expandafter \gdef \csname pgfplots@labelstyle@plot_one\endcsname {color={black},line width={1.2pt},draw={none},mark size={5.0pt},mark={*},mark options={solid, fill=red, black}}
+\expandafter \gdef \csname pgfplots@show@ref@plot_one\endcsname {\begingroup \def \pgfplots@draw@image {\def \tikz@plot@handler {\pgfkeys {/pgf/plots/@handler options/.cd, start=\relax , end macro=\relax , point macro=\pgfutil@gobble , jump macro=\relax , special macro=\pgfutil@gobble , point macro=\pgf@plot@line@handler , jump=\global \let \pgf@plotstreampoint \pgf@plot@line@handler@move }\begingroup \escapechar =-1 \edef \pgfplotsplothandlername {\string \pgfplothandlerlineto }\pgfmath@smuggleone \pgfplotsplothandlername \endgroup \def \pgfplotsplothandlerLUAfactory {function(axis, pointmetainputhandler) return pgfplots.GenericPlothandler.new("\pgfplotsplothandlername ", axis,pointmetainputhandler) end}\def \pgfplotsplothandlerLUAvisualizerfactory {pgfplots.defaultPlotVisualizerFactory}}\pgfkeysdef {/pgfplots/legend image code}{\draw [/pgfplots/mesh=false,bar width=3pt,bar shift=0pt,mark repeat=2,mark phase=2,] plot coordinates { (0cm,0cm) (0.3cm,0cm) (0.6cm,0cm)};}\pgfkeysdef {/pgfplots/every legend image post}{}\pgfkeyssetvalue {/pgfplots/mark list fill}{.!80!black}\pgfkeysdef {/pgfplots/every crossref picture}{\pgfkeysalso {baseline,yshift=0.3em}}\pgfplots@show@small@legendplots {color={black},line width={1.2pt},draw={none},mark size={5.0pt},mark={*},mark options={solid, fill=red, black}}{}}\ifpgfpicture \scope [/pgfplots/every crossref picture]\pgfplots@draw@image \endscope \else \expandafter \ifx \csname tikzappendtofigurename\endcsname \relax \else \begingroup \tikzappendtofigurename {_crossref}\fi \tikz [/pgfplots/every crossref picture]{\pgfplots@draw@image }\expandafter \ifx \csname tikzappendtofigurename\endcsname \relax \else \endgroup \fi \fi \endgroup }
+\expandafter \gdef \csname pgfplots@labelstyle@plot_one\endcsname {color={black},line width={1.2pt},draw={none},mark size={5.0pt},mark={*},mark options={solid, fill=red, black}}
+\expandafter \gdef \csname pgfplots@show@ref@plot_one\endcsname {\begingroup \def \pgfplots@draw@image {\def \tikz@plot@handler {\pgfkeys {/pgf/plots/@handler options/.cd, start=\relax , end macro=\relax , point macro=\pgfutil@gobble , jump macro=\relax , special macro=\pgfutil@gobble , point macro=\pgf@plot@line@handler , jump=\global \let \pgf@plotstreampoint \pgf@plot@line@handler@move }\begingroup \escapechar =-1 \edef \pgfplotsplothandlername {\string \pgfplothandlerlineto }\pgfmath@smuggleone \pgfplotsplothandlername \endgroup \def \pgfplotsplothandlerLUAfactory {function(axis, pointmetainputhandler) return pgfplots.GenericPlothandler.new("\pgfplotsplothandlername ", axis,pointmetainputhandler) end}\def \pgfplotsplothandlerLUAvisualizerfactory {pgfplots.defaultPlotVisualizerFactory}}\pgfkeysdef {/pgfplots/legend image code}{\draw [/pgfplots/mesh=false,bar width=3pt,bar shift=0pt,mark repeat=2,mark phase=2,] plot coordinates { (0cm,0cm) (0.3cm,0cm) (0.6cm,0cm)};}\pgfkeysdef {/pgfplots/every legend image post}{}\pgfkeyssetvalue {/pgfplots/mark list fill}{.!80!black}\pgfkeysdef {/pgfplots/every crossref picture}{\pgfkeysalso {baseline,yshift=0.3em}}\pgfplots@show@small@legendplots {color={black},line width={1.2pt},draw={none},mark size={5.0pt},mark={*},mark options={solid, fill=red, black}}{}}\ifpgfpicture \scope [/pgfplots/every crossref picture]\pgfplots@draw@image \endscope \else \expandafter \ifx \csname tikzappendtofigurename\endcsname \relax \else \begingroup \tikzappendtofigurename {_crossref}\fi \tikz [/pgfplots/every crossref picture]{\pgfplots@draw@image }\expandafter \ifx \csname tikzappendtofigurename\endcsname \relax \else \endgroup \fi \fi \endgroup }
+\expandafter \gdef \csname pgfplots@labelstyle@plot_one\endcsname {color={black},line width={1.2pt},draw={none},mark size={5.0pt},mark={*},mark options={solid, fill=red, black}}
+\expandafter \gdef \csname pgfplots@show@ref@plot_one\endcsname {\begingroup \def \pgfplots@draw@image {\def \tikz@plot@handler {\pgfkeys {/pgf/plots/@handler options/.cd, start=\relax , end macro=\relax , point macro=\pgfutil@gobble , jump macro=\relax , special macro=\pgfutil@gobble , point macro=\pgf@plot@line@handler , jump=\global \let \pgf@plotstreampoint \pgf@plot@line@handler@move }\begingroup \escapechar =-1 \edef \pgfplotsplothandlername {\string \pgfplothandlerlineto }\pgfmath@smuggleone \pgfplotsplothandlername \endgroup \def \pgfplotsplothandlerLUAfactory {function(axis, pointmetainputhandler) return pgfplots.GenericPlothandler.new("\pgfplotsplothandlername ", axis,pointmetainputhandler) end}\def \pgfplotsplothandlerLUAvisualizerfactory {pgfplots.defaultPlotVisualizerFactory}}\pgfkeysdef {/pgfplots/legend image code}{\draw [/pgfplots/mesh=false,bar width=3pt,bar shift=0pt,mark repeat=2,mark phase=2,] plot coordinates { (0cm,0cm) (0.3cm,0cm) (0.6cm,0cm)};}\pgfkeysdef {/pgfplots/every legend image post}{}\pgfkeyssetvalue {/pgfplots/mark list fill}{.!80!black}\pgfkeysdef {/pgfplots/every crossref picture}{\pgfkeysalso {baseline,yshift=0.3em}}\pgfplots@show@small@legendplots {color={black},line width={1.2pt},draw={none},mark size={5.0pt},mark={*},mark options={solid, fill=red, black}}{}}\ifpgfpicture \scope [/pgfplots/every crossref picture]\pgfplots@draw@image \endscope \else \expandafter \ifx \csname tikzappendtofigurename\endcsname \relax \else \begingroup \tikzappendtofigurename {_crossref}\fi \tikz [/pgfplots/every crossref picture]{\pgfplots@draw@image }\expandafter \ifx \csname tikzappendtofigurename\endcsname \relax \else \endgroup \fi \fi \endgroup }
+\expandafter \gdef \csname pgfplots@labelstyle@plot_one\endcsname {color={black},line width={1.2pt},draw={none},mark size={5.0pt},mark={*},mark options={solid, fill=red, black}}
+\expandafter \gdef \csname pgfplots@show@ref@plot_one\endcsname {\begingroup \def \pgfplots@draw@image {\def \tikz@plot@handler {\pgfkeys {/pgf/plots/@handler options/.cd, start=\relax , end macro=\relax , point macro=\pgfutil@gobble , jump macro=\relax , special macro=\pgfutil@gobble , point macro=\pgf@plot@line@handler , jump=\global \let \pgf@plotstreampoint \pgf@plot@line@handler@move }\begingroup \escapechar =-1 \edef \pgfplotsplothandlername {\string \pgfplothandlerlineto }\pgfmath@smuggleone \pgfplotsplothandlername \endgroup \def \pgfplotsplothandlerLUAfactory {function(axis, pointmetainputhandler) return pgfplots.GenericPlothandler.new("\pgfplotsplothandlername ", axis,pointmetainputhandler) end}\def \pgfplotsplothandlerLUAvisualizerfactory {pgfplots.defaultPlotVisualizerFactory}}\pgfkeysdef {/pgfplots/legend image code}{\draw [/pgfplots/mesh=false,bar width=3pt,bar shift=0pt,mark repeat=2,mark phase=2,] plot coordinates { (0cm,0cm) (0.3cm,0cm) (0.6cm,0cm)};}\pgfkeysdef {/pgfplots/every legend image post}{}\pgfkeyssetvalue {/pgfplots/mark list fill}{.!80!black}\pgfkeysdef {/pgfplots/every crossref picture}{\pgfkeysalso {baseline,yshift=0.3em}}\pgfplots@show@small@legendplots {color={black},line width={1.2pt},draw={none},mark size={5.0pt},mark={*},mark options={solid, fill=red, black}}{}}\ifpgfpicture \scope [/pgfplots/every crossref picture]\pgfplots@draw@image \endscope \else \expandafter \ifx \csname tikzappendtofigurename\endcsname \relax \else \begingroup \tikzappendtofigurename {_crossref}\fi \tikz [/pgfplots/every crossref picture]{\pgfplots@draw@image }\expandafter \ifx \csname tikzappendtofigurename\endcsname \relax \else \endgroup \fi \fi \endgroup }
+\expandafter \gdef \csname pgfplots@labelstyle@plot_one\endcsname {color={black},line width={1.2pt},draw={none},mark size={5.0pt},mark={*},mark options={solid, fill=red, black}}
+\expandafter \gdef \csname pgfplots@show@ref@plot_one\endcsname {\begingroup \def \pgfplots@draw@image {\def \tikz@plot@handler {\pgfkeys {/pgf/plots/@handler options/.cd, start=\relax , end macro=\relax , point macro=\pgfutil@gobble , jump macro=\relax , special macro=\pgfutil@gobble , point macro=\pgf@plot@line@handler , jump=\global \let \pgf@plotstreampoint \pgf@plot@line@handler@move }\begingroup \escapechar =-1 \edef \pgfplotsplothandlername {\string \pgfplothandlerlineto }\pgfmath@smuggleone \pgfplotsplothandlername \endgroup \def \pgfplotsplothandlerLUAfactory {function(axis, pointmetainputhandler) return pgfplots.GenericPlothandler.new("\pgfplotsplothandlername ", axis,pointmetainputhandler) end}\def \pgfplotsplothandlerLUAvisualizerfactory {pgfplots.defaultPlotVisualizerFactory}}\pgfkeysdef {/pgfplots/legend image code}{\draw [/pgfplots/mesh=false,bar width=3pt,bar shift=0pt,mark repeat=2,mark phase=2,] plot coordinates { (0cm,0cm) (0.3cm,0cm) (0.6cm,0cm)};}\pgfkeysdef {/pgfplots/every legend image post}{}\pgfkeyssetvalue {/pgfplots/mark list fill}{.!80!black}\pgfkeysdef {/pgfplots/every crossref picture}{\pgfkeysalso {baseline,yshift=0.3em}}\pgfplots@show@small@legendplots {color={black},line width={1.2pt},draw={none},mark size={5.0pt},mark={*},mark options={solid, fill=red, black}}{}}\ifpgfpicture \scope [/pgfplots/every crossref picture]\pgfplots@draw@image \endscope \else \expandafter \ifx \csname tikzappendtofigurename\endcsname \relax \else \begingroup \tikzappendtofigurename {_crossref}\fi \tikz [/pgfplots/every crossref picture]{\pgfplots@draw@image }\expandafter \ifx \csname tikzappendtofigurename\endcsname \relax \else \endgroup \fi \fi \endgroup }
+\citation{stern2002identification}
 \citation{abdul-ghani_two-step_2011}
 \citation{stern2002identification}
-\bibstyle{IEEEtran}
-\bibdata{References}
-\newlabel{fig:gmean_lin_unbal}{{3a}{6}}
+\citation{abdul-ghani_two-step_2011}
+\newlabel{fig:gmean_lin_unbal}{{3a}{5}}
 \newlabel{sub@fig:gmean_lin_unbal}{{(a)}{a}}
-\newlabel{fig:gmean_rbf_unbal}{{3b}{6}}
+\newlabel{fig:gmean_rbf_unbal}{{3b}{5}}
 \newlabel{sub@fig:gmean_rbf_unbal}{{(b)}{b}}
 \acronymused{rbf}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The geometric mean of sensitivity and specificity for (a) linear, and (b) \ac {rbf} kernels.\relax }}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The \ac {gm} of sensitivity and specificity for (a) linear, and (b) \ac {rbf} kernels. The maximum performance feature combination is depicted by a different color scheme.\relax }}{5}}
+\acronymused{gm}
 \acronymused{rbf}
-\newlabel{fig:gmean}{{3}{6}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Linear}}}{6}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\ac {rbf}}}}{6}}
-\newlabel{fig:sn_acc_lin_unbal}{{4a}{6}}
+\newlabel{fig:gmean}{{3}{5}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Linear}}}{5}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\ac {rbf}}}}{5}}
+\@writefile{toc}{\contentsline {section}{\numberline {III}Results and Discussion}{5}}
+\acronymused{mrmr}
+\acronymused{ogtt}
+\acronymused{gm}
+\acronymused{rbf}
+\acronymused{gm}
+\acronymused{gm}
+\acronymused{svm}
+\acronymused{gm}
+\acronymused{svm}
+\acronymused{rbf}
+\acronymused{gm}
+\acronymused{svm}
+\acronymused{rbf}
+\newlabel{plot_one}{{\expandafter\protect\csname pgfplots@show@ref@plot_one\endcsname}{5}}
+\newlabel{sub@plot_one}{{(a)}{a}}
+\newlabel{fig:sn_acc_lin_unbal}{{4a}{5}}
 \newlabel{sub@fig:sn_acc_lin_unbal}{{(a)}{a}}
-\newlabel{fig:sn_acc_rbf_unbal}{{4b}{6}}
+\newlabel{plot_one}{{\expandafter\protect\csname pgfplots@show@ref@plot_one\endcsname}{5}}
+\newlabel{sub@plot_one}{{(b)}{b}}
+\newlabel{fig:sn_acc_rbf_unbal}{{4b}{5}}
 \newlabel{sub@fig:sn_acc_rbf_unbal}{{(b)}{b}}
 \acronymused{rbf}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces The classifier performance in terms of accuracy and sensitivity for the best feature combinations.\relax }}{6}}
-\newlabel{fig:sn_acc}{{4}{6}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Linear}}}{6}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\ac {rbf}}}}{6}}
-\@writefile{lot}{\contentsline {table}{\numberline {V}{\ignorespaces  Validation performance classifiers\relax }}{6}}
-\newlabel{tab:validation}{{V}{6}}
-\@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusion}{6}}
-\acronymused{svm}
-\acronymused{t2dm}
-\acronymused{bmi}
-\acronymused{t2dm}
-\acronymused{t2dm}
-\acronymused{sahs}
-\acronymused{gm}
-\acronymused{t2dm}
-\acronymused{ogtt}
-\acronymused{t2dm}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces The classifier performance in terms of accuracy and sensitivity for the best feature combinations.\relax }}{5}}
+\newlabel{fig:sn_acc}{{4}{5}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Linear}}}{5}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\ac {rbf}}}}{5}}
+\bibstyle{IEEEtran}
+\bibdata{References_clean}
 \bibcite{mathers_projections_2006}{1}
 \bibcite{tuomilehto2001prevention}{2}
 \bibcite{diabetes2015long}{3}
@@ -252,24 +273,59 @@
 \bibcite{abdul-ghani_what_2007}{14}
 \bibcite{barakat_intelligible_2010}{15}
 \bibcite{han_rule_2015}{16}
+\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Comparison of validation performance of the best \ac {svm} classifiers with previous studies.\relax }}{6}}
+\acronymused{svm}
+\acronymused{gm}
+\acronymused{svm}
+\acronymused{rbf}
+\acronymused{sadpm}
+\newlabel{tab:validation}{{III}{6}}
+\acronymused{svm}
+\acronymused{sahs}
+\acronymused{sadpm}
+\acronymused{sadpm}
+\acronymused{sadpm}
+\acronymused{sahs}
+\acronymused{ifg}
+\acronymused{igt}
+\acronymused{ifg}
+\acronymused{igt}
+\acronymused{igt}
+\acronymused{ifg}
+\acronymused{t2dm}
+\acronymused{homair}
+\acronymused{t2dm}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Conclusion}{6}}
+\acronymused{svm}
+\acronymused{t2dm}
+\acronymused{ogtt}
+\acronymused{bmi}
+\acronymused{t2dm}
+\acronymused{t2dm}
+\acronymused{sahs}
+\acronymused{gm}
+\acronymused{t2dm}
+\acronymused{ogtt}
+\acronymused{t2dm}
+\@writefile{toc}{\contentsline {section}{References}{6}}
 \bibcite{stern2002identification}{17}
 \bibcite{abdul-ghani_two-step_2011}{18}
 \bibcite{abdul2009fasting}{19}
-\bibcite{chawla2002smote}{20}
-\bibcite{Domingos}{21}
-\bibcite{kubat1997addressing}{22}
-\bibcite{Tang_SVM}{23}
-\bibcite{burke_rapid_1999}{24}
-\bibcite{lorenzo_trend_2006}{25}
-\bibcite{vapnik_nature_2000}{26}
-\bibcite{vapnik2015uniform}{27}
-\bibcite{friedman2001elements}{28}
-\bibcite{seino1975insulinogenic}{29}
-\bibcite{Matsuda1462}{30}
-\bibcite{matthews1985homeostasis}{31}
-\bibcite{mRMR}{32}
-\bibcite{ross2014mutual}{33}
-\@writefile{toc}{\contentsline {section}{References}{7}}
+\bibcite{Ozery-Flato2013}{20}
+\bibcite{chawla2002smote}{21}
+\bibcite{Domingos}{22}
+\bibcite{kubat1997addressing}{23}
+\bibcite{Tang_SVM}{24}
+\bibcite{burke_rapid_1999}{25}
+\bibcite{lorenzo_trend_2006}{26}
+\bibcite{vapnik_nature_2000}{27}
+\bibcite{vapnik2015uniform}{28}
+\bibcite{friedman2001elements}{29}
+\bibcite{seino1975insulinogenic}{30}
+\bibcite{Matsuda1462}{31}
+\bibcite{matthews1985homeostasis}{32}
+\bibcite{mRMR}{33}
+\bibcite{ross2014mutual}{34}
 \@writefile{toc}{\contentsline {section}{Biographies}{7}}
 \@writefile{toc}{\contentsline {subsection}{Michael Shell}{7}}
 \@writefile{toc}{\contentsline {subsection}{John Doe}{7}}
@@ -282,6 +338,7 @@
 \newacro{mrmr}[\AC@hyperlink{mrmr}{mRMR}]{minimum redundancy maximum relevance}
 \newacro{t2dm}[\AC@hyperlink{t2dm}{T2DM}]{type 2 diabetes mellitus}
 \newacro{igt}[\AC@hyperlink{igt}{IGT}]{impaired glucose tolerance}
+\newacro{ifg}[\AC@hyperlink{ifg}{IFG}]{impaired fasting glucose}
 \newacro{sahs}[\AC@hyperlink{sahs}{SAHS}]{San Antonio Heart Study}
 \newacro{sadpm}[\AC@hyperlink{sadpm}{SADPM}]{San Antonio diabetes prediction model}
 \newacro{cvd}[\AC@hyperlink{cvd}{CVD}]{cardiovascular disease}
@@ -291,6 +348,6 @@
 \newacro{ml}[\AC@hyperlink{ml}{ML}]{Machine learning}
 \newacro{rbf}[\AC@hyperlink{rbf}{RBF}]{radial basis function}
 \newacro{igi}[\AC@hyperlink{igi}{IGI}]{insulinogenic index}
-\newacro{mi}[\AC@hyperlink{mi}{MI}]{Matsuda index}
+\newacro{mi}[\AC@hyperlink{mi}{M}]{Matsuda index}
 \newacro{homair}[\AC@hyperlink{homair}{HOMA-IR}]{homeostatic model assessment - insulin resistance}
 \newacro{cv}[\AC@hyperlink{cv}{CV}]{cross-validation}

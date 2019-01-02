@@ -1,0 +1,49 @@
+# of FPG > 126 -- 0
+# of PG120 > 200 -- 23
+
+# of PG120 > 200 actually developing diabetes = 14
+
+Sensitivity = 14/171 = 8.19 %
+
+============
+IGT criteria
+============
+
+# of people with PG120 > 140 & <200 = 336
+
+# of such people that developed diabetes = 114
+
+Sensitivity = 114/336 = 33.93 %
+Prevalence = 336/1492 = 22.52 %
+
+============
+IGF Criteria
+============
+# of people with PG0 > 100 & 124 = 133
+# of such people that developed diabetes = 54
+
+Sensitivity = 54/133 = 40.60 %
+Prevalence = 133/1462 = 8.91 %
+====================================
+Prediabetes (both IGT and IGF)
+====================================
+# of people with IGT and IGF = 70
+# of such people that developed diabetes = 42
+
+Sensitivity = 42/70 = 60 %
+
+==========
+IGT or IGF
+==========
+
+# of people with IGT or IGF = 399
+# of such people that developed diabetes = 120
+
+Sensitivity = 120/399 = 30.08 %
+
+==========
+NO IGT or IGF
+==========
+# of people with diabetes with no IGT or IGF = 41
+
+Healthy to diabetes = 41/161 = 25.67%
